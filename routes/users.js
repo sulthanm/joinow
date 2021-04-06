@@ -10,5 +10,7 @@ router.get('/profile', profile.profilePage);
 router.get('/posts', post.postsPage);
 router.get('/signup', profile.signupPage);
 router.get('/signin', profile.signinPage);
+router.post('/create', profile.createUser);
+// router.post('/create-session', profile.createUserSession);
 
 module.exports = router;
