@@ -1,10 +1,23 @@
 const User = require('../user');
 
 module.exports.profilePage = function (req,res){
-    
-    return res.render('user_profile',{
-        title: "joinow"
-    });
+    if(req.cookies){
+        User.findById(req.cookies.user_id, function(err, userPresent){
+            if(userPresent){
+                return res.render('user_profile',{
+                    title: "joinow",
+                    userDetails : userPresent
+                });
+            }
+            else{
+                return res.redirect('/users/signin');
+            }
+        });
+    }
+    else{
+        return res.redirect('/users/signin');
+    }
+   
 }
 
 module.exports.signupPage = function(req, res){
@@ -14,6 +27,7 @@ module.exports.signupPage = function(req, res){
 }
 
 module.exports.signinPage = function(req, res){
+    res.clearCookie('user_id');
     return res.render('user_signin', {
         title : "joinow || Sign-In"
     });
@@ -30,9 +44,7 @@ module.exports.createUser = function(req, res){
         if(!userPresent){
             User.create(req.body, function(err, user){
                 if(err){console.log('Error in creating user');return;}
-                // return res.render('user_signin',{
-                //     title:"joinow"
-                // });
+            
                 return res.redirect('/users/signin');
             });
         }else{
@@ -51,10 +63,7 @@ module.exports.createUserSession = function(req, res){
             }
             res.cookie('user_id', userPresent.id);
             console.log(userPresent);
-            return res.render('user_profile', {
-                title : "joinow",
-                userDetails : userPresent
-            });
+            return res.redirect('/users/profile');
         }
         else{
             return res.redirect('back');
