@@ -8,7 +8,8 @@ const session = require('express-session');
 const passport = require('passport');
 const localSession = require('./passport');
 
-// console.log(db);
+const MongoStore = require('connect-mongodb-session')(session);
+
 app.use(express.urlencoded());
 
 app.use(cookie());
@@ -30,7 +31,16 @@ app.use(session({
     resave : false,
     cookie : {
         maxAge : (1000 * 60 * 10)
-    }
+    
+    },
+    store : new MongoStore(
+    {
+        mongooseConnection : db,
+        autoSave : 'disabled'
+    },
+    function(err){
+        console.log(err || 'connect to mongo-db');
+    })
 }));
 
 app.use(passport.initialize());
