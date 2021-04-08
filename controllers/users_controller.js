@@ -7,12 +7,18 @@ module.exports.profilePage = function (req,res){
 }
 
 module.exports.signupPage = function(req, res){
+    if(req.isAuthenticated()){
+        return res.redirect('/users/profile');
+    }
     return res.render('user_signup', {
         title : "joinow || Sign-Up"
     });
 }
 
 module.exports.signinPage = function(req, res){
+    if(req.isAuthenticated()){
+        return res.redirect('/users/profile');
+    }
     return res.render('user_signin', {
         title : "joinow || Sign-In"
     });
@@ -41,6 +47,6 @@ module.exports.createUser = function(req, res){
 
 }
 
-// module.exports.createUserSession = function(req, res){
-
-// }
+module.exports.createUserSession = function(req, res){
+    return res.redirect('/');
+}

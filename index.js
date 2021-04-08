@@ -4,6 +4,9 @@ const app = express();
 const expressLayouts = require('express-ejs-layouts');
 const db = require('./mongoose');
 const cookie = require('cookie-parser');
+const session = require('express-session');
+const passport = require('passport');
+const localSession = require('./passport');
 
 // console.log(db);
 app.use(express.urlencoded());
@@ -16,13 +19,33 @@ app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
 
 
-
-const routes = require('./routes/index');
-app.use('/', routes);
-
 app.set('view engine', 'ejs');
 app.set("views" , "./views");
 
+app.use(session({
+    name : 'Joinow',
+    //todo 
+    secret : 'blahSom',
+    saveUninitialized : false,
+    resave : false,
+    cookie : {
+        maxAge : (1000 * 60 * 10)
+    }
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+app.use(function(req, res, next){
+    if(req.isAuthenticated()){
+        res.locals.user = req.user;
+    }
+    next();
+});
+
+const routes = require('./routes/index');
+app.use('/', routes);
 
 app.listen(port, function(err){
     if(err){
