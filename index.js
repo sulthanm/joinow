@@ -7,9 +7,18 @@ const cookie = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
 const localSession = require('./passport');
+const sassMiddleware = require('node-sass-middleware');
 
 const MongoStore = require('connect-mongodb-session')(session);
 
+
+app.use(sassMiddleware({
+    src : './',
+    dest : './assets/css',
+    debug : true,
+    outputStyle : 'extended',
+    prefix : '/css'
+}));
 app.use(express.urlencoded());
 
 app.use(cookie());

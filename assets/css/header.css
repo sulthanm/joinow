@@ -1,0 +1,25 @@
+body {
+  margin: 0; }
+  body #head {
+    background-color: lightseagreen;
+    height: 18%;
+    width: 100%; }
+    body #head p {
+      position: relative;
+      top: 20%;
+      left: 8%;
+      font-size: 35px;
+      color: white; }
+    body #head #head-list {
+      position: relative;
+      left: 80%;
+      bottom: 38%;
+      list-style: none; }
+      body #head #head-list li {
+        display: inline;
+        padding: 15px;
+        margin-top: -45px; }
+        body #head #head-list li a {
+          font-size: 20px;
+          color: white;
+          text-decoration: none; }

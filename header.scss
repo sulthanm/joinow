@@ -1,0 +1,38 @@
+body{
+    margin: 0;
+    #head{
+        background-color: lightseagreen;
+        height: 18%;
+        width: 100%;
+        p{
+            position: relative;
+            top: 20%;
+            left: 8%;
+            font-size: 35px;
+            color: white;
+        }
+        #head-list{
+            position: relative;
+            left: 80%;
+            bottom: 38%;;
+            list-style: none;
+            // margin-left: 80%;
+            // margin-top: -45px;
+            li{
+                display: inline;
+                padding: 15px;
+                margin-top: -45px;
+                a{
+                    font-size: 20px;
+                    color:white;
+                    text-decoration: none;
+                }
+                // a:hover{
+                //     transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+                //     color: lightskyblue;
+                // }
+            }
+        }
+    
+    }
+}

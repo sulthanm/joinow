@@ -1,24 +1,29 @@
-<header>
-    joinow
-    <ul>
-        <% if(locals.user){ %>
-            <li>
-                <a href="/users/profile"><%= user.name %></a>
-        
-            </li>
-            <li>
-                <a href="/users/signout">Sign-out</a>
-            </li>
-    
-       
-        <% } else{ %>
-            <li>
-                <a href="/users/signup">Sign-Up</a>
-            </li>
-            <li>
-                <a href="/users/signin">Sign-In</a>
-            </li>
+<link rel="stylesheet" href="/css/header.css">
+
+<header >
+    <div id="head">
+        <p id="name"> JOINOW </p>
+        <ul id="head-list">
+            <% if(locals.user){ %>
+                <li>
+                    <a href="/users/profile"><%= user.name %></a>
             
-        <% } %>
-    </ul>   
+                </li>
+                <li>
+                    <a href="/users/signout">Sign-out</a>
+                </li>
+        
+        
+            <% } else{ %>
+                <li>
+                    <a href="/users/signup">Sign-Up</a>
+                </li>
+                <li>
+                    <a href="/users/signin">Sign-In</a>
+                </li>
+                
+            <% } %>
+        </ul>   
+    </div>
+
 </header>
