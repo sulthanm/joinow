@@ -9,7 +9,6 @@ const post = require('../controllers/posts_controller');
 // const signup = require('../controllers')
 
 router.get('/profile', passport.checkAuthentication ,profile.profilePage);
-router.get('/posts', post.postsPage);
 router.get('/signup', profile.signupPage);
 router.get('/signin', profile.signinPage);
 router.post('/create', profile.createUser);
@@ -19,5 +18,7 @@ router.post('/create-session', passport.authenticate(
 ), profile.createUserSession);
 
 router.get('/signout', profile.destroySession);
+
+router.post('/posts', post.posts)
 
 module.exports = router;
