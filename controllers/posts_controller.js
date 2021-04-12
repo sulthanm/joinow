@@ -1,9 +1,12 @@
 const Post = require('../post');
 
-module.exports.posts = function(req, res){
+module.exports.createPosts = function(req, res){
     // console.log(req.body);
     if(req.isAuthenticated()){
-        Post.create(req.body, function(err){
+        Post.create({
+            post_content : req.body.post_content,
+            userss : req.user._id
+        }, function(err){
             if(err){
                 console.log(err, "Error while creating post");
             }

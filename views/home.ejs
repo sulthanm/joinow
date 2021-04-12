@@ -2,12 +2,26 @@
 <div>
         <h1>Posts</h1>
         <% if(locals.user){ %>
-                <form action="/users/posts" method="POST">
+                <form action="/users/create-posts" method="POST">
                         <textarea name="post_content" id="post-area" cols="30" rows="5" placeholder="Type to Post.."></textarea>
                         <input type="submit" value="Submit">
                 </form>
-                
+
         <% } %>
+
+        <div>
+                
+                 <ul>
+                        <% for(post of posts){ %>
+                        <li>
+                                <p>
+                                        <%= post.post_content %>
+                                        <%= post.userss.name %>
+                                </p>
+                        </li>
+                        <% } %>
+                </ul>
+        </div>
 
         
 </div>

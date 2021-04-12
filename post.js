@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const user = require('./user');
+// const user = require('./user');
 
 const postSchema = new mongoose.Schema({
     post_content: {
@@ -7,9 +7,9 @@ const postSchema = new mongoose.Schema({
         required : true,
         // unique : true
     },
-    users : {
+    userss : {
         type : mongoose.Schema.Types.ObjectId,
-        ref : 'users'
+        ref : 'User'
     }
 
 },{
