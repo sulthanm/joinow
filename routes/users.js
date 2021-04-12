@@ -19,6 +19,8 @@ router.post('/create-session', passport.authenticate(
 
 router.get('/signout', profile.destroySession);
 
-router.post('/create-posts', post.createPosts);
+router.post('/create-posts',passport.checkAuthentication, post.createPosts);
+router.post('/comment',passport.checkAuthentication,post.createComment);
+
 
 module.exports = router;

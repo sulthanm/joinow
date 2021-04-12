@@ -15,8 +15,14 @@
                         <% for(post of posts){ %>
                         <li>
                                 <p>
-                                        <%= post.post_content %>
+                                        <%= post.post_content %><br>
                                         <%= post.userss.name %>
+                                        <% if(locals.user){ %>
+                                                <form action="/users/comment" method="POST">
+                                                        <input type="text" name="comment" placeholder="Add Comment">
+                                                        <input type="submit" value="Add Comment">
+                                                </form>
+                                        <% } %>
                                 </p>
                         </li>
                         <% } %>
