@@ -8,7 +8,7 @@ const profile = require('../controllers/users_controller');
 const post = require('../controllers/posts_controller');
 // const signup = require('../controllers')
 
-router.get('/profile', passport.checkAuthentication ,profile.profilePage);
+router.get('/profile/:id', passport.checkAuthentication ,profile.profilePage);
 router.get('/signup', profile.signupPage);
 router.get('/signin', profile.signinPage);
 router.post('/create', profile.createUser);
@@ -22,6 +22,7 @@ router.get('/signout', profile.destroySession);
 router.post('/create-posts',passport.checkAuthentication, post.createPosts);
 router.post('/create-comment',passport.checkAuthentication,post.createComment);
 router.get('/delete-post/:id',passport.checkAuthentication, post.deletePost);
-router.get('/delete-comment/:id',passport.checkAuthentication, post.deleteComment)
+router.get('/delete-comment/:id',passport.checkAuthentication, post.deleteComment);
+router.post('/profile-update/:id',passport.checkAuthentication, profile.profieUpdate);
 
 module.exports = router;

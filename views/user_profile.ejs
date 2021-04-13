@@ -2,7 +2,16 @@
 <h1>Users profile..!</h1>
 
 
-<p><%= user.name %></p>
-<p><%= user.email %></p>
+ <% if(locals.user.id==profile_user.id){ %>
+    <form action="/users/profile-update/<%= user.id %>" method="POST">
 
- 
+        <input type="text" name="name" value="<%= user.name %>">
+        <input type="text" name="email" value="<%= user.email %>">
+        <input type="submit" value="Update me..!">
+    </form>
+
+ <% }else{ %>
+    
+    <p><%= profile_user.name %></p>
+    <p><%= profile_user.email %></p>
+ <% } %>

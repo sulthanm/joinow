@@ -1,0 +1,53 @@
+#home-container {
+  height: auto;
+  display: flex; }
+  #home-container #post-container {
+    height: 100%;
+    width: 75%; }
+    #home-container #post-container h1 {
+      font-size: 20px;
+      color: #82bcf7; }
+    #home-container #post-container form #post-area {
+      background-color: #ece6d9;
+      font-size: 15px;
+      border: none; }
+    #home-container #post-container form #submit {
+      border: none;
+      padding: 7px;
+      display: block;
+      background-color: #f7beb5;
+      margin-left: 21.4%; }
+    #home-container #post-container #posts ul li {
+      list-style: disc; }
+      #home-container #post-container #posts ul li p {
+        font-size: 15px;
+        font-family: sans-serif;
+        color: #0e0d01; }
+        #home-container #post-container #posts ul li p small {
+          font-family: Georgia, 'Times New Roman', Times, serif; }
+        #home-container #post-container #posts ul li p a {
+          color: red;
+          text-decoration: none; }
+      #home-container #post-container #posts ul li #post-form #button {
+        background-color: #cff3b2;
+        border: none;
+        padding: 5px; }
+  #home-container #friends {
+    margin-top: 20px;
+    height: 100%;
+    width: 24%;
+    border-left: 2px solid #3c4c50; }
+    #home-container #friends h4 {
+      margin-left: 20px;
+      font-size: 20px;
+      color: dodgerblue; }
+    #home-container #friends p {
+      margin-left: 20px; }
+      #home-container #friends p a {
+        text-decoration: none;
+        color: #3f382f;
+        font-family: sans-serif;
+        font-size: 15px; }
+      #home-container #friends p a:hover {
+        color: #94082b;
+        transition: 0s; }

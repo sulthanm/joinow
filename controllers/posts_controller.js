@@ -41,7 +41,6 @@ module.exports.deletePost = function(req, res){
     Post.findById(req.params.id,function(err, post){
         //.id convets _id to string
         // if(err)console.log("Error while deleting post -err1");
-        // console.log(post.userss,req.user.id);
         if(post.userss == req.user.id){
             post.remove();
             Comment.deleteMany({post : req.params.id}, function(err){

@@ -1,9 +1,13 @@
 const User = require('../user');
 
 module.exports.profilePage = function (req,res){
-    return res.render('user_profile',{
-        title: "joinow"
+    User.findById(req.params.id, function(err, user){
+        return res.render('user_profile',{
+            title: "joinow",
+            profile_user: user
+        });
     });
+    
 }
 
 module.exports.signupPage = function(req, res){
@@ -55,3 +59,11 @@ module.exports.destroySession = function(req, res){
     req.logout();
     return res.redirect('/users/signin');
 }
+
+module.exports.profieUpdate = function(req, res){
+    
+    User.findByIdAndUpdate(req.params.id, req.body,function(err, user){
+        return res.redirect('back');
+    });
+    
+} 

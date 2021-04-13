@@ -1,0 +1,20 @@
+#sign-in-container {
+  height: 500px;
+  width: 300px;
+  text-align: center;
+  margin-left: 40%; }
+  #sign-in-container h1 {
+    color: #1e1e2b; }
+  #sign-in-container form input {
+    display: block;
+    height: 10%;
+    width: 90%;
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 16px;
+    border: none;
+    border-bottom: 1px solid grey; }
+  #sign-in-container form input:focus {
+    outline: none; }
+  #sign-in-container form #button {
+    background-color: thistle; }
