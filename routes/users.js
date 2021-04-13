@@ -20,7 +20,8 @@ router.post('/create-session', passport.authenticate(
 router.get('/signout', profile.destroySession);
 
 router.post('/create-posts',passport.checkAuthentication, post.createPosts);
-router.post('/comment',passport.checkAuthentication,post.createComment);
-
+router.post('/create-comment',passport.checkAuthentication,post.createComment);
+router.get('/delete-post/:id',passport.checkAuthentication, post.deletePost);
+router.get('/delete-comment/:id',passport.checkAuthentication, post.deleteComment)
 
 module.exports = router;

@@ -3,18 +3,18 @@ body{
     #head{
         background-color: lightseagreen;
         height: 18%;
-        width: 100%;
+        // width: 100vw;
+        position: relative;
         p{
-            position: relative;
-            top: 20%;
+            position: absolute;
             left: 8%;
             font-size: 35px;
             color: white;
         }
         #head-list{
-            position: relative;
+            position: absolute;
             left: 80%;
-            bottom: 38%;;
+            bottom: 25%;
             list-style: none;
             // margin-left: 80%;
             // margin-top: -45px;
@@ -27,10 +27,10 @@ body{
                     color:white;
                     text-decoration: none;
                 }
-                // a:hover{
-                //     transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-                //     color: lightskyblue;
-                // }
+                a:hover{
+                    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+                    color: rgb(250, 1, 1);
+                }
             }
         }
     

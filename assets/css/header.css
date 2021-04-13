@@ -3,17 +3,16 @@ body {
   body #head {
     background-color: lightseagreen;
     height: 18%;
-    width: 100%; }
+    position: relative; }
     body #head p {
-      position: relative;
-      top: 20%;
+      position: absolute;
       left: 8%;
       font-size: 35px;
       color: white; }
     body #head #head-list {
-      position: relative;
+      position: absolute;
       left: 80%;
-      bottom: 38%;
+      bottom: 25%;
       list-style: none; }
       body #head #head-list li {
         display: inline;
@@ -23,3 +22,6 @@ body {
           font-size: 20px;
           color: white;
           text-decoration: none; }
+        body #head #head-list li a:hover {
+          transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+          color: #fa0101; }

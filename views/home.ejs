@@ -15,15 +15,39 @@
                         <% for(post of posts){ %>
                         <li>
                                 <p>
-                                        <%= post.post_content %><br>
+                                        <%= post.post_content %>
+                                        <% if(locals.user && locals.user.id == post.userss.id) { %>
+                                                <a href="/users/delete-post/<%= post._id %>">X</a>
+                                        <% } %>
+                                        <br>
                                         <%= post.userss.name %>
+                                </p>
+                                <div>
                                         <% if(locals.user){ %>
-                                                <form action="/users/comment" method="POST">
+                                                <form action="/users/create-comment" method="POST">
                                                         <input type="text" name="comment" placeholder="Add Comment">
+                                                        <input type="hidden" name="post" value="<%= post._id %>">
                                                         <input type="submit" value="Add Comment">
                                                 </form>
                                         <% } %>
-                                </p>
+                                </div>
+                                <div class="post-comments-list">
+                                        <ul id="post-comments-<%= post._id %>">
+                                            <% for (comment of post.comments){%>
+                                                
+                                            <p>
+                                                <%= comment.content %>
+                                                <% if(locals.user && locals.user.id == comment.user.id){ %> 
+                                                        <a href="/users/delete-comment/<%= comment._id %>">X</a>
+                                                <% } %>
+                                                <br>
+                                                <small>
+                                                    <%= comment.user.name %>
+                                                </small>
+                                            </p>    
+                                            <%} %>
+                                        </ul>
+                                </div>
                         </li>
                         <% } %>
                 </ul>
