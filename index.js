@@ -10,7 +10,8 @@ const localSession = require('./passport');
 const sassMiddleware = require('node-sass-middleware');
 
 const MongoStore = require('connect-mongodb-session')(session);
-
+const flash = require('connect-flash');
+const customMware = require('./middleware');
 
 app.use(sassMiddleware({
     src : './',
@@ -62,6 +63,10 @@ app.use(function(req, res, next){
     }
     next();
 });
+
+app.use(flash());
+app.use(customMware.setFlash);
+
 
 const routes = require('./routes/index');
 app.use('/', routes);

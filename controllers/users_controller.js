@@ -52,10 +52,12 @@ module.exports.createUser = function(req, res){
 }
 
 module.exports.createUserSession = function(req, res){
+    req.flash('success', 'ThankYou for Signing In');
     return res.redirect('/');
 }
 
 module.exports.destroySession = function(req, res){
+    req.flash('success', 'You have logged Out');
     req.logout();
     return res.redirect('/users/signin');
 }

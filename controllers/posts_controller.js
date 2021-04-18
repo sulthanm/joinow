@@ -28,7 +28,7 @@ module.exports.createComment = async function(req,res){
             });
             post.comments.push(comment);
             post.save();
-            // req.flash('success', 'Comment published!');
+            req.flash('success', 'Comment published!');
             return  res.redirect('back');
         }
         
@@ -49,7 +49,7 @@ module.exports.deletePost = async function(req, res){
             post.remove();
             await Comment.deleteMany({post : req.params.id});
 
-            // req.flash('success', 'Post and associated comments deleted!');
+            req.flash('success', 'Post and associated comments deleted!');
             return res.redirect('back');
             
         }else{
@@ -73,7 +73,7 @@ module.exports.deleteComment = async function(req, res){
             comment.remove();
 
             let post = await Post.findByIdAndUpdate(postId, { $pull: {comments: req.params.id}});
-            // req.flash('success', 'Comment deleted!');
+            req.flash('success', 'Comment deleted!');
             return res.redirect('back');
         }else{
             return res.redirect('back');
