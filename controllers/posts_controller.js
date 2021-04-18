@@ -41,8 +41,8 @@ module.exports.createComment = async function(req,res){
         }
         
     }catch(err){
-        // req.flash('error', err);
-        console.log(err);
+        req.flash('error', err);
+        return res.redirect('back');
     }
     
 }
@@ -52,11 +52,17 @@ module.exports.deletePost = async function(req, res){
     try{
         let post = await Post.findById(req.params.id);
         //.id convets _id to string
-     
         if(post.userss == req.user.id){
             post.remove();
             await Comment.deleteMany({post : req.params.id});
-
+            if (req.xhr){
+                return res.status(200).json({
+                    data: {
+                        post_id: req.params.id
+                    },
+                    message: "Post Deleted!"
+                });
+            }
             req.flash('success', 'Post and associated comments deleted!');
             return res.redirect('back');
             

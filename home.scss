@@ -11,11 +11,11 @@
             color: rgb(130, 188, 247);
         }
         form{
-            input {
+            #submit,#post-area {
                 border: none;
             }
             #post-area{
-                background-color: rgb(231, 238, 234);
+                background-color: rgb(232, 240, 233);
                 font-size: 15px;
             }
             #submit{
@@ -24,8 +24,11 @@
                 background-color: rgb(248, 221, 217);
                 margin-left:21.4%; 
             }
-            input:focus{
+            input:focus,#post-area:focus{
                 outline: none;
+            }
+            #submit:hover{
+                cursor: pointer;
             }
         }
         #posts{
@@ -46,10 +49,11 @@
                     }
                     #post-form{
                         #button{
-                            background-color: rgb(207, 243, 178);
+                            background-color: rgb(144, 219, 83);
                             border: none;
                             padding: 5px;
                         }
+                        
                     }
                 }
             }

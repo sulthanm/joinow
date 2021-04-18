@@ -13,6 +13,8 @@
                     let newpost1 = newPostDisplay(data.data.post);
                     
                     $('#post-list-container>ul').prepend(newpost1);
+
+                    deletePost($(' .delete-post', newpost1));
                 },error : function(error){
                     console.log(error.responseText);
                 }
@@ -26,7 +28,7 @@
                     <p>
                             ${post.post_content}
                             
-                            <a href="/users/delete-post/${ post._id }">X</a>
+                            <a class="delete-post" href="/users/delete-post/${ post._id }">X</a>
                           
                             <br>
                             <small>${post.userss.name}</small>
@@ -47,5 +49,32 @@
                     </div>
             </li>`);
     }
+
+
+    let deletePost = function(deleteLink){
+        console.log(deleteLink);
+        $(deleteLink).click(function(e){
+            // console.log("prevetnggggg");
+            e.preventDefault();
+            
+            $.ajax({
+                type: 'get',
+                url: $(deleteLink).prop('href'),
+                success: function(data){
+                    // console.log(data);
+                    $(`#post-${data.data.post_id}`).remove();
+                },error: function(error){
+                    console.log(error.responseText);
+                }
+            });
+
+        });
+    }
+
+
+
+
+
     createPost();
+  
 }

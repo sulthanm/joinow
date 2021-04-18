@@ -7,18 +7,20 @@
     #home-container #post-container h1 {
       font-size: 20px;
       color: #82bcf7; }
-    #home-container #post-container form input {
+    #home-container #post-container form #submit, #home-container #post-container form #post-area {
       border: none; }
     #home-container #post-container form #post-area {
-      background-color: #e7eeea;
+      background-color: #e8f0e9;
       font-size: 15px; }
     #home-container #post-container form #submit {
       padding: 7px;
       display: block;
       background-color: #f8ddd9;
       margin-left: 21.4%; }
-    #home-container #post-container form input:focus {
+    #home-container #post-container form input:focus, #home-container #post-container form #post-area:focus {
       outline: none; }
+    #home-container #post-container form #submit:hover {
+      cursor: pointer; }
     #home-container #post-container #posts ul li {
       list-style: disc; }
       #home-container #post-container #posts ul li p {
@@ -31,7 +33,7 @@
           color: red;
           text-decoration: none; }
       #home-container #post-container #posts ul li #post-form #button {
-        background-color: #cff3b2;
+        background-color: #90db53;
         border: none;
         padding: 5px; }
   #home-container #friends {
