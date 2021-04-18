@@ -11,17 +11,21 @@
             color: rgb(130, 188, 247);
         }
         form{
-            #post-area{
-                background-color: rgb(236, 230, 217);
-                font-size: 15px;
+            input {
                 border: none;
             }
+            #post-area{
+                background-color: rgb(231, 238, 234);
+                font-size: 15px;
+            }
             #submit{
-                border: none;
                 padding: 7px;
                 display: block;
-                background-color: rgb(247, 190, 181);
+                background-color: rgb(248, 221, 217);
                 margin-left:21.4%; 
+            }
+            input:focus{
+                outline: none;
             }
         }
         #posts{

@@ -1,5 +1,7 @@
 {
+    
     let createPost = function(){
+        
         let newPost = $('#new-post');
         newPost.submit(function(e){
             e.preventDefault();
@@ -19,7 +21,7 @@
     }
 
     let newPostDisplay = function(post){
-        // console.log(post.userss.name);
+        console.log(post.userss);
         return $(` <li id="post-${post._id}">
                     <p>
                             ${post.post_content}

@@ -7,16 +7,18 @@
     #home-container #post-container h1 {
       font-size: 20px;
       color: #82bcf7; }
-    #home-container #post-container form #post-area {
-      background-color: #ece6d9;
-      font-size: 15px;
+    #home-container #post-container form input {
       border: none; }
+    #home-container #post-container form #post-area {
+      background-color: #e7eeea;
+      font-size: 15px; }
     #home-container #post-container form #submit {
-      border: none;
       padding: 7px;
       display: block;
-      background-color: #f7beb5;
+      background-color: #f8ddd9;
       margin-left: 21.4%; }
+    #home-container #post-container form input:focus {
+      outline: none; }
     #home-container #post-container #posts ul li {
       list-style: disc; }
       #home-container #post-container #posts ul li p {

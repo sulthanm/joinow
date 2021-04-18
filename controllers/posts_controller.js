@@ -5,10 +5,18 @@ module.exports.createPosts = async function(req, res){
     // console.log(req.body);
     
     try{
-        let post = await Post.create({
+        let posT = await Post.create({
             post_content : req.body.post_content,
             userss : req.user._id
         });
+        if (req.xhr){
+            return res.status(200).json({
+                data: {
+                    post: posT
+                },
+                message: "Post created!"
+            });
+        }
         return res.redirect('back');
     }catch(err){
         return res.redirect('back');
