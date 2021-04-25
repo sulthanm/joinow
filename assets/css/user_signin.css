@@ -16,5 +16,6 @@
     border-bottom: 1px solid grey; }
   #sign-in-container form input:focus {
     outline: none; }
-  #sign-in-container form #button {
-    background-color: thistle; }
+  #sign-in-container form #button:hover {
+    background-color: cadetblue;
+    cursor: pointer; }

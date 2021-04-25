@@ -3,10 +3,11 @@
 
 
  <% if(locals.user.id==profile_user.id){ %>
-    <form action="/users/profile-update/<%= user.id %>" method="POST">
+    <form action="/users/profile-update/<%= user.id %>" enctype="multipart/form-data" method="POST">
 
         <input type="text" name="name" value="<%= user.name %>">
         <input type="text" name="email" value="<%= user.email %>">
+        <input type="file" placeholder="Profile PIcture" name="avatar">
         <input type="submit" value="Update me..!">
     </form>
 

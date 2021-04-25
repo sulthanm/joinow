@@ -12,7 +12,8 @@ module.exports.createPosts = async function(req, res){
         if (req.xhr){
             return res.status(200).json({
                 data: {
-                    post: posT
+                    post: posT,
+                    name : posT.userss
                 },
                 message: "Post created!"
             });

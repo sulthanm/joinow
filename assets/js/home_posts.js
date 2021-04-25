@@ -10,6 +10,7 @@
                 url : '/users/create-posts',
                 data : newPost.serialize(),
                 success : function(data){
+                    console.log(data.data.name);
                     let newpost1 = newPostDisplay(data.data.post);
                     
                     $('#post-list-container>ul').prepend(newpost1);
@@ -23,7 +24,7 @@
     }
 
     let newPostDisplay = function(post){
-        console.log(post.userss);
+        // console.log(name);
         return $(` <li id="post-${post._id}">
                     <p>
                             ${post.post_content}
