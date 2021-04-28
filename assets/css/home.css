@@ -21,21 +21,25 @@
       outline: none; }
     #home-container #post-container form #submit:hover {
       cursor: pointer; }
-    #home-container #post-container #posts ul li {
+    #home-container #post-container #post-list-container ul li {
       list-style: disc; }
-      #home-container #post-container #posts ul li p {
+      #home-container #post-container #post-list-container ul li p {
         font-size: 15px;
         font-family: sans-serif;
         color: #0e0d01; }
-        #home-container #post-container #posts ul li p small {
+        #home-container #post-container #post-list-container ul li p small {
           font-family: Georgia, 'Times New Roman', Times, serif; }
-        #home-container #post-container #posts ul li p a {
+        #home-container #post-container #post-list-container ul li p a:hover {
           color: red;
           text-decoration: none; }
-      #home-container #post-container #posts ul li #post-form #button {
+      #home-container #post-container #post-list-container ul li #post-form form input {
+        padding: 5px; }
+      #home-container #post-container #post-list-container ul li #post-form form #button {
         background-color: #90db53;
         border: none;
         padding: 5px; }
+      #home-container #post-container #post-list-container ul li #post-form form #button:focus {
+        outline: none; }
   #home-container #friends {
     margin-top: 20px;
     height: 100%;

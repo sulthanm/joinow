@@ -31,7 +31,7 @@
                 cursor: pointer;
             }
         }
-        #posts{
+        #post-list-container{
             ul{
                 li{
                     list-style: disc;
@@ -42,17 +42,27 @@
                         small{
                             font-family:Georgia, 'Times New Roman', Times, serif ;
                         }
-                        a{
+                        a:hover{
                             color: red;
                             text-decoration: none;
                         }
                     }
                     #post-form{
-                        #button{
-                            background-color: rgb(144, 219, 83);
-                            border: none;
-                            padding: 5px;
+                        form{
+                            input{
+                                padding: 5px;
+                                
+                            }
+                            #button{
+                                background-color: rgb(144, 219, 83);
+                                border: none;
+                                padding: 5px;
+                            }
+                            #button:focus{
+                                outline: none;
+                            }
                         }
+                       
                         
                     }
                 }
