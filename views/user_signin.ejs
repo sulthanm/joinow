@@ -1,10 +1,22 @@
 <link rel="stylesheet" type="text/css" href="/css/user_signin.css">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="285033210056-jii7c4id24g5jucskhri0tdlvgv0bvcj.apps.googleusercontent.com">
 <div id="sign-in-container">
     <h1>Sign In</h1>
     <form action="/users/create-session" method="POST">
         <input type="email" name="email" placeholder="Email" required>
         <input type="password" name="password" placeholder="Password" required>
-        <input type="submit" value="Sign-In" id="button">
-
+        <!-- <input type="submit" value="Sign-In" id="button"> -->
+        <div class="g-signin2" data-onsuccess="onSignIn" id="button"></div>
     </form>
 </div>
+
+<script>
+    function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+    }
+</script>
