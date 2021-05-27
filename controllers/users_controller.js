@@ -1,5 +1,9 @@
 const User = require('../user');
 
+const fs = require('fs');
+const path = require('path');
+// var gutil = require('gulp-util');
+
 module.exports.profilePage = function (req,res){
     User.findById(req.params.id, function(err, user){
         return res.render('user_profile',{
@@ -62,10 +66,27 @@ module.exports.destroySession = function(req, res){
     return res.redirect('/users/signin');
 }
 
-module.exports.profieUpdate = function(req, res){
-    
-    User.findByIdAndUpdate(req.params.id, req.body,function(err, user){
+module.exports.profieUpdate = async function(req, res){
+    let user = await User.findById(req.params.id);
+    //we cant update by User.findByIdAndUpdate because its now multipart form-data(which we cant get in body-parser), so using static func whch is globally initialised in userScheme as it has req
+    User.uploadedAvatar(req, res, function(err){
+        if(err){console.log("error in multer ", err);}
+        //we are able to read body because of multer(as this form has file)
+        user.name = req.body.name;
+        user.email = req.body.email;
+        if(req.file){
+            if(user.avatar && fs.existsSync(path.join(__dirname,'..',user.avatar))){
+                
+                fs.unlinkSync(path.join(__dirname,'..',user.avatar));
+                
+            }
+       
+            user.avatar = User.avatarPath+'/'+req.file.filename;
+            
+        }
+        user.save();
         return res.redirect('back');
+
     });
     
 } 

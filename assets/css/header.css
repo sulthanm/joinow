@@ -2,7 +2,7 @@ body {
   margin: 0; }
   body #head {
     background-color: lightseagreen;
-    height: 18%;
+    height: 100px;
     position: relative; }
     body #head p {
       position: absolute;

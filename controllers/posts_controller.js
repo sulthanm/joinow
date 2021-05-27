@@ -9,6 +9,7 @@ module.exports.createPosts = async function(req, res){
             post_content : req.body.post_content,
             userss : req.user._id
         });
+        
         if (req.xhr){
             return res.status(200).json({
                 data: {
@@ -18,8 +19,10 @@ module.exports.createPosts = async function(req, res){
                 message: "Post created!"
             });
         }
-        return res.redirect('back');
+        req.flash('success', 'Post created & published!');
+        return res.redirect('back');   
     }catch(err){
+        req.flash('error', err);
         return res.redirect('back');
     }
 
@@ -64,6 +67,7 @@ module.exports.deletePost = async function(req, res){
                     message: "Post Deleted!"
                 });
             }
+           
             req.flash('success', 'Post and associated comments deleted!');
             return res.redirect('back');
             

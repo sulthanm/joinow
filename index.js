@@ -24,6 +24,9 @@ app.use(express.urlencoded());
 
 app.use(cookie());
 
+//make the uplads path available to user
+app.use('/uploads', express.static(__dirname + '/uploads'));
+
 app.use(express.static('./assets'));
 app.use(expressLayouts);
 app.set('layout extractStyles', true);
@@ -63,6 +66,7 @@ app.use(function(req, res, next){
     }
     next();
 });
+
 
 app.use(flash());
 app.use(customMware.setFlash);
