@@ -1,4 +1,18 @@
-body{
-    color: rgb(17, 15, 16);
-    margin: 0;
+#profile-container{
+    height: 500px;
+    border: 2px solid grey;
+    #cover-pic{
+        height: 150px;
+        width: 98vw;
+        border: 2px solid red;
+     
+        margin-top: -22px;
+    }
+    #profile-pic{
+        height: 150px;
+        width: 150px;
+        border-radius: 100px;
+        margin-left: 550px;
+        margin-top: -50px;
+    }
 }
