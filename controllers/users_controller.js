@@ -69,11 +69,13 @@ module.exports.destroySession = function(req, res){
 module.exports.profieUpdate = async function(req, res){
     let user = await User.findById(req.params.id);
     //we cant update by User.findByIdAndUpdate because its now multipart form-data(which we cant get in body-parser), so using static func whch is globally initialised in userScheme as it has req
+
     User.uploadedAvatar(req, res, function(err){
-        if(err){console.log("error in multer ", err);}
+        if(err){console.log("error in multer22 ", err);}
         //we are able to read body because of multer(as this form has file)
         user.name = req.body.name;
         user.email = req.body.email;
+        console.log(req.file);
         if(req.file){
             if(user.avatar && fs.existsSync(path.join(__dirname,'..',user.avatar))){
                 

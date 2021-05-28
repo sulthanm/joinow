@@ -26,6 +26,7 @@ app.use(cookie());
 
 //make the uplads path available to user
 app.use('/uploads', express.static(__dirname + '/uploads'));
+app.use('/assets', express.static(__dirname + '/assets'));
 
 app.use(express.static('./assets'));
 app.use(expressLayouts);
