@@ -2,7 +2,8 @@ const User = require('../user');
 
 const fs = require('fs');
 const path = require('path');
-// var gutil = require('gulp-util');
+
+const passport = require('../passport-local-strategy');
 
 module.exports.profilePage = function (req,res){
     User.findById(req.params.id, function(err, user){
@@ -56,6 +57,7 @@ module.exports.createUser = function(req, res){
 }
 
 module.exports.createUserSession = function(req, res){
+
     req.flash('success', 'ThankYou for Signing In');
     return res.redirect('/');
 }

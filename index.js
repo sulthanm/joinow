@@ -6,12 +6,14 @@ const db = require('./mongoose');
 const cookie = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
-const localSession = require('./passport');
+const localSession = require('./passport-local-strategy');
 const sassMiddleware = require('node-sass-middleware');
 
 const MongoStore = require('connect-mongodb-session')(session);
 const flash = require('connect-flash');
 const customMware = require('./middleware');
+
+const passportJWT = require('./passport-jwt');
 
 app.use(sassMiddleware({
     src : './assets/scss',
@@ -59,16 +61,20 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(passport.setAuthenticatedUser);
+
+// app.use(function(req, res, next){
+//     if(req.isAuthenticated()){
+//         res.locals.user = req.user;
+//     }
+//     console.log(res.locals.user);
+//     console.log(req.user);
+//     next();
+// });//why post not crea
 
 
-app.use(function(req, res, next){
-    if(req.isAuthenticated()){
-        res.locals.user = req.user;
-    }
-    next();
-});
-
-
+//paste token now delete the post using postman and check okk
+//shud i requst fr creatng session?yes i copied
 app.use(flash());
 app.use(customMware.setFlash);
 
