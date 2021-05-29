@@ -10,10 +10,10 @@ passport.use(new LocalStrategy({
         User.findOne({ email : email }, function (err, userPresent) {
             if (err) { return done(err); }
             if (!userPresent ) {
-            return done(null, false, { message: 'Incorrect username.' });
+              return done(null, false, { message: 'Incorrect username.' });
             }
             if (password != userPresent.password) {
-            return done(null, false, { message: 'Incorrect password.' });
+              return done(null, false, { message: 'Incorrect password.' });
             }
             return done(null, userPresent);
       });

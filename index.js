@@ -14,7 +14,7 @@ const flash = require('connect-flash');
 const customMware = require('./middleware');
 
 app.use(sassMiddleware({
-    src : './',
+    src : './assets/scss',
     dest : './assets/css',
     debug : true,
     outputStyle : 'extended',
@@ -40,7 +40,7 @@ app.set('view engine', 'ejs');
 app.use(session({
     name : 'Joinow',
     //todo 
-    secret : 'blahSom',
+    secret : 'sdfhgjdhdk',
     saveUninitialized : false,
     resave : false,
     cookie : {

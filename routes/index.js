@@ -9,5 +9,7 @@ console.log("router loaded");
 router.get('/', home.homePage);
 router.use('/users', require('./users'));
 
+router.use('/api', require('./api'));
+
 
 module.exports = router;
