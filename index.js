@@ -3,10 +3,12 @@ const port = 8000;
 const app = express();
 const expressLayouts = require('express-ejs-layouts');
 const db = require('./mongoose');
+// used for session cookie
 const cookie = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
 const localSession = require('./passport-local-strategy');
+const passportGoogle = require('./passport-google-oauth2-strategy');
 const sassMiddleware = require('node-sass-middleware');
 
 const MongoStore = require('connect-mongodb-session')(session);
@@ -63,18 +65,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
 
-// app.use(function(req, res, next){
-//     if(req.isAuthenticated()){
-//         res.locals.user = req.user;
-//     }
-//     console.log(res.locals.user);
-//     console.log(req.user);
-//     next();
-// });//why post not crea
 
-
-//paste token now delete the post using postman and check okk
-//shud i requst fr creatng session?yes i copied
 app.use(flash());
 app.use(customMware.setFlash);
 

@@ -1,6 +1,6 @@
 const Post = require('../../../post');
 const Comment = require('../../../comment');
-const { user } = require('../../../mongoose');
+const User = require('../../../user');
 
 module.exports.index = async function(req, res){
     let userPosts = await Post.find({})
@@ -20,14 +20,11 @@ module.exports.index = async function(req, res){
 }
 
 module.exports.deletePost = async function(req, res){
-    console.log("**************",req.params.id);
+    // console.log("**************",req.params.id);
     try{
         let post = await Post.findById(req.params.id);
         //.id convets _id to string
-        // console.log("111111111111111111");
-        // console.log("id of post owner",post.userss);
-        console.log("id of requested user",req.user.id);
-
+        console.log("id of requested user",req.user);
         if(post.userss == req.user.id){
         
             post.remove();

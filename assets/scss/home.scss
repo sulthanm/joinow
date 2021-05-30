@@ -19,16 +19,19 @@
                 font-size: 15px;
             }
             #submit{
+                width: 257px;
+                height: 30px;
                 padding: 7px;
                 display: block;
                 background-color: rgb(248, 221, 217);
-                margin-left:21.4%; 
+                // margin-left:100px; 
             }
             input:focus,#post-area:focus{
                 outline: none;
             }
             #submit:hover{
                 cursor: pointer;
+                background-color: #659DBD;
             }
         }
         #post-list-container{
@@ -54,9 +57,16 @@
                                 
                             }
                             #button{
-                                background-color: rgb(144, 219, 83);
+                                background-color:rgba(168, 169, 223, 0.185);
                                 border: none;
                                 padding: 5px;
+                                
+                            }
+                            #button:hover{
+                                cursor: pointer;
+                                background-color:rgb(81, 136, 189);
+                            
+                               
                             }
                             #button:focus{
                                 outline: none;

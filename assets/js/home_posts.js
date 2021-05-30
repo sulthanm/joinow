@@ -37,7 +37,7 @@
                     <div id="post-form">
                             
                                     <form action="/users/create-comment" method="POST">
-                                            <input type="text" name="comment" placeholder="Comment">
+                                            <input type="text" name="comment" placeholder="Add Comment">
                                             <input type="hidden" name="post" value="${post._id }">
                                             <input type="submit" value="Add Comment" id="button">
                                     </form>

@@ -11,6 +11,7 @@ module.exports.createPosts = async function(req, res){
         });
         
         if (req.xhr){
+            posT = await posT.populate('userss', 'name').execPopulate();
             return res.status(200).json({
                 data: {
                     post: posT,
@@ -56,6 +57,7 @@ module.exports.deletePost = async function(req, res){
     try{
         let post = await Post.findById(req.params.id);
         //.id convets _id to string
+        
         if(post.userss == req.user.id){
             post.remove();
             await Comment.deleteMany({post : req.params.id});

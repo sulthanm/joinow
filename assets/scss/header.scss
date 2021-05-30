@@ -13,13 +13,16 @@ body{
         }
         #head-list{
             position: absolute;
-            left: 80%;
+            left: 80vw;
             bottom: 25%;
             list-style: none;
             li{
                 display: inline;
                 padding: 15px;
                 margin-top: -45px;
+                #user-name{
+                    margin-left: -80px;
+                }
                 a{
                     font-size: 20px;
                     color:white;

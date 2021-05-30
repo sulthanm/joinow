@@ -1,10 +1,10 @@
 const Post = require('../post');
 const User = require('../user');
-
 module.exports.homePage = async function(req, res){
     
     try{
         // populate the user of each post
+    
         let userPosts = await Post.find({})
         .sort('-createdAt')
         .populate('userss')
@@ -15,7 +15,7 @@ module.exports.homePage = async function(req, res){
             }
         });
         let users = await User.find({});
-           
+        // console.log(userPosts);
         return res.render('home',{
             title: "homepage",
             posts : userPosts,

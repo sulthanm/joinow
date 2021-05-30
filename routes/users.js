@@ -25,4 +25,11 @@ router.get('/delete-post/:id',passport.checkAuthentication, post.deletePost);
 router.get('/delete-comment/:id',passport.checkAuthentication, post.deleteComment);
 router.post('/profile-update/:id',passport.checkAuthentication, profile.profieUpdate);
 
+router.get('/auth/google',passport.authenticate('google',{scope: ['profile', 'email']}))
+router.get('/auth/google/callback',passport.authenticate(
+    'google',
+    {failureRedirect : '/users/signin'}),
+profile.createUserSession);
+
+
 module.exports = router;
