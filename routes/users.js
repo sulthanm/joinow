@@ -3,10 +3,8 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 
-
 const profile = require('../controllers/users_controller');
 const post = require('../controllers/posts_controller');
-// const signup = require('../controllers')
 
 router.get('/profile/:id', passport.checkAuthentication ,profile.profilePage);
 router.get('/signup', profile.signupPage);

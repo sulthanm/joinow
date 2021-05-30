@@ -4,8 +4,9 @@
         <section id="post-container">
                 <h1>Posts:</h1>
                 <% if(locals.user){ %>
-                        <form action="/users/create-posts" id="new-post" method="POST">
+                        <form action="/users/create-posts" id="new-post" method="POST" >
                                 <textarea name="post_content" id="post-area" cols="30" rows="5" placeholder="Type to Post.."></textarea>
+                                <!-- <input type="file" placeholder="Post PIcture" name="avatar" > -->
                                 <input type="submit" value="Submit" id="submit">
                         </form>
         

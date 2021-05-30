@@ -2,14 +2,21 @@ const Post = require('../post');
 const Comment = require('../comment');
 
 module.exports.createPosts = async function(req, res){
-    // console.log(req.body);
     
     try{
+    
+        // Post.uploadedAvatar(req, res, function(err){
+        //     console.log(req.body);
+        //     console.log(req.file);
+        // });
+       
         let posT = await Post.create({
             post_content : req.body.post_content,
             userss : req.user._id
         });
-        
+     
+
+        posT.save();
         if (req.xhr){
             posT = await posT.populate('userss', 'name').execPopulate();
             return res.status(200).json({
@@ -23,6 +30,7 @@ module.exports.createPosts = async function(req, res){
         req.flash('success', 'Post created & published!');
         return res.redirect('back');   
     }catch(err){
+        console.log(err,":Error in creating post");
         req.flash('error', err);
         return res.redirect('back');
     }
