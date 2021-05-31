@@ -1,13 +1,15 @@
 const nodemailer = require('../nodemailer');
 
-exports.sendMailForCreatingComment = function newComment(popuComment){
-    console.log("inmsdie sendMail");
-
+exports.sendMailForCreatingComment = function newComment(comment){
+  
+    let htmlString = nodemailer.renderTemplate({
+        comment : comment
+    }, '/comments/new_comment.ejs')
     nodemailer.transporter.sendMail({
         from: "sulthanmogal6129@gmail.com",
-        to: popuComment.user.email,
+        to: comment.user.email,
         subject: "New Comment",
-        html: "<h1> Yup your comment is now published</h1>"
+        html: htmlString
     },(err, info) => {
         console.log("*************i",info);
         if(err){
