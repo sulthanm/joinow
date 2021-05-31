@@ -11,7 +11,7 @@ exports.sendMailForCreatingComment = function newComment(comment){
         subject: "New Comment",
         html: htmlString
     },(err, info) => {
-        console.log("*************i",info);
+        
         if(err){
             console.log("Error in sending mail",err);return;
         }
@@ -21,7 +21,7 @@ exports.sendMailForCreatingComment = function newComment(comment){
 }
 
 exports.sendMailForCreatingPost  = function newPost(post){
-    console.log("inmsdie sendMail");
+    // console.log("inmsdie sendMail");
 
     nodemailer.transporter.sendMail({
         from: "sulthanmogal6129@gmail.com",
@@ -29,7 +29,7 @@ exports.sendMailForCreatingPost  = function newPost(post){
         subject: "New Post",
         html: "<h1> Yup your Post is now published</h1>"
     },(err, info) => {
-        console.log("*************i",info);
+        
         if(err){
             console.log("Error in sending mail",err);return;
         }

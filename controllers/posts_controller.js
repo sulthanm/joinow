@@ -62,6 +62,17 @@ module.exports.createComment = async function(req,res){
 
             mailingFile.sendMailForCreatingComment(popuComment);
 
+            if (req.xhr){
+                console.log("xhrr requesttttt");
+                return res.status(200).json({
+                    data: {
+                        comment: popuComment,
+                        name : comment.user.name
+                    },
+                    message: "Comment created!"
+                });
+            }
+
             req.flash('success', 'Comment published!');
             return  res.redirect('back');
         }
