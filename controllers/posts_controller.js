@@ -1,5 +1,7 @@
 const Post = require('../post');
 const Comment = require('../comment');
+const mailingFile = require('../mailers/funcToSendMails');
+// const nodemailer = require('../nodemailer');
 
 module.exports.createPosts = async function(req, res){
     
@@ -17,8 +19,13 @@ module.exports.createPosts = async function(req, res){
      
 
         posT.save();
+
+        posT = await posT.populate('userss', 'name email').execPopulate();
+        
+        mailingFile.sendMailForCreatingPost(posT);
+
         if (req.xhr){
-            posT = await posT.populate('userss', 'name').execPopulate();
+            
             return res.status(200).json({
                 data: {
                     post: posT,
@@ -49,6 +56,12 @@ module.exports.createComment = async function(req,res){
             });
             post.comments.push(comment);
             post.save();
+
+            let popuComment = await comment.populate('user', 'name email').execPopulate();
+            console.log(popuComment.user.email,"*****************");
+
+            mailingFile.sendMailForCreatingComment(popuComment);
+
             req.flash('success', 'Comment published!');
             return  res.redirect('back');
         }
