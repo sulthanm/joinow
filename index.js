@@ -17,6 +17,7 @@ const customMware = require('./config/middleware');
 
 const passportJWT = require('./config/passport-jwt');
 
+// const ejsLint = require('ejs-lint');
 app.use(sassMiddleware({
     src : './assets/scss',
     dest : './assets/css',
@@ -39,7 +40,7 @@ app.set('layout extractScripts', true);
 
 
 app.set('view engine', 'ejs');
-// app.set("views" , "./views");
+app.set("views" , "./views");
 
 app.use(session({
     name : 'Joinow',

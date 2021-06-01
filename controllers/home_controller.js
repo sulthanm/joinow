@@ -23,7 +23,7 @@ module.exports.homePage = async function(req, res){
         });
 
     }catch(err){
-        console.log('Error', err);
+        console.log('Error in rendering homePage', err);
         return;
     }
   

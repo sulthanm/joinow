@@ -16,30 +16,29 @@ module.exports.createPosts = async function(req, res){
                 userss : req.user._id,
             },function(err, posT){
                 if(err){
-                    console.log("Error in creatin post-------",err)
+                    console.log("Error in creating post-------",err)
                 }
-             
+                let filePresent = false;
                 if(req.file){
                     // if(posT.avatar )){
                         
                     //     fs.unlinkSync(path.join(__dirname,'..',user.avatar));
                         
                     // }
-               
+                    filePresent = true;
                     posT.avatar = Post.avatarPath+'/'+req.file.filename;
                     
                 }
                 posT.save();
-                // posT.populate('userss', 'name email').execPopulate(function(err, post){
-                //     if(err){
-                //         console.log("Error in populating post", err);
-                //     }
-                //     mailingFile.sendMailForCreatingPost(post);
-                // });
-                
-                return res.render('home', {
-                    posts: posT
+                posT.populate('userss', 'name email').execPopulate(function(err, post){
+                    if(err){
+                        console.log("Error in populating post", err);
+                    }
+                    mailingFile.sendMailForCreatingPost(post);
                 });
+                console.log("ddddooooooonnnnneeeeeeeee");
+                return res.redirect('back');
+               
             });
            
             
