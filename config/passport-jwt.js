@@ -2,7 +2,7 @@ const passport = require('passport');
 const JWTStrategy = require('passport-jwt').Strategy;
 const ExtractJWT = require('passport-jwt').ExtractJwt;
 
-const User = require('./user');
+const User = require('../user');
 
 let opts = {
     jwtFromRequest : ExtractJWT.fromAuthHeaderAsBearerToken(),
@@ -10,7 +10,9 @@ let opts = {
 }
 
 passport.use(new JWTStrategy(opts, function(jwt_payload, done){
-    User.findOne({id: jwt_payload._id}, function(err, user) {
+    console.log(jwt_payload._id);
+    User.findById(jwt_payload._id, function(err, user) {
+        console.log("userrrrrrr",user);
         if (err) {
             return done(err, false);
         }

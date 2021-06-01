@@ -24,7 +24,8 @@ module.exports.deletePost = async function(req, res){
     try{
         let post = await Post.findById(req.params.id);
         //.id convets _id to string
-        console.log("id of requested user",req.user);
+        // console.log("id of requested post",post);
+        console.log(post);
         if(post.userss == req.user.id){
         
             post.remove();

@@ -12,10 +12,10 @@
                 success : function(data){
                     // console.log(data.data.comment);
                     let newcomment1 = newCommentDisplay(data.data.comment);
-                    
+                    console.log(newcomment1);
                     $('.post-comments-list>ul').prepend(newcomment1);
 
-                    // deletePost($(' .delete-post', newcomment1));
+                    deleteComment($(' #delete-comment', newcomment1)); 
                 },error : function(error){
                     console.log(error.responseText);
                 }
@@ -23,12 +23,12 @@
         });
     }
 
-    function newCommentDisplay(comment){
+    let newCommentDisplay= function(comment){
         return $(`<li>
                 <p>
                     ${ comment.content }
                    
-                    <a href="/users/delete-comment/${ comment._id }">X</a>
+                    <a href="/users/delete-comment/${ comment._id }" id="delete-comment">X</a>
                     
                     <br>
                     <small>
@@ -36,6 +36,26 @@
                     </small>
                 </p>    
             </li>`);
+    }
+
+    let deleteComment = function(deleteLink){
+        console.log(deleteLink);
+        $(deleteLink).click(function(e){
+            console.log("prevetnggggg");
+            e.preventDefault();
+            
+            $.ajax({
+                type: 'get',
+                url: $(deleteLink).prop('href'),
+                success: function(data){
+                    console.log(data);
+                    $(`#comment-${data.data.comment_id}`).remove();
+                },error: function(error){
+                    console.log(error.responseText);
+                }
+            });
+
+        });
     }
 
     createComment();

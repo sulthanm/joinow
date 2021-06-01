@@ -17,7 +17,7 @@ let transporter = nodemailer.createTransport({
 let renderTemplate = (data, relativePath) =>{
     let mailHTML;
     eje.renderFile(
-        path.join(__dirname,'./views/mailers', relativePath),
+        path.join(__dirname,'../views/mailers', relativePath),
         data,
         function(err, template){
             if(err){

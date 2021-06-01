@@ -1,4 +1,4 @@
-const nodemailer = require('../nodemailer');
+const nodemailer = require('../config/nodemailer');
 
 exports.sendMailForCreatingComment = function newComment(comment){
   

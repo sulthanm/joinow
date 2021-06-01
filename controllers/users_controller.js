@@ -3,7 +3,7 @@ const User = require('../user');
 const fs = require('fs');
 const path = require('path');
 
-const passport = require('../passport-local-strategy');
+const passport = require('../config/passport-local-strategy');
 
 module.exports.profilePage = function (req,res){
     User.findById(req.params.id, function(err, user){
@@ -73,6 +73,7 @@ module.exports.profieUpdate = async function(req, res){
     //we cant update by User.findByIdAndUpdate because its now multipart form-data(which we cant get in body-parser), so using static func whch is globally initialised in userScheme as it has req
 
     User.uploadedAvatar(req, res, function(err){
+        console.log(req.body);
         if(err){console.log("error in multer22 ", err);}
         //we are able to read body because of multer(as this form has file)
         user.name = req.body.name;

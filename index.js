@@ -2,20 +2,20 @@ const express = require('express');
 const port = 8000;
 const app = express();
 const expressLayouts = require('express-ejs-layouts');
-const db = require('./mongoose');
+const db = require('./config/mongoose');
 // used for session cookie
 const cookie = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
-const localSession = require('./passport-local-strategy');
-const passportGoogle = require('./passport-google-oauth2-strategy');
+const localSession = require('./config/passport-local-strategy');
+const passportGoogle = require('./config/passport-google-oauth2-strategy');
 const sassMiddleware = require('node-sass-middleware');
 
 const MongoStore = require('connect-mongodb-session')(session);
 const flash = require('connect-flash');
-const customMware = require('./middleware');
+const customMware = require('./config/middleware');
 
-const passportJWT = require('./passport-jwt');
+const passportJWT = require('./config/passport-jwt');
 
 app.use(sassMiddleware({
     src : './assets/scss',
@@ -78,5 +78,5 @@ app.listen(port, function(err){
         console.log(`Error in running the server:${err}`);
     }
     console.log(`Server is running on port :${port}`);
-})
+});
 

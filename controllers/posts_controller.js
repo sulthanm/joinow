@@ -1,41 +1,50 @@
 const Post = require('../post');
 const Comment = require('../comment');
 const mailingFile = require('../mailers/funcToSendMails');
-// const nodemailer = require('../nodemailer');
+
+const formidable = require('formidable')
 
 module.exports.createPosts = async function(req, res){
-    
+   // console.log("above",req.file);
     try{
-    
-        // Post.uploadedAvatar(req, res, function(err){
-        //     console.log(req.body);
-        //     console.log(req.file);
-        // });
-       
-        let posT = await Post.create({
-            post_content : req.body.post_content,
-            userss : req.user._id
-        });
-     
-
-        posT.save();
-
-        posT = await posT.populate('userss', 'name email').execPopulate();
-        
-        mailingFile.sendMailForCreatingPost(posT);
-
-        if (req.xhr){
-            
-            return res.status(200).json({
-                data: {
-                    post: posT,
-                    name : posT.userss
-                },
-                message: "Post created!"
+        Post.uploadedPost(req, res, function(err){
+            if(err){
+                console.log("Error in creatng post", err);return;
+            }
+            Post.create({
+                post_content : req.body.post_content,
+                userss : req.user._id,
+            },function(err, posT){
+                if(err){
+                    console.log("Error in creatin post-------",err)
+                }
+             
+                if(req.file){
+                    // if(posT.avatar )){
+                        
+                    //     fs.unlinkSync(path.join(__dirname,'..',user.avatar));
+                        
+                    // }
+               
+                    posT.avatar = Post.avatarPath+'/'+req.file.filename;
+                    
+                }
+                posT.save();
+                // posT.populate('userss', 'name email').execPopulate(function(err, post){
+                //     if(err){
+                //         console.log("Error in populating post", err);
+                //     }
+                //     mailingFile.sendMailForCreatingPost(post);
+                // });
+                
+                return res.render('home', {
+                    posts: posT
+                });
             });
-        }
-        req.flash('success', 'Post created & published!');
-        return res.redirect('back');   
+           
+            
+        });
+         
     }catch(err){
         console.log(err,":Error in creating post");
         req.flash('error', err);
@@ -63,7 +72,7 @@ module.exports.createComment = async function(req,res){
             mailingFile.sendMailForCreatingComment(popuComment);
 
             if (req.xhr){
-                console.log("xhrr requesttttt");
+                // console.log("xhrr requesttttt");
                 return res.status(200).json({
                     data: {
                         comment: popuComment,
@@ -126,6 +135,17 @@ module.exports.deleteComment = async function(req, res){
             comment.remove();
 
             let post = await Post.findByIdAndUpdate(postId, { $pull: {comments: req.params.id}});
+
+            if (req.xhr){
+                console.log("xhr requestttttt")
+                return res.status(200).json({
+                    data: {
+                        comment_id: req.params.id
+                    },
+                    message: "Comment Deleted!"
+                });
+            }
+
             req.flash('success', 'Comment deleted!');
             return res.redirect('back');
         }else{
