@@ -29,5 +29,6 @@ router.get('/auth/google/callback',passport.authenticate(
     {failureRedirect : '/users/signin'}),
 profile.createUserSession);
 
+router.post('/toggle', post.likePost);
 
 module.exports = router;

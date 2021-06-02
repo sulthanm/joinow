@@ -5,6 +5,8 @@ const mailingFile = require('../mailers/funcToSendMails');
 const commentEmailWorker = require('../workers/comment_email_worker');
 const queue = require('../config/kue');
 
+const Like = require('../like');
+
 module.exports.createPosts = async function(req, res){
    // console.log("above",req.file);
     try{
@@ -37,7 +39,7 @@ module.exports.createPosts = async function(req, res){
                     }
                     mailingFile.sendMailForCreatingPost(post);
                 });
-                console.log("ddddooooooonnnnneeeeeeeee");
+                // console.log("ddddooooooonnnnneeeeeeeee");
                 return res.redirect('back');
                
             });
@@ -106,6 +108,10 @@ module.exports.deletePost = async function(req, res){
         //.id convets _id to string
         
         if(post.userss == req.user.id){
+
+            await Like.deleteMany({likeable: post, onModel: 'Post'});
+            await Like.deleteMany({_id: {$in: post.comments}});
+
             post.remove();
             await Comment.deleteMany({post : req.params.id});
             if (req.xhr){
@@ -163,4 +169,61 @@ module.exports.deleteComment = async function(req, res){
     }
    
 
+}
+
+module.exports.likePost = async function(req, res){
+    try{
+        let modelWithQuery; 
+        let deleted = false;
+        if(req.query.type == 'Post'){
+            console.log("finding model with queru");
+            modelWithQuery = await Post.findOne(req.query._id).populate('likes');
+        }else{
+            modelWithQuery = await Comment.findOne( req.query._id).populate('likes');
+        }
+        
+
+
+        let modelPresentInLikes = await Like.findOne({
+            user: req.user._id,
+            onModel : req.query.type,
+            likeable: req.query.id
+        });
+
+        if(modelPresentInLikes){
+           
+            modelWithQuery.likes.pull(modelPresentInLikes._id);
+            modelWithQuery.save();
+            modelPresentInLikes.remove();
+
+            deleted = true;
+
+        }else{
+            console.log(req.query.id,"----------",req.query.type);
+            let newLike = await Like.create({
+                user: req.user._id,
+                likeable: req.query.id,
+                onModel: req.query.type
+            });
+            // modelWithQuery.save();
+            console.log("----------",modelWithQuery.likes);
+            modelWithQuery.likes.push(newLike._id);
+            modelWithQuery.save();
+        }
+        // console.log(req.xhr);
+        if(req.xhr){
+            return res.json(200, {
+                message: "Request successful!",
+                data: {
+                    deleted: deleted
+                }
+            });
+        }
+        
+    }catch(err){
+        if(err){
+            console.log("Error in creating like-----", err);
+            return res.redirect('back');
+        }
+    }
 }

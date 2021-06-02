@@ -1,21 +1,26 @@
 
     <li id="post-<%= post._id %>">
             <p>
-                    <%= post.post_content %>
+                <%= post.post_content %>
                     
                         
-                    <p><img src="<%= post.avatar %>" alt="<%= post.userss.name %>" width="100px" height="100px"></p>            
+                <p><img src="<%= post.avatar %>" alt="<%= post.userss.name %>" width="100px" height="100px"></p>            
                         
-                        
+                <small>
+                        <% if (locals.user){ %>
+                            <a class="toggle-like-button" data-likes="<%= post.likes.length %>" href="/users/toggle/?id=<%=post._id%>&type=Post">
+                                    <%= post.likes.length %> Like
+                            </a>
+                        <% }else{ %>
+                            <%= post.likes.length %> Likes
+                        <% } %>
+                    </small>  
                     
-                        
-                   
-                    
-                    <% if(locals.user && locals.user.id == post.userss.id) { %>
-                            <a class="delete-post" href="/users/delete-post/<%= post._id %>" >X</a>
-                    <% } %>
-                    <br>
-                    <small><%= post.userss.name %></small>
+                <% if(locals.user && locals.user.id == post.userss.id) { %>
+                        <a class="delete-post" href="/users/delete-post/<%= post._id %>" >X</a>
+                <% } %>
+                <br>
+                <small><%= post.userss.name %></small>
             </p>
             <div id="post-form">
                     <% if(locals.user){ %>

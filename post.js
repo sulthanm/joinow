@@ -6,7 +6,7 @@ const AVATAR_PATH = path.join('/uploads/users/ImagePosts');
 const postSchema = new mongoose.Schema({
     post_content: {
         type : String,
-        required : true
+        // required : true
         // unique : true
     },
     userss : {
@@ -21,7 +21,13 @@ const postSchema = new mongoose.Schema({
     ],
     avatar:{
         type: String
-    }
+    },
+    likes: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Like'
+        }
+    ]
 
 },{
     timestamps : true
