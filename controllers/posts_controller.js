@@ -2,7 +2,8 @@ const Post = require('../post');
 const Comment = require('../comment');
 const mailingFile = require('../mailers/funcToSendMails');
 
-const formidable = require('formidable')
+const commentEmailWorker = require('../workers/comment_email_worker');
+const queue = require('../config/kue');
 
 module.exports.createPosts = async function(req, res){
    // console.log("above",req.file);
@@ -68,7 +69,13 @@ module.exports.createComment = async function(req,res){
             let popuComment = await comment.populate('user', 'name email').execPopulate();
             console.log(popuComment.user.email,"*****************");
 
-            mailingFile.sendMailForCreatingComment(popuComment);
+            // mailingFile.sendMailForCreatingComment(popuComment);
+            let job = queue.create('emails', popuComment).save(function(err){
+                if(err){
+                    console.log("Errror in sending to queue", err);return;
+                }
+                console.log('job enqued', job.id);
+            });
 
             if (req.xhr){
                 // console.log("xhrr requesttttt");
