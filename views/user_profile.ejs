@@ -26,24 +26,33 @@
       
       <p><%= profile_user.name %></p>
       <p><%= profile_user.email %></p>
+      <br>
+      <br>
+      
+      <% let present = false %>
+    
+      <% for(friend1 of locals.user.friends) { %>
+
+         <% for(friend2 of profile_user.friends) { %>
+          
+            <% if(  friend1.equals(friend2) ){  %> 
+               <% present = true %>
+               <a href="/users/friend-req/<%= profile_user.id %>" id="add-friend" >profile-Un-friend</a>
+               <% break %>
+            <% }  %>
+          
+         <% } %>
+      <% } %>
+  
+      <% if(present == false){ %>
+         <a href="/users/friend-req/<%= profile_user.id %>" id="add-friend" >profile-Add-friend</a>
+      <% } %>
+         
+
+
+      
    <% } %>
 
 </div>
 
-<script>
- 
-   document.addEventListener('DOMContentLoaded', function () {
-   var btn = document.querySelector('.button'),
-      loader = document.querySelector('.loader'),
-      check = document.querySelector('.check');
-  
-  btn.addEventListener('click', function () {
-    loader.classList.add('active');    
-  });
- 
-  loader.addEventListener('animationend', function() {
-    check.classList.add('active'); 
-  });
-});
 
-</script>

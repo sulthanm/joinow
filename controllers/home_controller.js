@@ -14,8 +14,23 @@ module.exports.homePage = async function(req, res){
                 path: 'user'
             }
         });
-        let users = await User.find({});
-        // console.log(userPosts);
+        let users = await User.find({}).populate({
+            path:'friends',
+            populate:{
+             path:'from_user'   
+            }
+        }).populate({
+            path:'friends',
+            populate:'to_user'
+        });
+        // users.save();
+      
+        
+        // for(i of users){
+        //     console.log("message---------",i );
+        // }
+        
+        
         return res.render('home',{
             title: "homepage",
             posts : userPosts,

@@ -29,67 +29,58 @@
         </section>
                 
         <section id="friends">
-                <h4>Friends</h4>
-                <% for(u of allUsers) {%>
-                        <p>
-                                <a href="/users/profile/<%= u.id %>"><%= u.name %></a>
-                        </p>
+                <% if(locals.user ) { %>
+                        <h4>Friends</h4>
                         
+                        <% for(u of allUsers) {%>
+                                
+                                <% if(u._id.equals(locals.user._id)){ %>
+                                        <% for(f of u.friends){ %>
+                                                <p>
+                                                        <% let name = locals.user.name %>
+                                                
+                                                        
+                                                        <% if(name == f.to_user.name){   %>
+                                                                
+                                                                <a href="/users/profile/<%= f.from_user._id %>"><%= f.from_user.name %></a>
+                                                        <%} else{ %>
+                                                                <a href="/users/profile/<%= f.to_user._id %>" ><%= f.to_user.name %></a>
+                                                        <% } %>
+                
+                                                
+                        
+                                                </p>
+                                        <% } %>
+                                <% } %>
+                              
+                                
+                                
+                        <% } %>
                 <% } %>
+                        <h4>Users</h4>
+                        <% for(u of allUsers) {%>
+                                <p>
+                                        
+                                       
+                                        <a href="/users/profile/<%= u.id %>" ><%= u.name %></a>
+                                     
+                                </p>
+                                
+                        <% } %>
+
+               
+                
+                
         </section>
 </div>
 
-<script src="/js/home_comments.js">
+<script src="/js/home_comments.js"></script>
 
-</script>
-
-<script >
-        // CHANGE :: create a class to toggle likes when a link is clicked, using AJAX
-class ToggleLike{
-    constructor(toggleElement){
-        this.toggler = toggleElement;
-        this.toggleLike();
-    }
-
-
-    toggleLike(){
-        $(this.toggler).click(function(e){
-            e.preventDefault();
-            let self = this;
-
-            // this is a new way of writing ajax which you might've studied, it looks like the same as promises
-            $.ajax({
-                type: 'POST',
-                url: $(self).attr('href'),
-            })
-            .done(function(data) {
-                let likesCount = parseInt($(self).attr('data-likes'));
-                console.log(likesCount);
-                if (data.data.deleted == true){
-                    likesCount -= 1;
-                    
-                }else{
-                    likesCount += 1;
-                }
-
-
-                $(self).attr('data-likes', likesCount);
-                $(self).html(`${likesCount} Like`);
-
-            })
-            .fail(function(errData) {
-                console.log('error in completing the request');
-            });
-            
-
-        });
-    }
-}
-
-</script>
+<script src="/js/toggle_likes.js" ></script>
 
 <script>
         $('.toggle-like-button').each(function(){
+                // console.log(this);
                 let self = this;
                 let toggleLike = new ToggleLike(self);
         })

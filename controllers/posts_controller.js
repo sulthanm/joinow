@@ -69,7 +69,7 @@ module.exports.createComment = async function(req,res){
             post.save();
 
             let popuComment = await comment.populate('user', 'name email').execPopulate();
-            console.log(popuComment.user.email,"*****************");
+            // console.log(popuComment.user.email,"*****************");
 
             // mailingFile.sendMailForCreatingComment(popuComment);
             let job = queue.create('emails', popuComment).save(function(err){
@@ -147,6 +147,8 @@ module.exports.deleteComment = async function(req, res){
             comment.remove();
 
             let post = await Post.findByIdAndUpdate(postId, { $pull: {comments: req.params.id}});
+
+            await Like.deleteMany({likeable: comment._id, onModel: 'Comment'});
 
             if (req.xhr){
                 console.log("xhr requestttttt")

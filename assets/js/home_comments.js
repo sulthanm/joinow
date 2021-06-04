@@ -4,18 +4,32 @@
         
         let newComment = $('#new-comment');
         newComment.submit(function(e){
+            
             e.preventDefault();
+            let self = this;
+            
             $.ajax({
-                type : 'post',
+                type : 'POST',
                 url : '/users/create-comment',
-                data : newComment.serialize(),
+                data : $(self).serialize(),
                 success : function(data){
                     // console.log(data.data.comment);
                     let newcomment1 = newCommentDisplay(data.data.comment);
-                    console.log(newcomment1);
+                    // console.log(newcomment1);
                     $('.post-comments-list>ul').prepend(newcomment1);
+                    deleteComment($(' #delete-comment', newcomment1));
+                    // console.log($(' #delete-comment', newcomment1));
+                    new ToggleLike($(' .toggle-like-button', newComment));
+                    new Noty({
+                        theme: 'relax',
+                        text: "Comment published!",
+                        type: 'success',
+                        layout: 'topRight',
+                        timeout: 1500
+                        
+                    }).show();
 
-                    deleteComment($(' #delete-comment', newcomment1)); 
+                     
                 },error : function(error){
                     console.log(error.responseText);
                 }
@@ -24,7 +38,7 @@
     }
 
     let newCommentDisplay= function(comment){
-        return $(`<li>
+        return $(`<li id="comment-${ comment._id }">
                 <p>
                     ${ comment.content }
                    
@@ -34,21 +48,28 @@
                     <small>
                         ${ comment.user.name }
                     </small>
+                    <small>
+                        
+                            <a class="toggle-like-button" data-likes="${ comment.likes.length }" href="/users/toggle/?id=${comment._id}&type=Comment">
+                                    0 Likes
+                            </a>
+                      
+                    </small>
                 </p>    
             </li>`);
     }
 
-    let deleteComment = function(deleteLink){
-        console.log(deleteLink);
+    function deleteComment(deleteLink){
+        console.log("Deletnf link ", $(deleteLink).prop('href'));
         $(deleteLink).click(function(e){
-            console.log("prevetnggggg");
+            // console.log("prevetnggggg delete comment");
             e.preventDefault();
             
             $.ajax({
                 type: 'get',
                 url: $(deleteLink).prop('href'),
                 success: function(data){
-                    console.log(data);
+                    console.log("Daaaaataaaaaaaaaa", data);
                     $(`#comment-${data.data.comment_id}`).remove();
                 },error: function(error){
                     console.log(error.responseText);

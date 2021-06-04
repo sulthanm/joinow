@@ -6,6 +6,8 @@ const passport = require('passport');
 const profile = require('../controllers/users_controller');
 const post = require('../controllers/posts_controller');
 
+const friend = require('../controllers/friends_controller');
+
 router.get('/profile/:id', passport.checkAuthentication ,profile.profilePage);
 router.get('/signup', profile.signupPage);
 router.get('/signin', profile.signinPage);
@@ -30,5 +32,7 @@ router.get('/auth/google/callback',passport.authenticate(
 profile.createUserSession);
 
 router.post('/toggle', post.likePost);
+
+router.get('/friend-req/:id', friend.addFriend);
 
 module.exports = router;
