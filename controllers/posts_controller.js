@@ -58,7 +58,7 @@ module.exports.createPosts = async function(req, res){
 module.exports.createComment = async function(req,res){
     try{
         let post =await Post.findById(req.body.post);
-        
+        console.log("***************",req.body.post);
         if(post){
             let comment = await Comment.create({
                 content : req.body.comment,
@@ -177,11 +177,13 @@ module.exports.likePost = async function(req, res){
     try{
         let modelWithQuery; 
         let deleted = false;
+        // console.log("id----",req.query.id);
         if(req.query.type == 'Post'){
-            console.log("finding model with queru");
-            modelWithQuery = await Post.findOne(req.query._id).populate('likes');
+            console.log("finding model with query post");
+            modelWithQuery = await Post.findById(req.query.id).populate('likes');
+            console.log("----------",modelWithQuery);
         }else{
-            modelWithQuery = await Comment.findOne( req.query._id).populate('likes');
+            modelWithQuery = await Comment.findById( req.query.id).populate('likes');
         }
         
 
@@ -191,6 +193,7 @@ module.exports.likePost = async function(req, res){
             onModel : req.query.type,
             likeable: req.query.id
         });
+        // console.log(modelPresentInLikes);
 
         if(modelPresentInLikes){
            
@@ -207,17 +210,22 @@ module.exports.likePost = async function(req, res){
                 likeable: req.query.id,
                 onModel: req.query.type
             });
-            // modelWithQuery.save();
-            console.log("----------",modelWithQuery.likes);
+       
+            // console.log("----------",modelWithQuery);
             modelWithQuery.likes.push(newLike._id);
+           
             modelWithQuery.save();
+
         }
-        // console.log(req.xhr);
+        res.locals.deleted = deleted;
+        console.log("++++++",res.locals.deleted);
+        console.log(req.xhr);
         if(req.xhr){
             return res.json(200, {
                 message: "Request successful!",
                 data: {
-                    deleted: deleted
+                    deleted: deleted,
+                    postId : req.query.id
                 }
             });
         }

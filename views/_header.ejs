@@ -1,25 +1,24 @@
 <link rel="stylesheet" href="/css/header.css">
-
 <header >
     <div id="head">
-        <a href="/"><p id="name"> JOINOW </p></a>
+        <a href="/" id="name"> JOINOW</a>
         <ul id="head-list">
             <% if(locals.user){ %>
                 <li>
-                <a href="/users/profile/<%= user._id %>" id="user-name"><%= user.name %></a>
+                <a href="/users/profile/<%= user._id %>" id="list-item" class="user-name"><%= user.name %></a>
             
                 </li>
                 <li>
-                    <a href="/users/signout">Sign-out</a>
+                    <a href="/users/signout" id="list-item">Sign-out</a>
                 </li>
         
         
             <% } else{ %>
                 <li>
-                    <a href="/users/signup">Sign-Up </a>
+                    <a href="/users/signup" id="list-item">Sign-Up </a>
                 </li>
                 <li>
-                    <a href="/users/signin" id="sign-in">Sign-In </a>
+                    <a href="/users/signin" id="list-item">Sign-In </a>
                 </li>
                 
             <% } %>

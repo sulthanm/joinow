@@ -41,7 +41,7 @@ module.exports.addFriend = async function(req, res){
         userAccepted.save();
         userRequested.save();
     
-
+        req.flash('success', 'Old Friend Removed!');
     }else{
         presence = false;
         console.log("new FriendShip Creating*******");
@@ -58,6 +58,7 @@ module.exports.addFriend = async function(req, res){
 
         userAccepted.save();
         userRequested.save();
+        req.flash('success', 'New Friend Added!');
        
     }
     
@@ -72,7 +73,7 @@ module.exports.addFriend = async function(req, res){
     //         }
     //     });
     // }
-    console.log(userAccepted);
-    return res.redirect('/');
+
+    return res.redirect('back');
   
 }

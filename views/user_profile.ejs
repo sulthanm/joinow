@@ -37,7 +37,7 @@
           
             <% if(  friend1.equals(friend2) ){  %> 
                <% present = true %>
-               <a href="/users/friend-req/<%= profile_user.id %>" id="add-friend" >profile-Un-friend</a>
+               <a href="/users/friend-req/<%= profile_user.id %>" id="add-friend" >Un-friend</a>
                <% break %>
             <% }  %>
           
@@ -45,7 +45,7 @@
       <% } %>
   
       <% if(present == false){ %>
-         <a href="/users/friend-req/<%= profile_user.id %>" id="add-friend" >profile-Add-friend</a>
+         <a href="/users/friend-req/<%= profile_user.id %>" id="add-friend" >Add-friend</a>
       <% } %>
          
 

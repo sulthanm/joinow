@@ -1,30 +1,32 @@
 <link rel="stylesheet" type="text/css" href="/css/home.css">
+<link rel="stylesheet" href="/css/chat_box.css">
 
 <div id="home-container">
         <section id="post-container">
-                <h1>Posts:</h1>
-                <% if(locals.user){ %>
-                        <form action="/users/create-posts" id="new-post" enctype="multipart/form-data" method="POST">
-                                <textarea name="post_content" id="post-area" cols="30" rows="5" placeholder="Type to Post.."></textarea>
-                                <input type="file" placeholder="Post PIcture" name="avatar" >
-                                <input type="submit" value="Submit">
-                        </form>
+                <div id="wall">
+                        <% if(locals.user){ %>
+                                <form action="/users/create-posts" id="new-post" enctype="multipart/form-data" method="POST">
+                                        <input name="post_content" id="post-area" type="text" placeholder="Type here.."></textarea>
+                                        <input type="file" placeholder="Post Picture" name="avatar" id="pic" class="custom-file-input">
+                                        <input type="submit" value="Post" id="button">
+                                </form>
+                
+                        <% } %>
+                
         
-                <% } %>
-        
-                <div id="post-list-container">
-                        <ul>
-                                
-                                <% for(post of posts){ %>
-                                        <%- include('_posts'); %>
+                        <div id="post-list-container">
+                                <ul>
                                         
-                                        
+                                        <% for(post of posts){ %>
+                                                <%- include('_posts'); %>
+                                                
+                                                
 
-                                <% } %>  
-                        </ul>     
-                     
+                                        <% } %>  
+                                </ul>     
+                        
+                        </div>
                 </div>
-        
                 
         </section>
                 
@@ -57,11 +59,15 @@
                                 
                         <% } %>
                 <% } %>
-                        <h4>Users</h4>
+                        <h4>Other Users</h4>
                         <% for(u of allUsers) {%>
                                 <p>
+                                        <% if(locals.user ) { %>
                                         
-                                       
+                                                <% if(u.name == locals.user.name){ %>
+                                                        <% continue %>
+                                                <%}%>
+                                        <% } %>
                                         <a href="/users/profile/<%= u.id %>" ><%= u.name %></a>
                                      
                                 </p>
@@ -72,6 +78,7 @@
                 
                 
         </section>
+        <%- include('_chat_box') -%>
 </div>
 
 <script src="/js/home_comments.js"></script>
@@ -79,9 +86,21 @@
 <script src="/js/toggle_likes.js" ></script>
 
 <script>
+        // let postId = $('#display-likes');
+        
         $('.toggle-like-button').each(function(){
                 // console.log(this);
                 let self = this;
+                
+
                 let toggleLike = new ToggleLike(self);
         })
 </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+<script src="/js/chat_engine.js"></script>
+<% if (locals.user){ %>
+<script>
+    new ChatEngine('user-chat-box', '<%= locals.useremail %>')
+</script>
+<% } %>

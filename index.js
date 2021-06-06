@@ -17,7 +17,12 @@ const customMware = require('./config/middleware');
 
 const passportJWT = require('./config/passport-jwt');
 
-// const ejsLint = require('ejs-lint');
+const chatServer = require('http').Server(app);
+const chatSockets = require('./config/chat_socket').chatSockets(chatServer);
+chatServer.listen(5000);
+console.log('chat server is listening on port 5000');
+
+
 app.use(sassMiddleware({
     src : './assets/scss',
     dest : './assets/css',
@@ -49,7 +54,7 @@ app.use(session({
     saveUninitialized : false,
     resave : false,
     cookie : {
-        maxAge : (1000 * 60 * 10)
+        maxAge : (1000 * 60 * 100)
     
     },
     store : new MongoStore(
