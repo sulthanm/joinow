@@ -1,5 +1,5 @@
 // CHANGE :: create a class to toggle likes when a link is clicked, using AJAX
-class ToggleLike{
+class ToggleLikeComment{
     constructor(toggleElement){
         this.toggler = toggleElement;
         this.toggleLike();
@@ -11,7 +11,7 @@ class ToggleLike{
         $(this.toggler).click(function(e){
             e.preventDefault();
             let self = this;
-            
+            console.log("----prevnt deflt----");
             // this is a new way of writing ajax which you might've studied, it looks like the same as promises
             $.ajax({
                 type: 'post',
@@ -19,7 +19,7 @@ class ToggleLike{
             })
             .done(function(data) {
                 let likesCount = parseInt($(self).attr('data-likes'));
-                console.log("preevntttttt",likesCount,data);
+                console.log(likesCount);
                 let like;
                 if (data.data.deleted == true){
                     likesCount -= 1;
@@ -29,25 +29,25 @@ class ToggleLike{
                     likesCount += 1;
                     like =false;
                 }
-                // console.log("message--", data.data);
+                // console.log("message--", data.data.postId);
                 console.log(self);
-                if(data.data.type == "Post"){
-                    // console.log("sucess-----------post", data.data.requestedTypeId);
-                    let div1 = document.getElementById(`${data.data.requestedTypeId}`);
-                    console.log(div1);
-                    // $(self).attr('data-likes', likesCount);
-                    div1.setAttribute("data-likes", `${likesCount}`);
-                    div1.innerHTML = `${likesCount}`;
-                    // console.log(div1);
+                let div1 = document.getElementById(`${data.data.postId}`);
+              
+                $(self).attr('data-likes', likesCount);
+                // if(like==true){
+                //     $(self).html('Like');
+                // }else{
+                //     $(self).html('Dis-Like');
+
+                // }
+                
+                
+                console.log(self,"///////",div1);
+
+                div1.setAttribute("data-likes", `${likesCount}`);
+                div1.innerHTML = `${likesCount}`;
+                console.log(div1);
                
-                }else{
-                         
-                    console.log("sucess-----------");
-                    $(self).attr('data-likes', likesCount);
-                    $(self).html(`${likesCount} Likes`);
-  
-                }
-           
                 
             })
             .fail(function(errData) {

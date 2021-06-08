@@ -225,7 +225,8 @@ module.exports.likePost = async function(req, res){
                 message: "Request successful!",
                 data: {
                     deleted: deleted,
-                    postId : req.query.id
+                    requestedTypeId : req.query.id,
+                    type: req.query.type
                 }
             });
         }

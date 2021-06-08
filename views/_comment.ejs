@@ -1,12 +1,13 @@
 <ul id="post-comments-<%= post._id %>" class="comments-list">
-    <h3 id="comment-heading">Comments: </h3>
+    
     <% for (comment of post.comments){%>
     <li id="comment-<%= comment._id %>" class="comment-list-item">
-        
+              
+            <div id="for-border"></div>
             <h4 id="user-name">
                 <%= comment.user.name %>
             </h4>
-            <p><%= comment.content %></p>
+            
            
             <% if(locals.user && locals.user.id == comment.user.id){ %> 
                     <a href="/users/delete-comment/<%= comment._id %>" id="delete-comment">X</a>
@@ -21,7 +22,9 @@
                     <p id="likes-length"><%= comment.likes.length %> Likes </p>
                 <% } %>
             </div>
+            <p><%= comment.content %></p>
             
     </li>
+    
     <%} %>
 </ul>

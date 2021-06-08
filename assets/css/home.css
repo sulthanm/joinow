@@ -26,13 +26,14 @@
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         font-weight: 700; }
       #home-container #post-container #wall #new-post ::placeholder {
-        color: black; }
+        color: rgba(0, 0, 0, 0.24); }
       #home-container #post-container #wall #new-post #pic:focus, #home-container #post-container #wall #new-post #post-area:focus {
         outline: none; }
       #home-container #post-container #wall #new-post .custom-file-input::-webkit-file-upload-button {
         visibility: hidden; }
       #home-container #post-container #wall #new-post .custom-file-input::before {
         content: 'Upload Picture';
+        color: rgba(0, 0, 0, 0.24);
         text-align: center;
         padding: 20px; }
       #home-container #post-container #wall #new-post .custom-file-input {
@@ -51,6 +52,7 @@
         margin-left: 335px;
         cursor: pointer;
         border: none;
+        color: rgba(0, 0, 0, 0.34);
         font-weight: 700;
         border-radius: 5px;
         background-color: #659DBD; }
@@ -69,7 +71,7 @@
       #home-container #post-container #post-list-container #post-list li #for-border {
         margin-left: 23px;
         width: 485px;
-        border-bottom: 1px solid black; }
+        border-bottom: 1px solid rgba(0, 0, 0, 0.24); }
       #home-container #post-container #post-list-container #post-list li #picture {
         margin-top: 20px;
         height: 460px;
@@ -122,10 +124,10 @@
         #home-container #post-container #post-list-container #post-list li #comment-form #new-comment #comment {
           width: 100%;
           height: 35px;
-          border-bottom: 0.01em solid black;
-          border-bottom-color: initial; }
+          border-bottom: 1px solid rgba(0, 0, 0, 0.14); }
         #home-container #post-container #post-list-container #post-list li #comment-form #new-comment #button {
           margin-top: 10px;
+          margin-left: 5px;
           border: 2px solid magenta;
           background-color: rgba(168, 169, 223, 0.185);
           border: none;
@@ -137,17 +139,18 @@
           outline: none; }
       #home-container #post-container #post-list-container #post-list li .post-comments-container #comment-heading {
         color: burlywood;
-        margin-left: -20px; }
+        margin-left: 5px; }
       #home-container #post-container #post-list-container #post-list li .post-comments-container li {
         margin-top: -10px; }
         #home-container #post-container #post-list-container #post-list li .post-comments-container li #user-name {
           display: inline-block; }
         #home-container #post-container #post-list-container #post-list li .post-comments-container li p {
           display: inline-block;
-          margin-left: 10px; }
+          margin-left: 10px;
+          width: 400px;
+          height: auto; }
         #home-container #post-container #post-list-container #post-list li .post-comments-container li #delete-comment {
-          color: #ff6f61;
-          margin-left: 58%; }
+          color: #ff6f61; }
         #home-container #post-container #post-list-container #post-list li .post-comments-container li #comment-likes-container {
           margin-left: 20px;
           margin-top: -15px; }
@@ -155,6 +158,10 @@
             color: #659DBD; }
           #home-container #post-container #post-list-container #post-list li .post-comments-container li #comment-likes-container a:hover {
             color: #ff6f61; }
+        #home-container #post-container #post-list-container #post-list li .post-comments-container li #for-border {
+          width: 450px;
+          border-top: 1px solid rgba(0, 0, 0, 0.14);
+          position: relative; }
   #home-container #friends {
     margin-top: 20px;
     height: 100%;

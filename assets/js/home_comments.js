@@ -13,13 +13,13 @@
                 url : '/users/create-comment',
                 data : $(self).serialize(),
                 success : function(data){
-                    // console.log(data.data.comment);
+                    console.log(data.data.comment);
                     let newcomment1 = newCommentDisplay(data.data.comment);
                     // console.log(newcomment1);
-                    $('.post-comments-list>ul').prepend(newcomment1);
+                    $('.post-comments-container>ul').prepend(newcomment1);
                     deleteComment($(' #delete-comment', newcomment1));
-                    // console.log($(' #delete-comment', newcomment1));
-                    new ToggleLike($(' .toggle-like-button', newComment));
+                    new  ToggleLike($(' .toggle-like-button', newcomment1));
+                    
                     new Noty({
                         theme: 'relax',
                         text: "Comment published!",
@@ -39,11 +39,11 @@
 
     let newCommentDisplay= function(comment){
         return $(`<li id="comment-${ comment._id }">
-                
+                <div id="for-border"></div>
                 <h4 id="user-name">
                     ${ comment.user.name }
                 </h4>
-                <p>${  comment.content }</p>
+                
                    
                     <a href="/users/delete-comment/${ comment._id }" id="delete-comment">X</a>
                  
@@ -54,7 +54,9 @@
                             </a>
                       
                     </div>
-                </p>    
+                    <p>${  comment.content }</p>
+                    
+                    
             </li>`);
     }
 
