@@ -39,22 +39,21 @@
 
     let newCommentDisplay= function(comment){
         return $(`<li id="comment-${ comment._id }">
-                <p>
-                    ${ comment.content }
+                
+                <h4 id="user-name">
+                    ${ comment.user.name }
+                </h4>
+                <p>${  comment.content }</p>
                    
                     <a href="/users/delete-comment/${ comment._id }" id="delete-comment">X</a>
-                    
-                    <br>
-                    <small>
-                        ${ comment.user.name }
-                    </small>
-                    <small>
+                 
+                    <div id="comment-likes-container">
                         
                             <a class="toggle-like-button" data-likes="${ comment.likes.length }" href="/users/toggle/?id=${comment._id}&type=Comment">
                                     0 Likes
                             </a>
                       
-                    </small>
+                    </div>
                 </p>    
             </li>`);
     }

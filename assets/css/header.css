@@ -1,24 +1,24 @@
 #head {
   background-color: #659DBD;
-  height: 54px; }
+  height: 54px;
+  position: relative; }
   #head #name {
     margin-left: 130px;
-    margin-top: 50px;
+    margin-top: 5px;
     font-size: 25px;
     color: white;
-    position: relative;
+    position: absolute;
     top: 13%;
     text-decoration: none; }
   #head #head-list {
     position: absolute;
-    left: 80vw;
+    left: 78vw;
     list-style: none;
-    margin-top: -20px; }
+    display: flex;
+    width: 200px;
+    justify-content: space-around; }
     #head #head-list li {
-      display: inline;
-      padding: 15px; }
-      #head #head-list li .user-name {
-        margin-left: -80px; }
+      display: inline; }
       #head #head-list li #list-item {
         font-size: 17px;
         color: white;

@@ -15,7 +15,7 @@
                 
         
                         <div id="post-list-container">
-                                <ul>
+                                <ul id="post-list">
                                         
                                         <% for(post of posts){ %>
                                                 <%- include('_posts'); %>
@@ -101,6 +101,6 @@
 <script src="/js/chat_engine.js"></script>
 <% if (locals.user){ %>
 <script>
-    new ChatEngine('user-chat-box', '<%= locals.useremail %>')
+    new ChatEngine('user-chat-box', '<%= locals.user.email %>',' xyz@gmail.com' );
 </script>
 <% } %>

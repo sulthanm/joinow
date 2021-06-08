@@ -1,26 +1,24 @@
 #home-container {
-  height: auto;
   display: flex;
-  border: 2px solid black;
   margin-top: 30px; }
   #home-container #post-container #wall {
     height: 100%;
-    width: 570px;
-    border: 2px solid black;
+    width: 540px;
     margin-left: 55%; }
     #home-container #post-container #wall #new-post {
       background-color: white;
       height: 130px;
-      border: 2px solid #659DBD; }
+      border-top: 3px solid #659DBD; }
       #home-container #post-container #wall #new-post #pic, #home-container #post-container #wall #new-post #button {
         height: 40px;
-        width: 200px;
+        width: 150px;
         padding: 10px;
         margin-top: 25px;
         margin-left: 48px; }
       #home-container #post-container #wall #new-post #post-area {
         margin-left: 46px;
-        width: 500px;
+        margin-top: 5px;
+        width: 438px;
         height: 50px;
         border: none;
         padding-left: 50px;
@@ -29,7 +27,7 @@
         font-weight: 700; }
       #home-container #post-container #wall #new-post ::placeholder {
         color: black; }
-      #home-container #post-container #wall #new-post input:focus, #home-container #post-container #wall #new-post #post-area:focus {
+      #home-container #post-container #wall #new-post #pic:focus, #home-container #post-container #wall #new-post #post-area:focus {
         outline: none; }
       #home-container #post-container #wall #new-post .custom-file-input::-webkit-file-upload-button {
         visibility: hidden; }
@@ -50,7 +48,7 @@
         background-color: #659DBD; }
       #home-container #post-container #wall #new-post #button {
         margin-top: -40px;
-        margin-left: 350px;
+        margin-left: 335px;
         cursor: pointer;
         border: none;
         font-weight: 700;
@@ -58,48 +56,105 @@
         background-color: #659DBD; }
   #home-container #post-container #post-list-container {
     margin-top: 30px; }
-    #home-container #post-container #post-list-container ul li {
+    #home-container #post-container #post-list-container #post-list li {
       margin-left: -35px;
       margin-top: 30px;
-      border: 2px solid yellow;
       background-color: white;
       list-style: none; }
-      #home-container #post-container #post-list-container ul li p {
-        font-size: 15px;
-        color: #0e0d01; }
-        #home-container #post-container #post-list-container ul li p #user-name {
-          font-family: sans-serif;
-          color: blue; }
-      #home-container #post-container #post-list-container ul li #user-name {
+      #home-container #post-container #post-list-container #post-list li #user-name {
+        margin-top: 10px;
         margin-left: 20px; }
-      #home-container #post-container #post-list-container ul li #post-content {
+      #home-container #post-container #post-list-container #post-list li #post-content {
         margin-left: 20px; }
-      #home-container #post-container #post-list-container ul li #for-border {
-        margin-left: 10px;
-        width: 550px;
+      #home-container #post-container #post-list-container #post-list li #for-border {
+        margin-left: 23px;
+        width: 485px;
         border-bottom: 1px solid black; }
-      #home-container #post-container #post-list-container ul li #picture {
+      #home-container #post-container #post-list-container #post-list li #picture {
         margin-top: 20px;
         height: 460px;
         width: 100%; }
-      #home-container #post-container #post-list-container ul li .display-likes {
-        display: inline-block;
-        margin-left: 10px; }
-      #home-container #post-container #post-list-container ul li #like-img {
-        display: inline;
-        height: 24px;
-        width: 20px; }
-      #home-container #post-container #post-list-container ul li #post-form form input {
-        padding: 5px; }
-      #home-container #post-container #post-list-container ul li #post-form form #button {
-        background-color: rgba(168, 169, 223, 0.185);
-        border: none;
-        padding: 5px; }
-      #home-container #post-container #post-list-container ul li #post-form form #button:hover {
-        cursor: pointer;
-        background-color: #5188bd; }
-      #home-container #post-container #post-list-container ul li #post-form form #button:focus {
-        outline: none; }
+      #home-container #post-container #post-list-container #post-list li #likes {
+        margin-left: 10px;
+        width: 200px;
+        display: flex; }
+        #home-container #post-container #post-list-container #post-list li #likes .count {
+          width: 10px; }
+        #home-container #post-container #post-list-container #post-list li #likes .img {
+          height: 23px;
+          width: 20px;
+          margin-top: 13px; }
+      #home-container #post-container #post-list-container #post-list li .toggle-like-button {
+        text-decoration: none; }
+        #home-container #post-container #post-list-container #post-list li .toggle-like-button #like-button-1 {
+          width: 46px;
+          background-color: #ff6f61;
+          color: white;
+          text-decoration: none;
+          text-transform: uppercase;
+          margin-top: 10px;
+          margin-left: 10px;
+          padding: 10px;
+          color: white;
+          display: inline-block; }
+      #home-container #post-container #post-list-container #post-list li .delete-post {
+        text-decoration: none; }
+        #home-container #post-container #post-list-container #post-list li .delete-post #delete-button-1 {
+          display: inline-block;
+          width: 106px;
+          background-color: #ff6f61;
+          color: white;
+          text-decoration: none;
+          text-transform: uppercase;
+          margin-top: 10px;
+          margin-left: 10px;
+          padding: 10px;
+          color: white; }
+      #home-container #post-container #post-list-container #post-list li #delete-button-1:hover, #home-container #post-container #post-list-container #post-list li #like-button-1:hover {
+        background-color: #8f8787; }
+      #home-container #post-container #post-list-container #post-list li #comment-form {
+        margin-top: 15px; }
+        #home-container #post-container #post-list-container #post-list li #comment-form #new-comment .comment-input {
+          padding: 5px;
+          border: none; }
+        #home-container #post-container #post-list-container #post-list li #comment-form #new-comment .comment-input:focus {
+          outline: none; }
+        #home-container #post-container #post-list-container #post-list li #comment-form #new-comment #comment {
+          width: 100%;
+          height: 35px;
+          border-bottom: 0.01em solid black;
+          border-bottom-color: initial; }
+        #home-container #post-container #post-list-container #post-list li #comment-form #new-comment #button {
+          margin-top: 10px;
+          border: 2px solid magenta;
+          background-color: rgba(168, 169, 223, 0.185);
+          border: none;
+          padding: 10px; }
+        #home-container #post-container #post-list-container #post-list li #comment-form #new-comment #button:hover {
+          cursor: pointer;
+          background-color: #5188bd; }
+        #home-container #post-container #post-list-container #post-list li #comment-form #new-comment #button:focus {
+          outline: none; }
+      #home-container #post-container #post-list-container #post-list li .post-comments-container #comment-heading {
+        color: burlywood;
+        margin-left: -20px; }
+      #home-container #post-container #post-list-container #post-list li .post-comments-container li {
+        margin-top: -10px; }
+        #home-container #post-container #post-list-container #post-list li .post-comments-container li #user-name {
+          display: inline-block; }
+        #home-container #post-container #post-list-container #post-list li .post-comments-container li p {
+          display: inline-block;
+          margin-left: 10px; }
+        #home-container #post-container #post-list-container #post-list li .post-comments-container li #delete-comment {
+          color: #ff6f61;
+          margin-left: 58%; }
+        #home-container #post-container #post-list-container #post-list li .post-comments-container li #comment-likes-container {
+          margin-left: 20px;
+          margin-top: -15px; }
+          #home-container #post-container #post-list-container #post-list li .post-comments-container li #comment-likes-container a {
+            color: #659DBD; }
+          #home-container #post-container #post-list-container #post-list li .post-comments-container li #comment-likes-container a:hover {
+            color: #ff6f61; }
   #home-container #friends {
     margin-top: 20px;
     height: 100%;

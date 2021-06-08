@@ -1,14 +1,14 @@
 <link rel="stylesheet" type="text/css" href="/css/user_signup.css">
-
+<link rel="stylesheet" type="text/css" href="/css/header.css">
 <div id="container">
-    <h1>Sign-Up</h1>
+    <h2>Sign-Up</h2>
     <form action="/users/create" method="POST" id="sign-up-form">
 
-        <input type="text" name="name" placeholder="Enter Your Name" required>
-        <input type="email"  name="email" placeholder="Enter Your Email" required>
-        <input type="password" name="password" placeholder="Enter Your Password"  required>
-        <input type="password"  name="confirm_password" placeholder="Confirm Your Password"  required>
-        <input type="submit" value="Sign-Up" id="submit-button">
+        <input type="text" name="name" placeholder="Enter Your Name" required class="details">
+        <input type="email"  name="email" placeholder="Enter Your Email" required class="details">
+        <input type="password" name="password" placeholder="Enter Your Password"  required class="details">
+        <input type="password"  name="confirm_password" placeholder="Confirm Your Password"  required class="details">
+        <input type="submit" value="Sign-Up" id="submit-button" class="details">
     </form>
     <p>Or</p>
     <a href="/users/auth/google">
@@ -23,3 +23,5 @@
 
     
 </div>
+
+<%- include('_footer'); %>

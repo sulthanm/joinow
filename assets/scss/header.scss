@@ -3,34 +3,40 @@
         background-color: #659DBD;
         height: 54px;
         // width: 100vw;
-        // position: relative;
+        position: relative;
+        // display: flex;
         #name {
             margin-left: 130px;
-            margin-top:50px;
+            margin-top:5px;
             font-size: 25px;
             color: white;
-            position: relative;
+            position: absolute;
             top: 13%;
             text-decoration: none;
         }
             
         #head-list{
             position: absolute;
-            left: 80vw;
-            // bottom: 20%;
+            left: 78vw;
+            // top:-10%;
             list-style: none;
             // border: 2px solid black;
-            margin-top: -20px;
+            // margin-top: 20px;
+            display: flex;
+            width: 200px;
+            justify-content: space-around;
+          
             li{
                 display: inline;
-                padding: 15px;
+                // padding: 15px;
                 // border: 2px solid black;
-                .user-name{
-                    margin-left: -80px;
-                }
+
+                // .user-name{
+                //     margin-left: -80px;
+                // }
                 
                 #list-item{
-                    
+                   
                     font-size: 17px;
                     color:white;
                     text-decoration: none;

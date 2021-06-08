@@ -1,11 +1,11 @@
 #profile-container {
   height: 500px; }
-  #profile-container #cover-pic {
-    height: 200px;
-    width: 98.7vw;
-    opacity: 0.9;
+  #profile-container #cover-background {
     margin-top: -22px;
-    filter: blur(2px); }
+    height: 200px;
+    width: 100vw;
+    background-color: #FFDEE9;
+    background-image: linear-gradient(315deg, #FFDEE9 0%, #B5FFFC 100%); }
   #profile-container #profile-pic {
     height: 180px;
     width: 180px;
@@ -15,8 +15,9 @@
     position: relative;
     border: 4px solid rgba(255, 255, 255, 0.5); }
   #profile-container form {
-    margin-left: 530px; }
-    #profile-container form input {
+    margin-left: 540px; }
+    #profile-container form #userName, #profile-container form #userEmail {
+      width: 200px;
       padding: 10px;
       display: block;
       margin-top: 15px; }

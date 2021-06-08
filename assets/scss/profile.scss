@@ -1,14 +1,18 @@
 #profile-container{
     height: 500px;
     // border: 2px solid grey;
-    #cover-pic{
-        height: 200px;
-        width: 98.7vw;
-        // border: 2px solid red;
-        opacity: 0.9;
+ 
+    #cover-background{
         margin-top: -22px;
-        filter: blur(2px);
+        height: 200px;
+        width: 100vw;
+        background-color: #FFDEE9;
+background-image: linear-gradient(315deg, #FFDEE9 0%, #B5FFFC 100%);
+
+
     }
+    
+
     #profile-pic{
         height: 180px;
         width: 180px;
@@ -20,8 +24,9 @@
         
     }
     form{
-        margin-left: 530px;
-        input{
+        margin-left: 540px;
+        #userName,#userEmail{
+            width: 200px;
             padding: 10px;
             display: block;
             margin-top: 15px;

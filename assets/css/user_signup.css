@@ -6,27 +6,28 @@
   #container #sign-up-form {
     display: flex;
     flex-direction: column; }
-    #container #sign-up-form input {
-      height: 35px;
+    #container #sign-up-form .details {
+      height: 45px;
       padding: 10px;
-      margin-top: 17px;
+      margin-top: 7px;
       border: none;
       border-bottom: 1px solid black; }
-    #container #sign-up-form input:focus {
+    #container #sign-up-form .details:focus {
       outline: none; }
     #container #sign-up-form #submit-button:hover {
       cursor: pointer;
+      transition: 0.5s;
       background-color: cadetblue; }
     #container #sign-up-form #submit-button {
       border: none; }
   #container .google-btn {
-    margin-left: 16px;
-    width: 90%;
-    height: 10%;
+    width: 100%;
+    height: 13%;
     box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25); }
     #container .google-btn .google-icon-wrapper {
       position: absolute;
       margin-left: 20px;
+      margin-top: 5px;
       width: 40px;
       height: 40px;
       border-radius: 2px;
@@ -39,8 +40,8 @@
       height: 18px; }
     #container .google-btn .btn-text {
       float: right;
-      margin-right: 80px;
-      margin-top: 10px;
+      margin-right: 90px;
+      margin-top: 15px;
       text-align: center;
       color: black;
       font-size: 14px;
