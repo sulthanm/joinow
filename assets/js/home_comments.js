@@ -46,7 +46,7 @@
                 
                    
                     <a href="/users/delete-comment/${ comment._id }" id="delete-comment">X</a>
-                 
+                   
                     <div id="comment-likes-container">
                         
                             <a class="toggle-like-button" data-likes="${ comment.likes.length }" href="/users/toggle/?id=${comment._id}&type=Comment">
@@ -54,7 +54,7 @@
                             </a>
                       
                     </div>
-                    <p>${  comment.content }</p>
+                    <p id="comment-content">${  comment.content }</p>
                     
                     
             </li>`);

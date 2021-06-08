@@ -1,6 +1,6 @@
-const Post = require('../post');
-const User = require('../user');
-const Friend = require('../friendship');
+const Post = require('../models/post');
+const User = require('../models/user');
+const Friend = require('../models/friendship');
 
 module.exports.addFriend = async function(req, res){
     // console.log(req.user._id,"------",req.params.id  );

@@ -245,10 +245,10 @@
                      
                             #user-name{
                                 display : inline-block;
-                              
+                                // border: 2px solid black;
                                
                             }
-                            p{
+                            #comment-content{
                                 display: inline-block;
                                 margin-left: 10px;
                                 // border: 2px solid black;
@@ -261,17 +261,23 @@
                             }
                             #comment-likes-container{
                                 margin-left: 20px;
-                                margin-top: -15px;
+                                margin-top: -20px;
                                 a{
                                     color: #659DBD;
+                                    // border: 2px solid black;
                                 }
                                 a:hover{
                                     color:rgb(255, 111, 97);                                
+                                }
+                                #likes-length{
+                                    color: #659DBD;
+                                    // border: 2px solid black;
                                 }
                             }
                             #for-border{
                                 width: 450px;
                                 border-top: 1px solid rgba(0, 0, 0, 0.14);
+                                border-bottom: 1px solid rgba(0, 0, 0, 0.14);
                                 position: relative;
                             }
                           

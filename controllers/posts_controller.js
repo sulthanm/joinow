@@ -1,11 +1,11 @@
-const Post = require('../post');
-const Comment = require('../comment');
+const Post = require('../models/post');
+const Comment = require('../models/comment');
 const mailingFile = require('../mailers/funcToSendMails');
 
 const commentEmailWorker = require('../workers/comment_email_worker');
 const queue = require('../config/kue');
 
-const Like = require('../like');
+const Like = require('../models/like');
 
 module.exports.createPosts = async function(req, res){
    // console.log("above",req.file);
