@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/joinow_development');
+const env = require('./environment');
+
+mongoose.connect(`mongodb://localhost/${env.db}`);
 mongoose.set('useFindAndModify', false);
 const db = mongoose.connection;
 

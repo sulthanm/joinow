@@ -1,7 +1,8 @@
-<link rel="stylesheet" type="text/css" href="/css/home.css">
-<link rel="stylesheet" href="/css/chat_box.css">
+<link rel="stylesheet" type="text/css" href="<%= assetPath('css/home.css') %>">
+<link rel="stylesheet" type="text/css" href="<%= assetPath('css/chat_box.css') %>">
 
 <div id="home-container">
+        <!-- <%= assetPath('/css/home.css') %> -->
         <section id="post-container">
                 <div id="wall">
                         <% if(locals.user){ %>
@@ -81,15 +82,15 @@
         <%- include('_chat_box') -%>
 </div>
 
-<script src="/js/home_comments.js"></script>
+<script src="<%= assetPath('js/home_comments.js') %>"></script>
 
-<script src="/js/toggle_likes.js" ></script>
+<script src="<%= assetPath('js/toggle_likes.js') %>" ></script>
 
 <script>
-        // let postId = $('#display-likes');
+     
         
         $('.toggle-like-button').each(function(){
-                console.log(this);
+              
                 let self = this;
                 
 
@@ -99,9 +100,9 @@
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
-<script src="/js/chat_engine.js"></script>
+<script src="<%= assetPath('js/chat_engine.js') %>"></script>
 <% if (locals.user){ %>
 <script>
-    new ChatEngine('user-chat-box', '<%= locals.user.email %>',' xyz@gmail.com' );
+    new ChatEngine('user-chat-box', '<%= locals.user.email %>' );
 </script>
 <% } %>

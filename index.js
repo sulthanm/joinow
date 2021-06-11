@@ -1,6 +1,7 @@
 const express = require('express');
 const port = 8000;
 const app = express();
+require('./config/view-helpers')(app);
 const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
 // used for session cookie
@@ -17,19 +18,25 @@ const customMware = require('./config/middleware');
 
 const passportJWT = require('./config/passport-jwt');
 
+const env = require('./config/environment');
+const logger = require('morgan');
+const path = require('path');
+
 const chatServer = require('http').Server(app);
 const chatSockets = require('./config/chat_socket').chatSockets(chatServer);
 chatServer.listen(5000);
 console.log('chat server is listening on port 5000');
 
+if(env.name=='development'){
+    app.use(sassMiddleware({
+        src : path.join(__dirname,env.asset_path,'scss'),
+        dest : path.join(__dirname,env.asset_path,'css'),
+        debug : true,
+        outputStyle : 'extended',
+        prefix : '/css'
+    }));
+}
 
-app.use(sassMiddleware({
-    src : './assets/scss',
-    dest : './assets/css',
-    debug : true,
-    outputStyle : 'extended',
-    prefix : '/css'
-}));
 app.use(express.urlencoded());
 
 app.use(cookie());
@@ -38,7 +45,11 @@ app.use(cookie());
 app.use('/uploads', express.static(__dirname + '/uploads'));
 app.use('/assets', express.static(__dirname + '/assets'));
 
-app.use(express.static('./assets'));
+app.use(express.static(env.asset_path));
+
+
+app.use(logger(env.morgan.mode,env.morgan.options));
+
 app.use(expressLayouts);
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
@@ -50,7 +61,7 @@ app.set("views" , "./views");
 app.use(session({
     name : 'Joinow',
     //todo 
-    secret : 'sdfhgjdhdk',
+    secret : env.session_cookie,
     saveUninitialized : false,
     resave : false,
     cookie : {

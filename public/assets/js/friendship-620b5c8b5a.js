@@ -1,0 +1,1 @@
+$("#add-friend").click((function(e){e.preventDefault();$.ajax({type:"GET",url:$(this).attr("href")}).done((function(e){console.log(e.data.presence),1==e.data.presence?$("#add-friend").html("Add Friend"):$("#add-friend").html("Un-Friend")})).fail((function(e){console.log("error in completing the request")}))}));

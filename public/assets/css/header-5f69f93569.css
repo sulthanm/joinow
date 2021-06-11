@@ -1,0 +1,28 @@
+#head {
+  background-color: #659DBD;
+  height: 54px;
+  position: relative; }
+  #head #name {
+    margin-left: 130px;
+    margin-top: 5px;
+    font-size: 25px;
+    color: white;
+    position: absolute;
+    top: 13%;
+    text-decoration: none; }
+  #head #head-list {
+    position: absolute;
+    left: 78vw;
+    list-style: none;
+    display: flex;
+    width: 200px;
+    justify-content: space-around; }
+    #head #head-list li {
+      display: inline; }
+      #head #head-list li #list-item {
+        font-size: 17px;
+        color: white;
+        text-decoration: none; }
+      #head #head-list li #list-item:hover {
+        transition: 0.5s;
+        color: #221212; }

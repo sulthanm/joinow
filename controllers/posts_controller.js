@@ -29,6 +29,7 @@ module.exports.createPosts = async function(req, res){
                         
                     // }
                     filePresent = true;
+                    console.log(Post.avatarPath+'/'+req.file.filename);
                     posT.avatar = Post.avatarPath+'/'+req.file.filename;
                     
                 }

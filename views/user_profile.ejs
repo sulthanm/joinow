@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/css/profile.css">
+<link rel="stylesheet" href="<%= assetPath('css/profile.css') %>">
 <div id="profile-container">
 
    <% if(locals.user.id==profile_user.id){ %>
@@ -23,7 +23,7 @@
       </form>
 
    <% }else{ %>
-      
+      <img src="<%= profile_user.avatar %>" alt="<%= profile_user.name %>" height="200px" width="200px">
       <p><%= profile_user.name %></p>
       <p><%= profile_user.email %></p>
       <br>
