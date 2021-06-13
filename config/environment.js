@@ -14,7 +14,7 @@ const accessLogStream = rfs.createStream("file.log", {
 
 const development = {
     name : 'development',
-    asset_path : './assets/',
+    asset_path : './assets',
     session_cookie : 'blahsomthing',
     db : 'joinow_development',
     smtp : {
@@ -39,28 +39,28 @@ const development = {
 
 const production = {
     name : 'production',
-    asset_path : process.env.joinow_pro_asset_path,
-    session_cookie : process.env.joinow_pro_session_cookie,
-    db : process.env.joinow_pro_db,
+    asset_path : process.env.JOINOW_PROD_ASSET_PATH,
+    session_cookie : process.env.JOINOW_PROD_SESSION_COOKIE,
+    db : process.env.JOINOW_PROD_DB,
     smtp : {
         service: "gmail",
         host: "smtp.gmail.com",
         port: 587,
         secure: false, // true for 465, false for other ports
         auth: {
-          user: process.env.joinow_pro_username, // generated ethereal user
-          pass: process.env.joinow_pro_password // generated ethereal password
+          user: process.env.JOINOW_PROD_USERNAME, // generated ethereal user
+          pass: process.env.JOINOW_PROD_PASSWORD // generated ethereal password
         },
     },
-    google_client_ID : process.env.joinow_pro_google_client_ID,
-    google_client_secret : process.env.joinow_pro_google_client_secret,
-    google_callback_URL : process.env.joinow_pro_google_callback_URL,
-    jwt_secret : process.env.joinow_pro_jwt_secret,
+    google_client_ID : process.env.JOINOW_PROD_GOOGLE_CLIENT_ID,
+    google_client_secret : process.env.JOINOW_PROD_GOOGLE_CLIENT_SECRET,
+    google_callback_URL : process.env.JOINOW_PROD_GOOGLE_CALLBACK_URL,
+    jwt_secret : process.env.JOINOW_PROD_GOOGLE_JWT_SECRET,
     morgan : {
       mode : 'combined',
       options : {stream:accessLogStream}
   }
 }
 
-module.exports = eval(process.env.JOINOW_PROD_ENVIRONMENT) == undefined ? development : eval(process.env.joinow_pro_environment);
+module.exports = eval(process.env.JOINOW_PROD_ENVIRONMENT) == undefined ? development : eval(process.env.JOINOW_PROD_ENVIRONMENT);
 

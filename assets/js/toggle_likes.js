@@ -19,26 +19,31 @@ class ToggleLike{
             })
             .done(function(data) {
                 let likesCount = parseInt($(self).attr('data-likes'));
-                console.log("preevntttttt",likesCount,data);
+                
+                console.log("preevntttttt",likesCount,data.data.deleted);
+                let div1 = document.getElementById(`${data.data.requestedTypeId}`);
+                let likesCountPost = parseInt($(div1).attr('data-likes'));
                 let like;
                 if (data.data.deleted == true){
+                    likesCountPost -=1;
                     likesCount -= 1;
                     like=true;
                     
                 }else{
+                    likesCountPost += 1;
                     likesCount += 1;
                     like =false;
                 }
                 // console.log("message--", data.data);
-                console.log(self);
+                // console.log(self);
                 if(data.data.type == "Post"){
-                    // console.log("sucess-----------post", data.data.requestedTypeId);
-                    let div1 = document.getElementById(`${data.data.requestedTypeId}`);
-                    console.log(div1);
-                    // $(self).attr('data-likes', likesCount);
-                    div1.setAttribute("data-likes", `${likesCount}`);
-                    div1.innerHTML = `${likesCount}`;
-                    // console.log(div1);
+                    
+                   
+                    console.log("message", div1.innerHTML);
+                
+                    div1.setAttribute("data-likes", `${likesCountPost}`);
+                    div1.innerHTML = `${likesCountPost}`;
+                    console.log("message 22", div1.innerHTML);
                
                 }else{
                          
@@ -47,7 +52,6 @@ class ToggleLike{
                     $(self).html(`${likesCount} Likes`);
   
                 }
-           
                 
             })
             .fail(function(errData) {
