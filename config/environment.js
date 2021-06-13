@@ -62,6 +62,5 @@ const production = {
   }
 }
 
-module.exports = eval(process.env.joinow_pro_environment) == undefined ? development : eval(process.env.joinow_pro_environment);
+module.exports = eval(process.env.JOINOW_PROD_ENVIRONMENT) == undefined ? development : eval(process.env.joinow_pro_environment);
 
-//eval(process.env.joinow_pro_environment) == undefined ? development : eval(process.env.joinow_pro_environment);
