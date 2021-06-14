@@ -2,8 +2,8 @@ const Post = require('../models/post');
 const Comment = require('../models/comment');
 const mailingFile = require('../mailers/funcToSendMails');
 
-const commentEmailWorker = require('../workers/comment_email_worker');
-const queue = require('../config/kue');
+// const commentEmailWorker = require('../workers/comment_email_worker');
+// const queue = require('../config/kue');
 
 const Like = require('../models/like');
 
@@ -59,7 +59,7 @@ module.exports.createPosts = async function(req, res){
 module.exports.createComment = async function(req,res){
     try{
         let post =await Post.findById(req.body.post);
-        console.log("***************",req.body.post);
+       
         if(post){
             let comment = await Comment.create({
                 content : req.body.comment,
@@ -70,18 +70,18 @@ module.exports.createComment = async function(req,res){
             post.save();
 
             let popuComment = await comment.populate('user', 'name email').execPopulate();
-            // console.log(popuComment.user.email,"*****************");
+      
 
-            // mailingFile.sendMailForCreatingComment(popuComment);
-            let job = queue.create('emails', popuComment).save(function(err){
-                if(err){
-                    console.log("Errror in sending to queue", err);return;
-                }
-                console.log('job enqued', job.id);
-            });
-
+            mailingFile.sendMailForCreatingComment(popuComment);
+            // let job = queue.create('emails', popuComment).save(function(err){
+            //     if(err){
+            //         console.log("Errror in sending to queue", err);return;
+            //     }
+            //     console.log('job enqued', job.id);
+            // });
+            console.log(popuComment);
             if (req.xhr){
-                // console.log("xhrr requesttttt");
+             
                 return res.status(200).json({
                     data: {
                         comment: popuComment,

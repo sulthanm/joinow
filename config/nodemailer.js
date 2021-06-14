@@ -8,6 +8,7 @@ let transporter = nodemailer.createTransport(env.smtp);
 
 let renderTemplate = (data, relativePath) =>{
     let mailHTML;
+    console.log("???????", data)
     eje.renderFile(
         path.join(__dirname,'../views/mailers', relativePath),
         data,

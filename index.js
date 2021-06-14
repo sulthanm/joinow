@@ -1,5 +1,5 @@
 const express = require('express');
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 8080;
 const app = express();
 require('./config/view-helpers')(app);
 const expressLayouts = require('express-ejs-layouts');
@@ -24,8 +24,15 @@ const path = require('path');
 
 const chatServer = require('http').Server(app);
 const chatSockets = require('./config/chat_socket').chatSockets(chatServer);
-chatServer.listen(5000);
-console.log('chat server is listening on port 5000');
+const portChatServer = process.env.PORT || 48632;
+if(env.name=='development'){
+    chatServer.listen(portChatServer);
+    console.log("Chat server is listening on port",portChatServer);
+
+}else{
+    chatServer.listen(portChatServer);
+    console.log("Chat server is listening on port",portChatServer);
+}
 
 if(env.name=='development'){
     app.use(sassMiddleware({
@@ -74,7 +81,10 @@ app.use(session({
         autoSave : 'disabled'
     },
     function(err){
-        console.log(err || 'connect to mongo-db');
+        if(err){
+            console.log(err || 'connect to mongo-db');
+        }
+        
     })
 }));
 

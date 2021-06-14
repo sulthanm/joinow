@@ -7,13 +7,13 @@
             
             e.preventDefault();
             let self = this;
-            
+            // console.log("hmmmmmm",self);
             $.ajax({
                 type : 'POST',
                 url : '/users/create-comment',
                 data : $(self).serialize(),
                 success : function(data){
-                    console.log(data.data.comment);
+                    // console.log(data.data.comment);
                     let newcomment1 = newCommentDisplay(data.data.comment);
                     // console.log(newcomment1);
                     $('.post-comments-container>ul').prepend(newcomment1);
