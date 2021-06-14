@@ -24,15 +24,11 @@ const path = require('path');
 
 const chatServer = require('http').Server(app);
 const chatSockets = require('./config/chat_socket').chatSockets(chatServer);
-const portChatServer = process.env.PORT || 48632;
-if(env.name=='development'){
-    chatServer.listen(portChatServer);
-    console.log("Chat server is listening on port",portChatServer);
+const portChatServer = 8621;
 
-}else{
-    chatServer.listen(portChatServer);
-    console.log("Chat server is listening on port",portChatServer);
-}
+chatServer.listen(portChatServer);
+console.log("Chat server is listening on port",portChatServer);
+
 
 if(env.name=='development'){
     app.use(sassMiddleware({
