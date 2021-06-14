@@ -1,3 +1,4 @@
 node_modules/
-uploads/
+avatars/**
+ImagePosts/**
 /environment.js
