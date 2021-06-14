@@ -12,7 +12,7 @@ const localSession = require('./config/passport-local-strategy');
 const passportGoogle = require('./config/passport-google-oauth2-strategy');
 const sassMiddleware = require('node-sass-middleware');
 
-const MongoStore = require('connect-mongodb-session')(session);
+const MongoStore = require('connect-mongo')(session);
 const flash = require('connect-flash');
 const customMware = require('./config/middleware');
 
@@ -40,9 +40,10 @@ if(env.name=='development'){
     }));
 }
 
-app.use(express.urlencoded());
-console.log("hapyy");
+app.use(express.urlencoded({ extended: true }));
+// console.log("hapyy");
 app.use(cookie());
+
 
 //make the uplads path available to user
 app.use('/uploads', express.static(__dirname + '/uploads'));
@@ -61,29 +62,29 @@ app.set('layout extractScripts', true);
 app.set('view engine', 'ejs');
 app.set("views" , "./views");
 
+// mongo store is used to store the session cookie in the db
 app.use(session({
-    name : 'Joinow',
-    //todo 
-    secret : env.session_cookie,
-    saveUninitialized : false,
-    resave : false,
-    cookie : {
-        maxAge : (1000 * 60 * 100)
-    
+    name: 'joinow',
+    // TODO change the secret before deployment in production mode
+    secret: 'blahsomething',
+    saveUninitialized: false,
+    resave: false,
+    cookie: {
+        maxAge: (1000 * 60 * 100)
     },
-    store : new MongoStore(
-    {
-        mongooseConnection : db,
-        autoSave : 'disabled'
-    },
-    function(err){
-        if(err){
-            console.log(err || 'connect to mongo-db');
-        }
+    store: new MongoStore(
+        {
+            mongooseConnection: db,
+            autoRemove: 'disabled'
         
-    })
+        },
+        function(err){
+            console.log(err ||  'connect-mongodb setup ok');
+        }
+    )
 }));
 
+console.log("hapyyyyyy");
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
