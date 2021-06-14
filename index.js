@@ -41,7 +41,7 @@ if(env.name=='development'){
 }
 
 app.use(express.urlencoded());
-
+console.log("hapyy");
 app.use(cookie());
 
 //make the uplads path available to user
