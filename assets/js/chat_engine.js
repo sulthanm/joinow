@@ -2,7 +2,7 @@ class ChatEngine{
     constructor(chatBoxId, userEmail){
         this.chatBox = $(`#${chatBoxId}`);
         this.userEmail = userEmail;
-        this.socket = io.connect('https://joinow.herokuapp.com/:8621');
+        this.socket = io.connect('https://joinow.herokuapp.com:8621');
         console.log("hapy",this.userEmail);
         if (this.userEmail){
             this.connectionHandler();
@@ -13,21 +13,17 @@ class ChatEngine{
 
     connectionHandler(){
         let self = this;
-        // console.log(self);
+        console.log("thisss",self);
         this.socket.on('connect', function(){
             console.log('connection established using sockets...!');
         });
         this.socket.emit('join_room', {
             user_email : self.userEmail,
-            chatroom: 'joinow',
-            to_email : self.toEmail
+            chatroom: 'joinow'
         });
 
         self.socket.on('user_joined',function(data){
-            // console.log(self.toEmail ,"copmarre", data.user_email);
-            // if(self.toEmail == data.user_email){
-            //     console.log('a user joined', data);
-            // }
+        
             console.log('a user joined', data);
         });
 
