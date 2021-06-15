@@ -1,10 +1,11 @@
 
     #head{
-        background-color: #659DBD;
         height: 54px;
-        // width: 100vw;
+        width: 100%;
+        background-color: #659DBD;
+        // border: 2px solid black;
         position: relative;
-        // display: flex;
+     
         #name {
             margin-left: 130px;
             margin-top:5px;
@@ -13,6 +14,7 @@
             position: absolute;
             top: 13%;
             text-decoration: none;
+            // border: 2px solid black;
         }
             
         #head-list{
@@ -24,19 +26,13 @@
             // margin-top: 20px;
             display: flex;
             width: 200px;
-            justify-content: space-around;
+            justify-content: space-between;
           
             li{
                 display: inline;
-                // padding: 15px;
-                // border: 2px solid black;
-
-                // .user-name{
-                //     margin-left: -80px;
-                // }
-                
+            
                 #list-item{
-                   
+                    // border: 2px solid black;
                     font-size: 17px;
                     color:white;
                     text-decoration: none;
