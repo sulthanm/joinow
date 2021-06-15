@@ -8,7 +8,7 @@ const passport = require('../config/passport-local-strategy');
 module.exports.profilePage = function (req,res){
     User.findById(req.params.id, function(err, user){
         return res.render('user_profile',{
-            title: "joinow",
+            title: "Joinow || Profile_Page",
             profile_user: user
         });
     });
@@ -20,7 +20,7 @@ module.exports.signupPage = function(req, res){
         return res.redirect('/users/profile');
     }
     return res.render('user_signup', {
-        title : "joinow || Sign-Up"
+        title : "Joinow || Sign-Up"
     });
 }
 
@@ -29,7 +29,7 @@ module.exports.signinPage = function(req, res){
         return res.redirect('/users/profile');
     }
     return res.render('user_signin', {
-        title : "joinow || Sign-In"
+        title : "Joinow || Sign-In"
     });
 }
 

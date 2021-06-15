@@ -32,7 +32,7 @@ module.exports.homePage = async function(req, res){
         
         
         return res.render('home',{
-            title: "homepage",
+            title: "Joinow || Home-Page",
             posts : userPosts,
             allUsers : users
         });

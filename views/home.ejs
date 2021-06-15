@@ -2,7 +2,7 @@
 <link rel="stylesheet" type="text/css" href="<%= assetPath('css/chat_box.css') %>">
 
 <div id="home-container">
-        <!-- <%= assetPath('/css/home.css') %> -->
+    
         <section id="post-container">
                 <div id="wall">
                         <% if(locals.user){ %>
@@ -60,7 +60,7 @@
                                 
                         <% } %>
                 <% } %>
-                        <h4>Other Users</h4>
+                        <h4>All Users</h4>
                         <% for(u of allUsers) {%>
                                 <p>
                                         <% if(locals.user ) { %>

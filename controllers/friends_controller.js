@@ -63,16 +63,7 @@ module.exports.addFriend = async function(req, res){
     }
     
 
-    // console.log(userRequested.friends.name);
-    // if(req.xhr){
-    //     console.log(presence);
-    //     return res.json(200, {
-    //         message: "Request successful!",
-    //         data: {
-    //             presence: presence
-    //         }
-    //     });
-    // }
+
 
     return res.redirect('back');
   
