@@ -63,7 +63,12 @@ const production = {
     morgan : {
       mode : 'combined',
       options : {stream:accessLogStream}
-  }
+    },
+    aws_bucket:process.env.AWS_BUCKET,
+    aws_bucket_region : process.env.AWS_BUCKET_REGION,
+    aws_access_id : process.env.AWS_ACCESS_ID,
+    aws_access_key : process.env.AWS_ACCESS_KEY
+
 }
 
 module.exports = eval(process.env.JOINOW_PROD_ENVIRONMENT) == undefined ? development : eval(process.env.JOINOW_PROD_ENVIRONMENT);
