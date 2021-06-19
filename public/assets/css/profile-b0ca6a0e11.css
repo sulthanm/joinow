@@ -6,20 +6,23 @@
     width: 100vw;
     background-color: #FFDEE9;
     background-image: linear-gradient(315deg, #FFDEE9 0%, #B5FFFC 100%); }
-  #profile-container #profile-pic {
-    height: 180px;
+  #profile-container #profile-pic-container {
+    height: 400px;
     width: 180px;
-    border-radius: 100px;
-    margin-left: 550px;
-    margin-top: -100px;
-    position: relative;}
+    margin-left: 200px;
+    margin-top: -100px; }
+    #profile-container #profile-pic-container #profile-pic {
+      height: 200px;
+      width: 200px;
+      border-radius: 100px;
+      position: relative; }
   #profile-container form {
+    margin-top: -250px;
     margin-left: 540px; }
     #profile-container form #userName, #profile-container form #userEmail {
       width: 200px;
       padding: 10px;
-      display: block;
-      margin-top: 15px; }
+      display: block; }
     #profile-container form #userName, #profile-container form #userEmail {
       border: none;
       border-bottom: 2px solid rgba(12, 12, 12, 0.5);
@@ -67,3 +70,26 @@
         border-color: black;
         color: black;
         transition: all .1s ease-in-out; }
+  #profile-container #border {
+    margin-left: 470px;
+    width: 350px;
+    border-bottom: 3px solid grey; }
+  #profile-container #user-detaisl-container {
+    margin-top: 50px;
+    margin-left: 350px;
+    width: 500px;
+    height: 400px;
+    background-color: white;
+    font-family: sans-serif; }
+    #profile-container #user-detaisl-container #user-details {
+      position: relative;
+      top: 50px;
+      margin-left: 155px; }
+      #profile-container #user-detaisl-container #user-details #add-friend {
+        text-decoration: none;
+        margin-left: 40px;
+        margin-top: -20px; }
+      #profile-container #user-detaisl-container #user-details #add-friend:hover {
+        padding: 13px;
+        border-left: 2px solid grey;
+        border-right: 2px solid grey; }

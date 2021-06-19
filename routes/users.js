@@ -10,6 +10,7 @@ const friend = require('../controllers/friends_controller');
 
 const multer = require('multer');
 const upload = multer({dest: 'uploads/users/ImagePosts'});
+const uploadAvatar = multer({dest: 'uploads/users/avatars'});
 const s3BucketJoinow = require('../config/s3');
 
 router.get('/profile/:id', passport.checkAuthentication ,profile.profilePage);
@@ -27,7 +28,9 @@ router.post('/create-posts',upload.single('avatar'),passport.checkAuthentication
 router.post('/create-comment',passport.checkAuthentication,post.createComment);
 router.get('/delete-post/:id',passport.checkAuthentication, post.deletePost);
 router.get('/delete-comment/:id',passport.checkAuthentication, post.deleteComment);
-router.post('/profile-update/:id',passport.checkAuthentication, profile.profieUpdate);
+
+router.get('/profile/users/profile-updateavatar/:key',profile.downloadAvatar);
+router.post('/profile-update/:id',uploadAvatar.single('avatar'),passport.checkAuthentication, profile.profieUpdate);
 
 router.get('/auth/google',passport.authenticate('google',{scope: ['profile', 'email']}))
 router.get('/auth/google/callback',passport.authenticate(

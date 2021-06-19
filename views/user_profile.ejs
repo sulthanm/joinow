@@ -1,11 +1,14 @@
 <link rel="stylesheet" href="<%= assetPath('css/profile.css') %>">
 <div id="profile-container">
-
    <% if(locals.user.id==profile_user.id){ %>
       <h1>
          <div id="cover-background"></div>
-
-         <img src="<%= user.avatar %>" alt="<%= user.name %>" id="profile-pic">
+            <div id="profile-pic-container">
+               <img src="<%= user.avatar %>" alt="<%= user.name %>" id="profile-pic">
+            </div>
+            
+        
+         
       
       </h1>
      
@@ -22,37 +25,44 @@
          <button class="button">Update me</button>
           
       </form>
+      <div id="border"></div>
 
    <% }else{ %>
-      <img src="<%= profile_user.avatar %>" alt="<%= profile_user.name %>" height="200px" width="200px">
-      <p><%= profile_user.name %></p>
-      <p><%= profile_user.email %></p>
-      <br>
-      <br>
-      
-      <% let present = false %>
-    
-      <% for(friend1 of locals.user.friends) { %>
-
-         <% for(friend2 of profile_user.friends) { %>
-          
-            <% if(  friend1.equals(friend2) ){  %> 
-               <% present = true %>
-               <a href="/users/friend-req/<%= profile_user.id %>" id="add-friend" >Un-friend</a>
-               <% break %>
-            <% }  %>
-          
-         <% } %>
-      <% } %>
-  
-      <% if(present == false){ %>
-         <a href="/users/friend-req/<%= profile_user.id %>" id="add-friend" >Add-friend</a>
-      <% } %>
+      <div id="user-detaisl-container">
+         <div id="user-details">  
+            <img src="<%= profile_user.avatar %>" alt="<%= profile_user.name %>" height="200px" width="200px">
+         <p><%= profile_user.name %></p>
+         <p><%= profile_user.email %></p>
+         <br>
+         <br>
          
-
+         <% let present = false %>
+       
+         <% for(friend1 of locals.user.friends) { %>
+   
+            <% for(friend2 of profile_user.friends) { %>
+             
+               <% if(  friend1.equals(friend2) ){  %> 
+                  <% present = true %>
+                  <a href="/users/friend-req/<%= profile_user.id %>" id="add-friend" >Un-friend</a>
+                  <% break %>
+               <% }  %>
+             
+            <% } %>
+         <% } %>
+     
+         <% if(present == false){ %>
+            <a href="/users/friend-req/<%= profile_user.id %>" id="add-friend" >Add-friend</a>
+         <% } %>
+            
+   
+         </div>
+      </div>
+      
 
       
    <% } %>
+   
 
 </div>
 

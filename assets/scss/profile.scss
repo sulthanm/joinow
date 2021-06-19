@@ -12,24 +12,33 @@
 
     }
     
-
-    #profile-pic{
-        height: 180px;
+    #profile-pic-container{
+        height: 400px;
         width: 180px;
-        border-radius: 100px;
-        margin-left: 550px;
+        // border: 4px solid black;
+        margin-left: 200px;
         margin-top: -100px;
-        position: relative;
-      
+        #profile-pic{
+            height: 200px;
+            width: 200px;
+            border-radius: 100px;
         
+            position: relative;
+          
+            
+        }
     }
+    
     form{
+        
+        margin-top: -250px;
         margin-left: 540px;
+        // border-bottom: 2px solid  blue;
         #userName,#userEmail{
             width: 200px;
             padding: 10px;
             display: block;
-            margin-top: 15px;
+            // margin-top: 15px;
         }
         #userName, #userEmail{
             border: none;
@@ -88,4 +97,35 @@
           }
           
     }
+    #border{
+        margin-left: 470px;
+        width: 350px;
+        border-bottom: 3px solid grey;
+    }
+    #user-detaisl-container{
+        margin-top: 50px;
+        margin-left: 350px;
+        // border: 2px solid black;
+        width: 500px;
+        height: 400px;
+        background-color: white;
+        font-family: sans-serif;
+        #user-details{
+            position: relative;
+            top: 50px;
+            margin-left: 155px;
+            #add-friend{
+                text-decoration: none;
+                margin-left: 40px;
+                margin-top: -20px;
+            }
+            #add-friend:hover{
+                padding: 13px;
+                border-left: 2px solid grey;
+                border-right: 2px solid grey;
+            }
+            
+        }
+    }
+    
 }

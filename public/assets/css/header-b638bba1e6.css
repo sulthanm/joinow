@@ -1,6 +1,7 @@
 #head {
-  background-color: #659DBD;
   height: 54px;
+  width: 100%;
+  background-color: #659DBD;
   position: relative; }
   #head #name {
     margin-left: 130px;
@@ -16,7 +17,7 @@
     list-style: none;
     display: flex;
     width: 200px;
-    justify-content: space-around; }
+    justify-content: space-between; }
     #head #head-list li {
       display: inline; }
       #head #head-list li #list-item {

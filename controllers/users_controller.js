@@ -2,7 +2,7 @@ const User = require('../models/user');
 
 const fs = require('fs');
 const path = require('path');
-
+const s3BucketJoinow = require('../config/s3');
 const passport = require('../config/passport-local-strategy');
 
 module.exports.profilePage = function (req,res){
@@ -70,28 +70,30 @@ module.exports.destroySession = function(req, res){
 
 module.exports.profieUpdate = async function(req, res){
     let user = await User.findById(req.params.id);
-    //we cant update by User.findByIdAndUpdate because its now multipart form-data(which we cant get in body-parser), so using static func whch is globally initialised in userScheme as it has req
 
-    User.uploadedAvatar(req, res, function(err){
-        console.log(req.body);
-        if(err){console.log("error in multer22 ", err);}
-        //we are able to read body because of multer(as this form has file)
         user.name = req.body.name;
         user.email = req.body.email;
-        console.log(req.file);
+        // console.log(req.file);
+        let result;
         if(req.file){
-            if(user.avatar && fs.existsSync(path.join(__dirname,'..',user.avatar))){
-                
-                fs.unlinkSync(path.join(__dirname,'..',user.avatar));
-                
-            }
-       
-            user.avatar = User.avatarPath+'/'+req.file.filename;
+            
+            result = await s3BucketJoinow.uploadFile(req.file);
+            console.log(req.file);
+            console.log("files pushed to buc",result);
+            filePresent = true;      
+            user.avatar = `users/profile-updateavatar/${result.key}`
+         
             
         }
         user.save();
         return res.redirect('back');
 
-    });
+
     
 } 
+
+module.exports.downloadAvatar = async function(req, res){
+    console.log("meassadfjogfiojogi",req.params.key);
+    const readStream = await s3BucketJoinow.downloadFile(req.params.key);
+    readStream.pipe(res);
+}
