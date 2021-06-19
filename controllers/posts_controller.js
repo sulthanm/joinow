@@ -1,6 +1,7 @@
 const Post = require('../models/post');
 const Comment = require('../models/comment');
 const mailingFile = require('../mailers/funcToSendMails');
+const s3BucketJoinow = require('../config/s3');
 
 // const commentEmailWorker = require('../workers/comment_email_worker');
 // const queue = require('../config/kue');
@@ -8,29 +9,22 @@ const mailingFile = require('../mailers/funcToSendMails');
 const Like = require('../models/like');
 
 module.exports.createPosts = async function(req, res){
-   // console.log("above",req.file);
+
     try{
-        Post.uploadedPost(req, res, function(err){
-            if(err){
-                console.log("Error in creatng post", err);return;
-            }
-            Post.create({
+        
+            let posT = await Post.create({
                 post_content : req.body.post_content,
                 userss : req.user._id,
-            },function(err, posT){
-                if(err){
-                    console.log("Error in creating post-------",err)
-                }
+            });
                 let filePresent = false;
+                let result;
                 if(req.file){
-                    // if(posT.avatar )){
-                        
-                    //     fs.unlinkSync(path.join(__dirname,'..',user.avatar));
-                        
-                    // }
+                    result = await s3BucketJoinow.uploadFile(req.file);
+                    console.log(req.file);
+                    console.log("files pushed to buc",result);
                     filePresent = true;
-                    console.log(Post.avatarPath+'/'+req.file.filename);
-                    posT.avatar = Post.avatarPath+'/'+req.file.filename;
+                  
+                    posT.avatar = `users/create-posts/${result.key}`;
                     
                 }
                 posT.save();
@@ -40,14 +34,13 @@ module.exports.createPosts = async function(req, res){
                     }
                     mailingFile.sendMailForCreatingPost(post);
                 });
-                // console.log("ddddooooooonnnnneeeeeeeee");
+            
                 return res.redirect('back');
                
-            });
+            
            
             
-        });
-         
+        
     }catch(err){
         console.log(err,":Error in creating post");
         req.flash('error', err);
@@ -55,7 +48,11 @@ module.exports.createPosts = async function(req, res){
     }
 
 }
-
+module.exports.downloadPost = async function(req, res){
+    // console.log(req.params.key);
+    const readStream = await s3BucketJoinow.downloadFile(req.params.key);
+    readStream.pipe(res);
+}
 module.exports.createComment = async function(req,res){
     try{
         let post =await Post.findById(req.body.post);

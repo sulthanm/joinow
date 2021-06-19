@@ -8,6 +8,10 @@ const post = require('../controllers/posts_controller');
 
 const friend = require('../controllers/friends_controller');
 
+const multer = require('multer');
+const upload = multer({dest: 'uploads/users/ImagePosts'});
+const s3BucketJoinow = require('../config/s3');
+
 router.get('/profile/:id', passport.checkAuthentication ,profile.profilePage);
 router.get('/signup', profile.signupPage);
 router.get('/signin', profile.signinPage);
@@ -18,8 +22,8 @@ router.post('/create-session', passport.authenticate(
 ), profile.createUserSession);
 
 router.get('/signout', profile.destroySession);
-
-router.post('/create-posts',passport.checkAuthentication, post.createPosts);
+router.get('/create-posts/:key',post.downloadPost);
+router.post('/create-posts',upload.single('avatar'),passport.checkAuthentication, post.createPosts);
 router.post('/create-comment',passport.checkAuthentication,post.createComment);
 router.get('/delete-post/:id',passport.checkAuthentication, post.deletePost);
 router.get('/delete-comment/:id',passport.checkAuthentication, post.deleteComment);

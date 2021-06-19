@@ -34,7 +34,11 @@ const development = {
     morgan : {
         mode : 'dev',
         options : {stream:accessLogStream}
-    }
+    },
+    aws_bucket : 'myjoinowbucket',
+    aws_bucket_region : 'us-east-2',
+    aws_access_id : 'AKIAQ2JGIAHHHQQXNFXL',
+    aws_access_key : 'pIGlznVzlMjqNW12ggABQfZKyGwSqaXZD9VdSWxV'
 }
 
 const production = {

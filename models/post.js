@@ -34,16 +34,16 @@ const postSchema = new mongoose.Schema({
 });
 
 
-let storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, path.join(__dirname,'..',AVATAR_PATH))
-    },
-    filename: function (req, file, cb) {
-      cb(null, file.fieldname + '-' + Date.now());
-    }
-});
+// let storage = multer.diskStorage({
+//     destination: function (req, file, cb) {
+//       cb(null, path.join(__dirname,'..',AVATAR_PATH))
+//     },
+//     filename: function (req, file, cb) {
+//       cb(null, file.fieldname + '-' + Date.now());
+//     }
+// });
 
-postSchema.statics.uploadedPost = multer({ storage: storage }).single('avatar');
+// postSchema.statics.uploadedPost = multer({ storage: storage }).single('avatar');
 postSchema.statics.avatarPath = AVATAR_PATH;
 
 const Post =  mongoose.model('Post', postSchema);
