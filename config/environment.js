@@ -27,8 +27,8 @@ const development = {
           pass: "Sulthan7866129$" // generated ethereal password
         },
     },
-    google_client_ID : "414960248057-0brsgn8l01pd68ebopr96kn3538r7ktl.apps.googleusercontent.com",
-    google_client_secret : "spNui9dUa4hGsZy2wTeW0li9",
+    google_client_ID : process.env.google_client_ID,
+    google_client_secret : process.env.google_client_secret,
     google_callback_URL : "http://localhost:8000/users/auth/google/callback",
     jwt_secret : 'joinow',
     morgan : {
