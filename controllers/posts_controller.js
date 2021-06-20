@@ -18,15 +18,20 @@ module.exports.createPosts = async function(req, res){
             });
                 let filePresent = false;
                 let result;
+                let postFile = false;
+                res.locals.file = postFile;
                 if(req.file){
+                    res.locals.file = true;
                     result = await s3BucketJoinow.uploadFile(req.file);
                     console.log(req.file);
                     console.log("files pushed to buc",result);
                     filePresent = true;
-                  
+                    postFile=true;
+                    res.locals.file = postFile;
                     posT.avatar = `users/create-posts/${result.key}`;
                     
                 }
+                
                 posT.save();
                 posT.populate('userss', 'name email').execPopulate(function(err, post){
                     if(err){

@@ -2,7 +2,14 @@
 <link rel="stylesheet" type="text/css" href="<%= assetPath('css/chat_box.css') %>">
 
 <div id="home-container">
-    
+        <% if(!locals.user){ %>
+                <section id="home-routes">
+                        <a href="/users/signin" class="route"><p  id="sign-in-home">Sign-In </p></a>
+                        <h3>New User ?</h3>
+                         <a href="/users/signup" class="route"><p  id="sign-up-home">Sign-Up </p></a>
+                </section>
+        <% } %>
+        
         <section id="post-container">
                 <div id="wall">
                         <% if(locals.user){ %>

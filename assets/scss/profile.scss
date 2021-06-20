@@ -33,7 +33,7 @@
         
         margin-top: -250px;
         margin-left: 540px;
-        // border-bottom: 2px solid  blue;
+        border-bottom: 2px solid  blue;
         #userName,#userEmail{
             width: 200px;
             padding: 10px;
@@ -107,7 +107,7 @@
         margin-left: 350px;
         // border: 2px solid black;
         width: 500px;
-        height: 400px;
+        height: 450px;
         background-color: white;
         font-family: sans-serif;
         #user-details{
@@ -117,10 +117,14 @@
             #add-friend{
                 text-decoration: none;
                 margin-left: 40px;
-                margin-top: -20px;
+                margin-top: -30px;
+                padding: 13px;
+                border-top: 2px solid grey;
+                border-bottom: 2px solid grey;
             }
             #add-friend:hover{
                 padding: 13px;
+                transition: 0.3s;
                 border-left: 2px solid grey;
                 border-right: 2px solid grey;
             }

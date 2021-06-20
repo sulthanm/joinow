@@ -6,7 +6,7 @@ const AVATAR_PATH = path.join('/uploads/users/ImagePosts');
 const postSchema = new mongoose.Schema({
     post_content: {
         type : String,
-        // required : true
+        required : true
         // unique : true
     },
     userss : {

@@ -1,14 +1,34 @@
 #home-container {
-  display: flex;
   margin-top: 30px; }
+  #home-container #home-routes {
+    border-top: 4px solid #659DBD;
+    margin-left: 30px;
+    width: 250px;
+    height: 600px;
+    display: inline-block; }
+    #home-container #home-routes .route {
+      text-decoration: none; }
+      #home-container #home-routes .route #sign-in-home, #home-container #home-routes .route #sign-up-home {
+        padding-left: 100px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-top: 20px;
+        background-color: white; }
+      #home-container #home-routes .route #sign-in-home:hover, #home-container #home-routes .route #sign-up-home:hover {
+        color: black;
+        background-color: #97959c;
+        transition: 0.5s; }
   #home-container #post-container #wall {
     height: 100%;
     width: 540px;
-    margin-left: 55%; }
+    margin-left: 25%;
+    margin-top: -48.5%;
+    display: inline-block; }
     #home-container #post-container #wall #new-post {
       background-color: white;
       height: 130px;
-      border-top: 3px solid #659DBD; }
+      border-top: 3px solid #659DBD;
+      margin-top: 110.5%; }
       #home-container #post-container #wall #new-post #pic, #home-container #post-container #wall #new-post #button {
         height: 40px;
         width: 150px;
@@ -170,11 +190,11 @@
             border-bottom: 1px solid rgba(0, 0, 0, 0.14);
             position: relative; }
   #home-container #friends {
-    margin-top: 20px;
-    height: 100%;
+    margin-top: -45%;
+    height: auto;
     width: 24%;
     border-left: 2px solid #3c4c50;
-    margin-left: 400px; }
+    margin-left: 75%; }
     #home-container #friends h4 {
       margin-left: 20px;
       font-size: 20px;
