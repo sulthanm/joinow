@@ -2,13 +2,15 @@
 <link rel="stylesheet" type="text/css" href="<%= assetPath('css/chat_box.css') %>">
 
 <div id="home-container">
-        <% if(!locals.user){ %>
+        
                 <section id="home-routes">
+                        <% if(!locals.user){ %>
                         <a href="/users/signin" class="route"><p  id="sign-in-home">Sign-In </p></a>
                         <h3>New User ?</h3>
                          <a href="/users/signup" class="route"><p  id="sign-up-home">Sign-Up </p></a>
+                         <% } %>
+        
                 </section>
-        <% } %>
         
         <section id="post-container">
                 <div id="wall">
@@ -40,21 +42,21 @@
                 
         <section id="friends">
                 <% if(locals.user ) { %>
-                        <h4>Friends</h4>
+                        <h4 id="friends-list">Friends</h4>
                         
                         <% for(u of allUsers) {%>
                                 
                                 <% if(u._id.equals(locals.user._id)){ %>
                                         <% for(f of u.friends){ %>
-                                                <p>
+                                                <p id="friend-details">
                                                         <% let name = locals.user.name %>
                                                 
                                                         
                                                         <% if(name == f.to_user.name){   %>
                                                                 
-                                                                <a href="/users/profile/<%= f.from_user._id %>"><%= f.from_user.name %></a>
+                                                                <a href="/users/profile/<%= f.from_user._id %>" id="f-name"><%= f.from_user.name %></a>
                                                         <%} else{ %>
-                                                                <a href="/users/profile/<%= f.to_user._id %>" ><%= f.to_user.name %></a>
+                                                                <a href="/users/profile/<%= f.to_user._id %>" id="f-name"><%= f.to_user.name %></a>
                                                         <% } %>
                 
                                                 
@@ -67,16 +69,16 @@
                                 
                         <% } %>
                 <% } %>
-                        <h4>All Users</h4>
+                        <h4 id="all-users">All Users</h4>
                         <% for(u of allUsers) {%>
-                                <p>
+                                <p id="all-users-list">
                                         <% if(locals.user ) { %>
                                         
                                                 <% if(u.name == locals.user.name){ %>
                                                         <% continue %>
                                                 <%}%>
                                         <% } %>
-                                        <a href="/users/profile/<%= u.id %>" ><%= u.name %></a>
+                                        <a href="/users/profile/<%= u.id %>" id="user-name-home" ><%= u.name %></a>
                                      
                                 </p>
                                 

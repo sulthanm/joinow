@@ -12,7 +12,7 @@
       
       </h1>
      
-      <form action="/users/profile-update/<%= user.id %>" enctype="multipart/form-data" method="POST">
+      <form action="/users/profile-update/<%= user.id %>" enctype="multipart/form-data" method="POST" id="update-form">
 
          <input type="text" name="name" value="<%= user.name %>" id="userName">
          <input type="text" name="email" value="<%= user.email %>" id="userEmail">

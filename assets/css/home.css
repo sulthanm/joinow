@@ -1,34 +1,32 @@
-#home-container {
-  margin-top: 30px; }
-  #home-container #home-routes {
-    border-top: 4px solid #659DBD;
-    margin-left: 30px;
-    width: 250px;
-    height: 600px;
-    display: inline-block; }
-    #home-container #home-routes .route {
-      text-decoration: none; }
-      #home-container #home-routes .route #sign-in-home, #home-container #home-routes .route #sign-up-home {
-        padding-left: 100px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        margin-top: 20px;
-        background-color: white; }
-      #home-container #home-routes .route #sign-in-home:hover, #home-container #home-routes .route #sign-up-home:hover {
-        color: black;
-        background-color: #97959c;
-        transition: 0.5s; }
+#home-container #home-routes {
+  display: inline-block;
+  width: 280px;
+  vertical-align: top;
+  margin-top: 15px; }
+  #home-container #home-routes .route {
+    text-decoration: none; }
+    #home-container #home-routes .route #sign-in-home, #home-container #home-routes .route #sign-up-home {
+      padding-left: 100px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      background-color: white;
+      width: 150px; }
+    #home-container #home-routes .route #sign-in-home:hover, #home-container #home-routes .route #sign-up-home:hover {
+      color: black;
+      background-color: #97959c;
+      transition: 0.5s; }
+
+#home-container #post-container {
+  display: inline-block;
+  margin-left: 55px; }
   #home-container #post-container #wall {
-    height: 100%;
     width: 540px;
-    margin-left: 25%;
-    margin-top: -48.5%;
     display: inline-block; }
     #home-container #post-container #wall #new-post {
+      margin-top: 35px;
       background-color: white;
       height: 130px;
-      border-top: 3px solid #659DBD;
-      margin-top: 110.5%; }
+      border-top: 3px solid #659DBD; }
       #home-container #post-container #wall #new-post #pic, #home-container #post-container #wall #new-post #button {
         height: 40px;
         width: 150px;
@@ -77,7 +75,9 @@
         border-radius: 5px;
         background-color: #659DBD; }
   #home-container #post-container #post-list-container {
-    margin-top: 30px; }
+    margin-top: 0px;
+    display: inline-block;
+    margin-left: 10px; }
     #home-container #post-container #post-list-container #post-list .post-list-item {
       margin-left: -35px;
       margin-top: 30px;
@@ -189,23 +189,38 @@
             border-top: 1px solid rgba(0, 0, 0, 0.14);
             border-bottom: 1px solid rgba(0, 0, 0, 0.14);
             position: relative; }
-  #home-container #friends {
-    margin-top: -45%;
-    height: auto;
-    width: 24%;
-    border-left: 2px solid #3c4c50;
-    margin-left: 75%; }
-    #home-container #friends h4 {
-      margin-left: 20px;
-      font-size: 20px;
-      color: dodgerblue; }
-    #home-container #friends p {
-      margin-left: 20px; }
-      #home-container #friends p a {
-        text-decoration: none;
-        color: #3f382f;
-        font-family: sans-serif;
-        font-size: 15px; }
-      #home-container #friends p a:hover {
-        color: #94082b;
-        transition: 0s; }
+
+#home-container #friends {
+  display: inline-block;
+  margin-left: 50px;
+  border-left: 2px solid grey;
+  vertical-align: top;
+  margin-top: 35px; }
+  #home-container #friends #friends-list {
+    margin-left: 20px;
+    font-size: 20px;
+    color: dodgerblue; }
+  #home-container #friends #friend-details {
+    margin-left: 20px; }
+    #home-container #friends #friend-details #f-name {
+      text-decoration: none;
+      color: #3f382f;
+      font-family: sans-serif;
+      font-size: 15px; }
+    #home-container #friends #friend-details #f-name:hover {
+      color: #94082b;
+      transition: 0s; }
+  #home-container #friends #all-users {
+    margin-left: 20px;
+    font-size: 20px;
+    color: dodgerblue; }
+  #home-container #friends #all-users-list {
+    margin-left: 20px; }
+    #home-container #friends #all-users-list #user-name-home {
+      text-decoration: none;
+      color: #3f382f;
+      font-family: sans-serif;
+      font-size: 15px; }
+    #home-container #friends #all-users-list #user-name-home:hover {
+      color: #94082b;
+      transition: 0s; }

@@ -16,25 +16,25 @@
       width: 200px;
       border-radius: 100px;
       position: relative; }
-  #profile-container form {
+  #profile-container #update-form {
     margin-top: -250px;
     margin-left: 540px; }
-    #profile-container form #userName, #profile-container form #userEmail {
+    #profile-container #update-form #userName, #profile-container #update-form #userEmail {
       width: 200px;
       padding: 10px;
       display: block; }
-    #profile-container form #userName, #profile-container form #userEmail {
+    #profile-container #update-form #userName, #profile-container #update-form #userEmail {
       border: none;
       border-bottom: 2px solid rgba(12, 12, 12, 0.5);
       font-family: sans-serif; }
-    #profile-container form #userName:focus, #profile-container form #userEmail:focus {
+    #profile-container #update-form #userName:focus, #profile-container #update-form #userEmail:focus {
       outline: none; }
-    #profile-container form #file {
+    #profile-container #update-form #file {
       opacity: 0;
       width: 0.1px;
       height: 0.1px;
       position: absolute; }
-    #profile-container form .file-input label {
+    #profile-container #update-form .file-input label {
       margin-top: 20px;
       display: block;
       position: relative;
@@ -49,7 +49,7 @@
       font-family: sans-serif;
       cursor: pointer;
       transition: transform .2s ease-out; }
-    #profile-container form .button {
+    #profile-container #update-form .button {
       margin-top: 15px;
       margin-left: 20px;
       position: relative;
@@ -65,7 +65,7 @@
       font-family: sans-serif;
       cursor: pointer;
       transition: all .1s ease-in-out; }
-      #profile-container form .button:hover {
+      #profile-container #update-form .button:hover {
         background-color: transparent;
         border-color: black;
         color: black;
