@@ -35,10 +35,10 @@ const development = {
         mode : 'dev',
         options : {stream:accessLogStream}
     },
-    aws_bucket : 'myjoinowbucket',
-    aws_bucket_region : 'us-east-2',
-    aws_access_id : 'AKIAQ2JGIAHHHQQXNFXL',
-    aws_access_key : 'pIGlznVzlMjqNW12ggABQfZKyGwSqaXZD9VdSWxV'
+    aws_bucket : process.env.aws_bucket_name,
+    aws_bucket_region : process.env.aws_region,
+    aws_access_id : process.env.aws_access_id,
+    aws_access_key : process.env.aws_access_key
 }
 
 const production = {
