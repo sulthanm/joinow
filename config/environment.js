@@ -24,7 +24,7 @@ const development = {
         secure: false, // true for 465, false for other ports
         auth: {
           user: "sulthanmogal6129@gmail.com", // generated ethereal user
-          pass: "Sulthan7866129$" // generated ethereal password
+          pass: "Sulthan7866129$@" // generated ethereal password
         },
     },
     google_client_ID : process.env.google_client_ID,

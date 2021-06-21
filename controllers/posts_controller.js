@@ -39,7 +39,7 @@ module.exports.createPosts = async function(req, res){
                     }
                     mailingFile.sendMailForCreatingPost(post);
                 });
-            
+                req.flash('success', "New Post Published");
                 return res.redirect('back');
                
             
@@ -184,7 +184,7 @@ module.exports.likePost = async function(req, res){
         if(req.query.type == 'Post'){
             console.log("finding model with query post");
             modelWithQuery = await Post.findById(req.query.id).populate('likes');
-            console.log("----------",modelWithQuery);
+            // console.log("----------",modelWithQuery);
         }else{
             modelWithQuery = await Comment.findById( req.query.id).populate('likes');
         }
@@ -196,7 +196,7 @@ module.exports.likePost = async function(req, res){
             onModel : req.query.type,
             likeable: req.query.id
         });
-        // console.log(modelPresentInLikes);
+      
 
         if(modelPresentInLikes){
            
@@ -207,7 +207,7 @@ module.exports.likePost = async function(req, res){
             deleted = true;
 
         }else{
-            console.log(req.query.id,"----------",req.query.type);
+            
             let newLike = await Like.create({
                 user: req.user._id,
                 likeable: req.query.id,
@@ -221,8 +221,7 @@ module.exports.likePost = async function(req, res){
 
         }
         res.locals.deleted = deleted;
-        console.log("++++++",res.locals.deleted);
-        console.log(req.xhr);
+        
         if(req.xhr){
             return res.json(200, {
                 message: "Request successful!",

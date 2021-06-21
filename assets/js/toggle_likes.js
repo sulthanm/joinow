@@ -12,15 +12,14 @@ class ToggleLike{
             e.preventDefault();
             let self = this;
             
-            // this is a new way of writing ajax which you might've studied, it looks like the same as promises
+            
             $.ajax({
                 type: 'post',
                 url: $(self).attr('href'),
             })
             .done(function(data) {
-                let likesCount = parseInt($(self).attr('data-likes'));
                 
-                console.log("preevntttttt",likesCount,data.data.deleted);
+                let likesCount = parseInt($(self).attr('data-likes'));
                 let div1 = document.getElementById(`${data.data.requestedTypeId}`);
                 let likesCountPost = parseInt($(div1).attr('data-likes'));
                 let like;
@@ -38,16 +37,13 @@ class ToggleLike{
                 // console.log(self);
                 if(data.data.type == "Post"){
                     
-                   
-                    console.log("message", div1.innerHTML);
                 
                     div1.setAttribute("data-likes", `${likesCountPost}`);
                     div1.innerHTML = `${likesCountPost}`;
-                    console.log("message 22", div1.innerHTML);
+                  
                
                 }else{
-                         
-                    console.log("sucess-----------");
+               
                     $(self).attr('data-likes', likesCount);
                     $(self).html(`${likesCount} Likes`);
   

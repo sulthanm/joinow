@@ -21,8 +21,7 @@
         background-color: #97959c;
         transition: 0.5s; }
   #home-container #post-container {
-    display: inline-block;
-    margin-left: 55px; }
+    display: inline-block; }
     #home-container #post-container #wall {
       width: 540px;
       display: inline-block; }
