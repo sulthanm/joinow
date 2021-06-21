@@ -13,6 +13,7 @@ const upload = multer({dest: 'uploads/users/ImagePosts'});
 const uploadAvatar = multer({dest: 'uploads/users/avatars'});
 const s3BucketJoinow = require('../config/s3');
 
+
 router.get('/profile/:id', passport.checkAuthentication ,profile.profilePage);
 router.get('/signup', profile.signupPage);
 router.get('/signin', profile.signinPage);

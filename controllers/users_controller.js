@@ -82,7 +82,7 @@ module.exports.profieUpdate = async function(req, res){
             console.log("files pushed to buc",result);
             filePresent = true;      
             user.avatar = `users/profile-updateavatar/${result.key}`
-         
+            user.avatarKey = result.key;
             
         }
         user.save();

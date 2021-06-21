@@ -1,5 +1,6 @@
 const Post = require('../models/post');
 const User = require('../models/user');
+const s3BucketJoinow = require('../config/s3');
 module.exports.homePage = async function(req, res){
     
     try{
@@ -23,12 +24,6 @@ module.exports.homePage = async function(req, res){
             path:'friends',
             populate:'to_user'
         });
-        // users.save();
-      
-        
-        // for(i of users){
-        //     console.log("message---------",i );
-        // }
         
         
         return res.render('home',{
@@ -42,8 +37,10 @@ module.exports.homePage = async function(req, res){
         return;
     }
   
-        
-        
-    
+}
 
+module.exports.downloadAvatar = async function(req, res){
+    console.log("meassadfjogfiojogi",req.params.key);
+    const readStream = await s3BucketJoinow.downloadFile(req.params.key);
+    readStream.pipe(res);
 }
