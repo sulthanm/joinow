@@ -224,3 +224,7 @@
     #home-container #friends #all-users-list #user-name-home:hover {
       color: #94082b;
       transition: 0s; }
+
+@media only screen and (max-width: 768px) {
+  #home-routes {
+    margin-left: 75px; } }

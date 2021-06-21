@@ -99,9 +99,15 @@
             margin-left: -530px;
             left:100px ;
             li{
+                
                 .sign-up-header{
                     display: none;
                 }
+                
+            }
+            .sign-in-header{
+                margin-left: -150px;
+                // border :2px solid rgb(34, 18, 18);
             }
             .dropbtn {
                 display: inline;

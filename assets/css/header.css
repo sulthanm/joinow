@@ -71,5 +71,7 @@
     left: 100px; }
     #head-list li .sign-up-header {
       display: none; }
+    #head-list .sign-in-header {
+      margin-left: -150px; }
     #head-list .dropbtn {
       display: inline; } }
