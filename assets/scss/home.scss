@@ -1,13 +1,20 @@
 
 #home-container{
 
-   
+    height: 90.5%;
+    overflow: scroll;
+    // border: 2px solid black;
+    
     #home-routes{
         display: inline-block;
-        width: 200px;
+        width: 250px;
         // border: 2px solid black;
         vertical-align: top;
         margin-top: 15px;
+        #new{
+              
+            margin-left: 80px;
+        }
         .route{
             
             text-decoration: none;
@@ -20,6 +27,7 @@
                 background-color: white;
                 width: 150px;
             }
+        
             #sign-in-home:hover,#sign-up-home:hover{
                
                 color: black;
@@ -30,6 +38,7 @@
      
     }
     #post-container{
+        // border: 2px solid black;
         display: inline-block;
         margin-left: 55px;
         #wall{
@@ -330,6 +339,7 @@
         border-left: 2px solid grey;
         vertical-align: top;
         margin-top: 35px;
+        position: fixed;
         #friends-list{
             // margin-top: -468px;
             margin-left: 20px;
@@ -376,6 +386,7 @@
     
     }
 }
+
 @media only screen and (max-width: 768px) {
     #home-routes{
         margin-left: 75px;

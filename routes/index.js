@@ -6,7 +6,7 @@ const profile = require('../controllers/users_controller');
 
 console.log("router loaded");
 
-// router.get('/:key', home.downloadAvatar);
+router.get('/:key', home.downloadAvatar);
 router.get('/', home.homePage);
 
 router.use('/users', require('./users'));
