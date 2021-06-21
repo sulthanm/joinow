@@ -1,16 +1,19 @@
 <link rel="stylesheet" href="<%= assetPath('css/header.css') %>">
 <header >
     <div id="head">
-        <a href="/" id="name"> JOINOW</a>
+        <div id="name">
+          <a href="/" id="joinow"> JOINOW</a>
+        </div>
+        
         <ul id="head-list">
             <% if(locals.user){ %>
                 <% if(locals.user.avatar){ %>
-                    <li>
+                    
                         
                         
                             <img src="/<%= user.avatarKey %>" id="user-pic-header">
                     
-                    </li>
+                    
                 <% } %>
                 <li>
                 

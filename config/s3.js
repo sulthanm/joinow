@@ -26,7 +26,7 @@ module.exports.uploadFile = function(file){
 module.exports.downloadFile = function(fileKey){
     const downloadFile = {
         Key : fileKey,
-        Bucket : 'myjoinowbucket'
+        Bucket : env.aws_bucket
     };
     return s3.getObject(downloadFile).createReadStream();
 }

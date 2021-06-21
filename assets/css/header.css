@@ -1,34 +1,35 @@
 #head {
   height: 54px;
   background-color: white;
-  position: relative; }
+  position: relative;
+  display: flex; }
   #head #name {
     margin-left: 130px;
     margin-top: 5px;
     font-size: 25px;
-    color: black;
     position: absolute;
-    top: 13%;
-    text-decoration: none;
-    font-family: Helvetica; }
-  #head #name:hover {
-    transition: 0.5s;
-    color: grey; }
+    top: 13%; }
+    #head #name #joinow {
+      text-decoration: none;
+      font-family: Helvetica;
+      color: black; }
+    #head #name #joinow:hover {
+      transition: 0.5s;
+      color: grey; }
   #head #head-list {
-    position: absolute;
-    left: 960px;
+    margin-left: 70vw;
     list-style: none;
     display: flex;
-    width: 200px;
-    justify-content: space-between; }
+    width: 200px; }
     #head #head-list #user-pic-header {
       height: 30px;
       width: 30px;
       margin-top: -4px;
-      border-radius: 50px;
-      margin-left: 30px; }
+      border-radius: 50px; }
     #head #head-list li {
-      display: inline; }
+      display: inline;
+      margin-left: 40px;
+      margin-top: -4px; }
       #head #head-list li #list-item {
         font-size: 17px;
         color: black;
@@ -38,13 +39,15 @@
         border-bottom: 1px solid rgba(90, 112, 128, 0.411);
         color: rgba(212, 22, 22, 0.658); }
     #head #head-list .dropbtn {
+      height: 20px;
+      width: auto;
       background-color: white;
       color: black;
-      padding: 17px;
+      padding: 10px 15px 10px 15px;
       font-size: 16px;
       border: none;
       cursor: pointer;
-      margin-top: -15px;
+      margin-top: -5px;
       margin-left: -40px; }
     #head #head-list .dropbtn:hover, #head #head-list .dropbtn:focus {
       transition: 0.5s;

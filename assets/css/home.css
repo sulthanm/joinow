@@ -229,6 +229,9 @@
         color: #94082b;
         transition: 0s; }
 
+#home-container::-webkit-scrollbar {
+  width: 0; }
+
 @media only screen and (max-width: 768px) {
   #home-routes {
     margin-left: 75px; } }
