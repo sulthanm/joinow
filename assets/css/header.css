@@ -4,7 +4,7 @@
   background-color: white;
   position: fixed;
   display: flex;
-  margin-top: 0; }
+  margin: 0; }
   #head #name {
     margin-left: 130px;
     margin-top: 5px;
@@ -21,8 +21,7 @@
   #head #head-list {
     margin-left: 75vw;
     list-style: none;
-    display: flex;
-    width: 200px; }
+    display: flex; }
     #head #head-list #user-pic-header {
       height: 30px;
       width: 30px;
@@ -75,14 +74,11 @@
     #head #head-list .show {
       display: block; }
 
-@media only screen and (max-width: 768px) {
-  #head-list {
-    color: #3f382f;
-    margin-left: -530px;
-    left: 100px; }
-    #head-list li .sign-up-header {
-      display: none; }
-    #head-list .sign-in-header {
-      margin-left: -150px; }
-    #head-list .dropbtn {
-      display: inline; } }
+@media screen and (max-width: 360px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+  #name {
+    left: -25%;
+    font-size: 7px;
+    border: 2px solid black; }
+  .dropbtn {
+    margin-left: -50px;
+    border: 2px solid black; } }

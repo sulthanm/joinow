@@ -292,6 +292,19 @@
 #home-container::-webkit-scrollbar {
   width: 0; }
 
-@media only screen and (max-width: 768px) {
-  #home-routes {
-    margin-left: 75px; } }
+  @media (max-width: 400px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+    #sign-in-home{
+        width: 100%;
+       position: relative;
+        top: -190px;
+        left: -60px;
+        color: #93ccea;
+        font-size: 7px;
+    }
+    #form-signin-home{
+        position: relative;
+        top: 70px;
+        left: -450px;
+        width: 50px;
+    }
+}
