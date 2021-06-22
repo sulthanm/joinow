@@ -1,46 +1,19 @@
+$white: #fff;
+$google-blue: #4285f4;
+$button-active-blue: #1669F2;
 
 #home-container{
 
-    height: 90.5%;
+    height: 98.5%;
     overflow: scroll;
     // border: 2px solid black;
     
-    #home-routes{
-        display: inline-block;
-        width: 250px;
-        // border: 2px solid black;
-        vertical-align: top;
-        margin-top: 15px;
-        #new{
-              
-            margin-left: 80px;
-        }
-        .route{
-            
-            text-decoration: none;
-            
-            #sign-in-home,#sign-up-home{
-                padding-left: 100px;
-                padding-top: 10px;
-                padding-bottom: 10px;
-                // margin-top: 20px;
-                background-color: white;
-                width: 150px;
-            }
-        
-            #sign-in-home:hover,#sign-up-home:hover{
-               
-                color: black;
-                background-color: rgb(151, 149, 156);
-                transition: 0.5s;
-            }
-        }
-     
-    }
+    
     #post-container{
         // border: 2px solid black;
         display: inline-block;
-        // margin-left: -20px;
+        margin-left: 300px;
+        margin-top: 40px;
         #wall{
             // height: 100%;
             width: 540px;
@@ -50,6 +23,8 @@
             display: inline-block;
             #new-post{
                 margin-top: 35px;
+                margin-left:14px;
+                width: 523px;
                 background-color: white;
                 height: 130px;
                 border-top: 3px solid #659DBD;
@@ -339,7 +314,8 @@
         margin-left: 50px;
         border-left: 2px solid grey;
         vertical-align: top;
-        margin-top: 35px;
+        // margin-top: 35px;
+        margin-top: 90px;
         position: fixed;
         #friends-list{
             // margin-top: -468px;
@@ -385,6 +361,113 @@
         }
         
     
+    }
+
+
+    #sign-in-container-home{
+        // border: 2px solid black;
+        height: 99%;
+        width: 98%;
+        text-align: center;
+        // margin-left: 40%;
+        #sign-in-home{
+            width: 200px;
+            height: 100px;
+            // border: 2px solid gray;
+            color: rgb(30, 30, 43);
+            margin-left: 250px;
+            margin-top: 200px;
+            color: #93ccea;
+            font-size: 30px;
+        }
+        #form-signin-home{
+            // border: 2px solid black;
+            width: 400px;
+            height: 350px;
+            margin-left: 48%;
+            margin-top: -280px;
+            background-color: white;
+            #home-form{
+                border-top: 1px solid rgba(65, 65, 236,0);
+                
+                margin-top: 30px;
+                #input-home{
+                display: block;
+                height: 50px;
+                width: 350px;
+                padding: 10px;
+                margin-top: 20px;
+                margin-left: 26px;
+                border:none;
+                border-bottom: 1px solid grey;
+                
+                // border-bottom: 2px solid grey;
+                }
+            
+    
+                #input-home:focus {
+                    outline:none;
+                }
+                .button{
+                    background-color: rgba(192, 190, 190,0.3);
+                }
+                .button:hover{
+                    transition: 0.5s;
+                    background-color: cadetblue;
+                    cursor: pointer;
+                }
+            }
+        }
+        #google-container{
+                width: 350px;
+                height:50px;
+                // border: 2px solid black;
+                margin-left: 28px;
+                border-radius: 20px;
+                .google-btn {
+                    width: 100%;
+                    height: 100%;
+                    // border: 2px solid black;
+                    display: inline-block;
+                    box-shadow: 0 3px 4px 0 rgba(0,0,0,.25);
+                .google-icon-wrapper {
+                    display: inline-block;
+                    border-radius: 2px;
+                    background-color: $white;
+                }
+                .google-icon {
+                    margin-top: 17px;
+                    display: inline-block;
+                    width: 18px;
+                    height: 18px;
+                }
+                .btn-text {
+                    float: right;
+                    margin-right: 120px;
+                    margin-top: 17px;
+                    text-align: center;
+                    color: black;
+                    font-size: 14px;
+                    letter-spacing: 0.2px;
+                    font-family: "Roboto";
+                }
+                &:hover {
+        
+                    box-shadow: 0 0 6px $google-blue;
+                }
+            }
+        
+        
+        }
+        #sign-up-home{
+            background-color: white;
+            width: 380px;
+            height: 40px;
+            margin-left: 48%;
+            margin-top: 10px;
+            padding: 10px;
+        }
+        
     }
 }
 #home-container::-webkit-scrollbar {

@@ -38,6 +38,7 @@ passport.checkAuthentication = function(req,res, next){
 
     if(req.isAuthenticated()){
       // res.locals.user = req.
+      
       return next();
     }
     //if the user is not signed in
@@ -48,7 +49,9 @@ passport.checkAuthentication = function(req,res, next){
 passport.setAuthenticatedUser = function (req, res, next) {
   if (req.isAuthenticated()) {
     res.locals.user = req.user;
+   
   }
+  
   next();
 };
 

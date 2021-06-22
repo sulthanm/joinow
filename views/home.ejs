@@ -2,92 +2,130 @@
 <link rel="stylesheet" type="text/css" href="<%= assetPath('css/chat_box.css') %>">
 
 <div id="home-container">
-        
-                <section id="home-routes">
-                        <% if(!locals.user){ %>
-                        <a href="/users/signin" class="route"><p  id="sign-in-home">Sign-In </p></a>
-                        <h3 id="new">New User ?</h3>
-                         <a href="/users/signup" class="route"><p  id="sign-up-home">Sign-Up </p></a>
-                         <% } %>
-        
-                </section>
-        
-        <section id="post-container">
-                <div id="wall">
-                        <% if(locals.user){ %>
-                                <form action="/users/create-posts" id="new-post" enctype="multipart/form-data" method="POST">
-                                        <input name="post_content" id="post-area" type="text" placeholder="Type here.."></textarea>
-                                        <input type="file" placeholder="Post Picture" name="avatar" id="pic" class="custom-file-input">
-                                        <input type="submit" value="Post" id="button">
-                                </form>
-                
-                        <% } %>
-                
-        
-                        <div id="post-list-container">
-                                <ul id="post-list">
-                                        
-                                        <% for(post of posts){ %>
-                                                <%- include('_posts'); %>
-                                                
-                                                
 
-                                        <% } %>  
-                                </ul>     
+        <% if(locals.user){ %>
+                <%- include('_header'); %>
+             
+        
+                <section id="post-container">
+                        <div id="wall">
+                                <% if(locals.user){ %>
+                                        <form action="/users/create-posts" id="new-post" enctype="multipart/form-data" method="POST">
+                                                <input name="post_content" id="post-area" type="text" placeholder="Type here.."></textarea>
+                                                <input type="file" placeholder="Post Picture" name="avatar" id="pic" class="custom-file-input">
+                                                <input type="submit" value="Post" id="button">
+                                        </form>
                         
-                        </div>
-                </div>
-                
-        </section>
-                
-        <section id="friends">
-                <% if(locals.user ) { %>
-                        <h4 id="friends-list">Friends</h4>
-                        
-                        <% for(u of allUsers) {%>
-                                
-                                <% if(u._id.equals(locals.user._id)){ %>
-                                        <% for(f of u.friends){ %>
-                                                <p id="friend-details">
-                                                        <% let name = locals.user.name %>
-                                                
-                                                        
-                                                        <% if(name == f.to_user.name){   %>
-                                                                
-                                                                <a href="/users/profile/<%= f.from_user._id %>" id="f-name"><%= f.from_user.name %></a>
-                                                        <%} else{ %>
-                                                                <a href="/users/profile/<%= f.to_user._id %>" id="f-name"><%= f.to_user.name %></a>
-                                                        <% } %>
-                
-                                                
-                        
-                                                </p>
-                                        <% } %>
                                 <% } %>
-                              
-                                
-                                
-                        <% } %>
-                <% } %>
-                        <h4 id="all-users">All Users</h4>
-                        <% for(u of allUsers) {%>
-                                <p id="all-users-list">
-                                        <% if(locals.user ) { %>
-                                        
-                                                <% if(u.name == locals.user.name){ %>
-                                                        <% continue %>
-                                                <%}%>
-                                        <% } %>
-                                        <a href="/users/profile/<%= u.id %>" id="user-name-home" ><%= u.name %></a>
-                                     
-                                </p>
-                                
-                        <% } %>
+                        
+                
+                                <div id="post-list-container">
+                                        <ul id="post-list">
+                                                
+                                                <% for(post of posts){ %>
+                                                        <%- include('_posts'); %>
+                                                        
+                                                        
 
-               
+                                                <% } %>  
+                                        </ul>     
+                                
+                                </div>
+                        </div>
+                        
+                </section>
                 
+                <section id="friends">
+                        <% if(locals.user ) { %>
+                                <h4 id="friends-list">Friends</h4>
+                                
+                                <% for(u of allUsers) {%>
+                                        
+                                        <% if(u._id.equals(locals.user._id)){ %>
+                                                <% for(f of u.friends){ %>
+                                                        <p id="friend-details">
+                                                                <% let name = locals.user.name %>
+                                                        
+                                                                
+                                                                <% if(name == f.to_user.name){   %>
+                                                                        
+                                                                        <a href="/users/profile/<%= f.from_user._id %>" id="f-name"><%= f.from_user.name %></a>
+                                                                <%} else{ %>
+                                                                        <a href="/users/profile/<%= f.to_user._id %>" id="f-name"><%= f.to_user.name %></a>
+                                                                <% } %>
+                        
+                                                        
+                                
+                                                        </p>
+                                                <% } %>
+                                        <% } %>
+                                
+                                        
+                                        
+                                <% } %>
+                        <% } %>
+                                <h4 id="all-users">All Users</h4>
+                                <% for(u of allUsers) {%>
+                                        <p id="all-users-list">
+                                                <% if(locals.user ) { %>
+                                                
+                                                        <% if(u.name == locals.user.name){ %>
+                                                                <% continue %>
+                                                        <%}%>
+                                                <% } %>
+                                                <a href="/users/profile/<%= u.id %>" id="user-name-home" ><%= u.name %></a>
+                                        
+                                        </p>
+                                        
+                                <% } %>
+
                 
-        </section>
+                        
+                        
+                </section>
+        <% }else{ %>
+                <div id="sign-in-container-home">
+                        <div id=sign-in-home>
+                                <h1 >joinow</h1>
+                        </div>
+                        <div id="form-signin-home">
+                                <form action="/users/create-session" method="POST" id="home-form">
+                                        <input type="email" name="email" placeholder="Email" required id="input-home">
+                                        <input type="password" name="password" placeholder="Password" required id="input-home">
+                                        <input type="submit" value="Sign-In" id="input-home" class="button">
+                                        
+                                        
+                                </form>
+                                <p>Or</p>
+                                <!-- <a href="/users/auth/google">Google Sign In</a> -->
+                                <div id="google-container"> 
+                                        <a href="/users/auth/google">
+                                                <div class="google-btn">
+                                                    <div class="google-icon-wrapper">
+                                                      <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+                                                    </div>
+                                                   
+                                                    <p class="btn-text"><b>Google Sign In</b></p>
+                                                </div>
+                                            </a>
+                                </div>
+                
+                                
+                        </div>
+                        <div id="sign-up-home">
+                                <p> 
+                                        New User ?
+                                        <a href="/users/signup">Sign Up</a>
+                                </p>
+                        </div>
+                        
+                       
+                            
+                        
+                        
+                    </div>
+        <% } %>
+                
         <%- include('_chat_box') -%>
 </div>
 

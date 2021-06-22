@@ -3,22 +3,22 @@
   width: 300px;
   text-align: center;
   margin-left: 40%; }
-  #sign-in-container #sign-in {
-    color: #1e1e2b; }
-  #sign-in-container form input {
-    display: block;
-    height: 10%;
-    width: 90%;
-    padding: 10px;
-    margin-top: 20px;
-    margin-left: 16px;
-    border: none;
-    border-bottom: 1px solid grey; }
-  #sign-in-container form input:focus {
-    outline: none; }
-  #sign-in-container form #button:hover {
-    background-color: cadetblue;
-    cursor: pointer; }
+  #sign-in-container form {
+    margin-top: 50px; }
+    #sign-in-container form input {
+      display: block;
+      height: 10%;
+      width: 90%;
+      padding: 10px;
+      margin-top: 20px;
+      margin-left: 16px;
+      border: none;
+      border-bottom: 1px solid grey; }
+    #sign-in-container form input:focus {
+      outline: none; }
+    #sign-in-container form #button:hover {
+      background-color: cadetblue;
+      cursor: pointer; }
   #sign-in-container .google-btn {
     margin-left: 16px;
     width: 90%;

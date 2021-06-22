@@ -1,32 +1,17 @@
 #home-container {
-  height: 90.5%;
+  height: 98.5%;
   overflow: scroll; }
-  #home-container #home-routes {
-    display: inline-block;
-    width: 250px;
-    vertical-align: top;
-    margin-top: 15px; }
-    #home-container #home-routes #new {
-      margin-left: 80px; }
-    #home-container #home-routes .route {
-      text-decoration: none; }
-      #home-container #home-routes .route #sign-in-home, #home-container #home-routes .route #sign-up-home {
-        padding-left: 100px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        background-color: white;
-        width: 150px; }
-      #home-container #home-routes .route #sign-in-home:hover, #home-container #home-routes .route #sign-up-home:hover {
-        color: black;
-        background-color: #97959c;
-        transition: 0.5s; }
   #home-container #post-container {
-    display: inline-block; }
+    display: inline-block;
+    margin-left: 300px;
+    margin-top: 40px; }
     #home-container #post-container #wall {
       width: 540px;
       display: inline-block; }
       #home-container #post-container #wall #new-post {
         margin-top: 35px;
+        margin-left: 14px;
+        width: 523px;
         background-color: white;
         height: 130px;
         border-top: 3px solid #659DBD; }
@@ -197,7 +182,7 @@
     margin-left: 50px;
     border-left: 2px solid grey;
     vertical-align: top;
-    margin-top: 35px;
+    margin-top: 90px;
     position: fixed; }
     #home-container #friends #friends-list {
       margin-left: 20px;
@@ -227,6 +212,81 @@
       #home-container #friends #all-users-list #user-name-home:hover {
         color: #94082b;
         transition: 0s; }
+  #home-container #sign-in-container-home {
+    height: 99%;
+    width: 98%;
+    text-align: center; }
+    #home-container #sign-in-container-home #sign-in-home {
+      width: 200px;
+      height: 100px;
+      color: #1e1e2b;
+      margin-left: 250px;
+      margin-top: 200px;
+      color: #93ccea;
+      font-size: 30px; }
+    #home-container #sign-in-container-home #form-signin-home {
+      width: 400px;
+      height: 350px;
+      margin-left: 48%;
+      margin-top: -280px;
+      background-color: white; }
+      #home-container #sign-in-container-home #form-signin-home #home-form {
+        border-top: 1px solid rgba(65, 65, 236, 0);
+        margin-top: 30px; }
+        #home-container #sign-in-container-home #form-signin-home #home-form #input-home {
+          display: block;
+          height: 50px;
+          width: 350px;
+          padding: 10px;
+          margin-top: 20px;
+          margin-left: 26px;
+          border: none;
+          border-bottom: 1px solid grey; }
+        #home-container #sign-in-container-home #form-signin-home #home-form #input-home:focus {
+          outline: none; }
+        #home-container #sign-in-container-home #form-signin-home #home-form .button {
+          background-color: rgba(192, 190, 190, 0.3); }
+        #home-container #sign-in-container-home #form-signin-home #home-form .button:hover {
+          transition: 0.5s;
+          background-color: cadetblue;
+          cursor: pointer; }
+    #home-container #sign-in-container-home #google-container {
+      width: 350px;
+      height: 50px;
+      margin-left: 28px;
+      border-radius: 20px; }
+      #home-container #sign-in-container-home #google-container .google-btn {
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25); }
+        #home-container #sign-in-container-home #google-container .google-btn .google-icon-wrapper {
+          display: inline-block;
+          border-radius: 2px;
+          background-color: #fff; }
+        #home-container #sign-in-container-home #google-container .google-btn .google-icon {
+          margin-top: 17px;
+          display: inline-block;
+          width: 18px;
+          height: 18px; }
+        #home-container #sign-in-container-home #google-container .google-btn .btn-text {
+          float: right;
+          margin-right: 120px;
+          margin-top: 17px;
+          text-align: center;
+          color: black;
+          font-size: 14px;
+          letter-spacing: 0.2px;
+          font-family: "Roboto"; }
+        #home-container #sign-in-container-home #google-container .google-btn:hover {
+          box-shadow: 0 0 6px #4285f4; }
+    #home-container #sign-in-container-home #sign-up-home {
+      background-color: white;
+      width: 380px;
+      height: 40px;
+      margin-left: 48%;
+      margin-top: 10px;
+      padding: 10px; }
 
 #home-container::-webkit-scrollbar {
   width: 0; }

@@ -1,7 +1,8 @@
 #head {
   height: 54px;
+  width: 100%;
   background-color: white;
-  position: relative;
+  position: fixed;
   display: flex; }
   #head #name {
     margin-left: 130px;
