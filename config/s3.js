@@ -6,7 +6,7 @@ const bucket   = env.aws_bucket;
 const region = env.aws_bucket_region;
 const accessKeyId = env.aws_access_id
 const secretAccessKey = env.aws_access_key
-
+console.log("diofjgdfigjhdiogjoighjihgjfhij", bucket);
 const s3 = new S3({
     region,
     accessKeyId,
@@ -20,6 +20,7 @@ module.exports.uploadFile = function(file){
         Body : fileStream,
         Key : file.filename
     });
+    console.log("diofjgdfigjhdiogjoighjihgjfhij", bucket);
     return s3.upload(uploadParams).promise();
 }
 

@@ -1,5 +1,7 @@
 <link rel="stylesheet" href="<%= assetPath('css/profile.css') %>">
+<%- include('_header'); %>
 <div id="profile-container">
+   <%- include('_header'); %>
    <% if(locals.user.id==profile_user.id){ %>
       <h1>
          <div id="cover-background"></div>
@@ -28,7 +30,7 @@
       <div id="border"></div>
 
    <% }else{ %>
-      <div id="user-detaisl-container">
+      <div id="user-details-container">
          <div id="user-details">  
             <img src="<%= profile_user.avatar %>" alt="<%= profile_user.name %>" height="200px" width="200px">
          <p><%= profile_user.name %></p>

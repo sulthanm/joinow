@@ -8,11 +8,12 @@ $button-active-blue: #1669F2;
     width: 300px;
     // border: 2px solid black;
     text-align: center;
-    margin-left: 40%;
+    margin-left: 500px;
+    
     #sign-up-form{
         display: flex;
         flex-direction: column;
-        
+        margin-top: 40px;
         .details{
             height: 45px;
             padding: 10px;

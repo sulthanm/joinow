@@ -3,7 +3,7 @@
     // border: 2px solid grey;
  
     #cover-background{
-        margin-top: -22px;
+        // margin-top: -22px;
         height: 200px;
         width: 100vw;
         background-color: #FFDEE9;
@@ -103,14 +103,17 @@
         width: 350px;
         border-bottom: 3px solid grey;
     }
-    #user-detaisl-container{
-        margin-top: 50px;
-        margin-left: 350px;
+    #user-details-container{
+        
         // border: 2px solid black;
         width: 500px;
         height: 450px;
         background-color: white;
         font-family: sans-serif;
+        // margin-top: 50px;
+        margin-left: 350px;
+        position: relative;
+        top: 80px;
         #user-details{
             position: relative;
             top: 50px;

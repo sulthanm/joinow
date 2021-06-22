@@ -223,7 +223,8 @@
       margin-left: 150px;
       margin-top: 200px;
       color: #93ccea;
-      font-size: 30px; }
+      font-size: 30px;
+      font-family: sans-serif; }
     #home-container #sign-in-container-home #form-signin-home {
       width: 400px;
       height: 350px;

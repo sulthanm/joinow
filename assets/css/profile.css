@@ -1,7 +1,6 @@
 #profile-container {
   height: 500px; }
   #profile-container #cover-background {
-    margin-top: -22px;
     height: 200px;
     width: 100vw;
     background-color: #FFDEE9;
@@ -74,25 +73,26 @@
     margin-left: 470px;
     width: 350px;
     border-bottom: 3px solid grey; }
-  #profile-container #user-detaisl-container {
-    margin-top: 50px;
-    margin-left: 350px;
+  #profile-container #user-details-container {
     width: 500px;
     height: 450px;
     background-color: white;
-    font-family: sans-serif; }
-    #profile-container #user-detaisl-container #user-details {
+    font-family: sans-serif;
+    margin-left: 350px;
+    position: relative;
+    top: 80px; }
+    #profile-container #user-details-container #user-details {
       position: relative;
       top: 50px;
       margin-left: 155px; }
-      #profile-container #user-detaisl-container #user-details #add-friend {
+      #profile-container #user-details-container #user-details #add-friend {
         text-decoration: none;
         margin-left: 40px;
         margin-top: -30px;
         padding: 13px;
         border-top: 2px solid grey;
         border-bottom: 2px solid grey; }
-      #profile-container #user-detaisl-container #user-details #add-friend:hover {
+      #profile-container #user-details-container #user-details #add-friend:hover {
         padding: 13px;
         transition: 0.3s;
         border-left: 2px solid grey;

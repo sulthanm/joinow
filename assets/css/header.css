@@ -3,7 +3,8 @@
   width: 100%;
   background-color: white;
   position: fixed;
-  display: flex; }
+  display: flex;
+  margin-top: 0; }
   #head #name {
     margin-left: 130px;
     margin-top: 5px;
