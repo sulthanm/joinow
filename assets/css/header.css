@@ -10,19 +10,27 @@
     font-size: 25px;
     position: absolute;
     top: 25%;
-    width: 25%; }
+    display: flex;
+    flex-direction: row;
+    width: 50%; }
     #head #name #joinow {
       text-decoration: none;
       font-family: Helvetica;
-      color: black; }
-    #head #name #home-img {
-      margin-left: 5%;
-      height: 20px;
-      display: inline-block; }
-    #head #name #user-friend {
       color: black;
-      display: inline-block;
-      visibility: hidden; }
+      display: inline-block; }
+    #head #name #icon-container {
+      width: 20%;
+      margin-left: 5%;
+      margin-top: 0.2%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around; }
+      #head #name #icon-container #home-image-a {
+        width: 10%; }
+      #head #name #icon-container #user-friend-a {
+        width: 10%;
+        position: relative;
+        margin-top: -3%; }
   #head #head-list {
     margin-left: 75vw;
     width: 180px;
@@ -87,11 +95,16 @@
       display: block; }
 
 @media (max-width: 750px) {
-  #user-friend {
-    height: 16px !important;
-    margin-left: 5%;
-    display: inline-block !important;
-    visibility: visible !important; }
+  #icon-container {
+    position: relative !important;
+    margin-top: -1% !important;
+    margin-left: 2% !important;
+    justify-content: space-around !important; }
+  #user-friend-a {
+    font-size: 20px;
+    position: relative !important;
+    margin-top: -7% !important;
+    margin-left: 10% !important; }
   #head {
     height: 40px !important; }
   #name {
@@ -99,9 +112,6 @@
     left: -5%;
     font-size: 15px !important;
     width: 70% !important; }
-  #home-img {
-    margin-left: 25% !important;
-    height: 16px !important; }
   #head-list {
     position: relative;
     left: -150px;

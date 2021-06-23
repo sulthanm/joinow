@@ -389,37 +389,37 @@ $button-active-blue: #1669F2;
         text-align: center;
         // margin-left: 40%;
         #sign-in-home{
-            width: 200px;
-            height: 100px;
+            width: 22%;
+            height: 20%;
             // border: 2px solid gray;
             color: rgb(30, 30, 43);
-            margin-left: 150px;
-            margin-top: 200px;
+            margin-left: 20%;
+            margin-top: 14%;
             color: #93ccea;
             font-size: 30px;
-        
+  
             font-family:  sans-serif;
         }
         #form-signin-home{
             // border: 2px solid black;
-            width: 400px;
-            height: 350px;
-            margin-left: 500px;
-            margin-top: -280px;
+            width: 33%;
+            height: 60%;
+            margin-left: 50%;
+            margin-top: -20%;
             background-color: white;
             #home-form{
                 border-top: 1px solid rgba(65, 65, 236,0);
                 
-                margin-top: 30px;
+                margin-top: 6%;
                 #input-home{
-                display: block;
-                height: 50px;
-                width: 350px;
-                padding: 10px;
-                margin-top: 20px;
-                margin-left: 26px;
-                border:none;
-                border-bottom: 1px solid grey;
+                    display: block;
+                    height: 15%;
+                    width: 87%;
+                    padding: 4%;
+                    margin-top: 5%;
+                    margin-left: 7%;
+                    border:none;
+                    border-bottom: 1px solid grey;
                 
                 // border-bottom: 2px solid grey;
                 }
@@ -439,10 +439,10 @@ $button-active-blue: #1669F2;
             }
         }
         #google-container{
-                width: 350px;
-                height:50px;
+                width: 87%;
+                height:15%;
                 // border: 2px solid black;
-                margin-left: 28px;
+                margin-left: 7%;
                 border-radius: 20px;
                 .google-btn {
                     width: 100%;
@@ -456,15 +456,16 @@ $button-active-blue: #1669F2;
                     background-color: $white;
                 }
                 .google-icon {
-                    margin-top: 17px;
+                    // border: 2px solid black;
+                    margin-top: 75%;
                     display: inline-block;
-                    width: 18px;
-                    height: 18px;
+                    width: 78%;
+                    height: auto;
                 }
                 .btn-text {
                     float: right;
-                    margin-right: 120px;
-                    margin-top: 17px;
+                    margin-right: 33%;
+                    margin-top: 5%;
                     text-align: center;
                     color: black;
                     font-size: 14px;
@@ -481,11 +482,12 @@ $button-active-blue: #1669F2;
         }
         #sign-up-home{
             background-color: white;
-            width: 380px;
-            height: 40px;
-            margin-left: 500px;
-            margin-top: 10px;
-            padding: 10px;
+            width: 33%;
+            height: 8%;
+            margin-left: 50%;
+            margin-top: 1%;
+            padding-top: 1%;
+            padding-bottom: 1%;
         }
         
     }
@@ -528,6 +530,31 @@ $button-active-blue: #1669F2;
     }
     .post-comments-container{
         font-size: 10px !important;
+    }
+    #sign-in-container-home{
+        height: 40% !important;
+    
+    }
+    #sign-in-home{
+        margin-left: 30% !important; 
+    }
+    #form-signin-home{
+        margin-top: 0% !important;
+        width: 80% !important;
+        height: 100% !important;
+        margin-left: 10% !important;
+        #input-home{
+          
+            height: 14% !important;
+        }
+    }
+    #google-container{
+        height: 14% !important;
+    }
+    #sign-up-home{
+        width: 80% !important;
+        height: 14% !important;
+        margin-left: 10% !important;
     }
 
 }
