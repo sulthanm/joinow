@@ -312,8 +312,7 @@
     width: 100% !important;
     margin-left: 0 !important; }
   #new-post {
-    height: 14% !important;
-    margin-top: 15% !important; }
+    height: 14% !important; }
   #pic, .button-home, #post-area {
     height: 30% !important;
     margin-top: 3% !important;
@@ -321,13 +320,14 @@
   .custom-file-input, .comment-button, .button-home {
     font-size: 7px !important; }
   #picture {
-    height: 400px !important; }
+    height: 400px !important;
+    width: 100% !important; }
   .img {
     margin-left: 7px !important; }
   .post-comments-container {
     font-size: 10px !important; }
   #sign-in-container-home {
-    height: 45% !important; }
+    height: 50% !important; }
   #sign-in-home {
     margin-top: -5% !important;
     margin-left: 25% !important; }
