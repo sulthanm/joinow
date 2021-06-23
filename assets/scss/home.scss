@@ -494,9 +494,9 @@ $button-active-blue: #1669F2;
     width: 0;  
    
 }
-@media (max-width: 400px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+@media (max-width: 750px) {
     #friends{
-        visibility: hidden;
+        display: none !important ;
     }
     
         

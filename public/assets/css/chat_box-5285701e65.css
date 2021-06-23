@@ -44,6 +44,6 @@
       border: none;
       background: #58d258; }
 
-@media (max-width: 380px) {
+@media (max-width: 750px) {
   #user-chat-box {
     display: none !important; } }

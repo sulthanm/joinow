@@ -86,7 +86,7 @@
     #head #head-list .show {
       display: block; }
 
-@media (max-width: 380px) {
+@media (max-width: 750px) {
   #user-friend {
     margin-left: 5%;
     display: inline-block !important;
