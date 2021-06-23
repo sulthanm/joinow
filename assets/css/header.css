@@ -88,6 +88,7 @@
 
 @media (max-width: 750px) {
   #user-friend {
+    height: 16px !important;
     margin-left: 5%;
     display: inline-block !important;
     visibility: visible !important; }
