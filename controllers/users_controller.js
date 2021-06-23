@@ -65,7 +65,7 @@ module.exports.createUserSession = function(req, res){
 module.exports.destroySession = function(req, res){
     req.flash('success', 'You have logged Out');
     req.logout();
-    return res.redirect('/users/signin');
+    return res.redirect('/');
 }
 
 module.exports.profieUpdate = async function(req, res){
