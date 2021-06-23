@@ -2,4 +2,6 @@ body {
   margin: 0;
   background-color: rgba(0, 0, 0, 0.05); }
 
-
+@media (max-width: 400px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+  body {
+    margin: 0; } }

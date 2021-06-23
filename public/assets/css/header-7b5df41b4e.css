@@ -22,7 +22,7 @@
     #head #name #user-friend {
       color: black;
       display: inline-block;
-      visibility: visible; }
+      visibility: hidden; }
   #head #head-list {
     margin-left: 75vw;
     width: 180px;
