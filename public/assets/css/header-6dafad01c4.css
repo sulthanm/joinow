@@ -1,0 +1,133 @@
+#head {
+  height: 54px;
+  width: 100%;
+  background-color: white;
+  position: fixed;
+  display: flex;
+  margin: 0; }
+  #head #name {
+    margin-left: 10%;
+    font-size: 25px;
+    position: absolute;
+    top: 25%;
+    display: flex;
+    flex-direction: row;
+    width: 50%; }
+    #head #name #joinow {
+      text-decoration: none;
+      font-family: Helvetica;
+      color: black;
+      display: inline-block; }
+    #head #name #icon-container {
+      width: 20%;
+      margin-left: 5%;
+      margin-top: 0.2%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around; }
+      #head #name #icon-container #home-image-a {
+        width: 10%; }
+      #head #name #icon-container #user-friend-a {
+        width: 10%;
+        position: relative;
+        margin-top: -3%; }
+  #head #head-list {
+    margin-left: 75vw;
+    width: 180px;
+    height: 20px;
+    list-style: none;
+    display: flex;
+    justify-content: space-around; }
+    #head #head-list #user-pic-header {
+      height: 30px;
+      width: 30px;
+      margin-top: -4px;
+      border-radius: 50px; }
+    #head #head-list li {
+      display: inline;
+      margin-top: -4px; }
+      #head #head-list li #list-item {
+        font-size: 17px;
+        text-decoration: none; }
+      #head #head-list li #list-item:hover {
+        transition: 0.3s;
+        border-bottom: 1px solid rgba(90, 112, 128, 0.411);
+        color: rgba(212, 22, 22, 0.658); }
+    #head #head-list .dropbtn {
+      height: 20px;
+      width: 160px;
+      background-color: white;
+      color: black;
+      padding: 10px 15px 30px 15px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      margin-top: -5px;
+      margin-left: -40px; }
+    #head #head-list .dropbtn:hover {
+      border: none;
+      transition: 0.5s;
+      background-color: rgba(192, 189, 189, 0.2); }
+    #head #head-list .dropdown {
+      border: none;
+      position: relative;
+      display: inline-block; }
+    #head #head-list .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      width: 100px;
+      overflow: auto;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 99; }
+    #head #head-list .dropdown-content a {
+      font-size: 13px;
+      color: black;
+      padding: 9px 5px;
+      text-decoration: none;
+      display: block; }
+    #head #head-list .dropdown-content a:hover {
+      border: none; }
+    #head #head-list .dropdown a:hover {
+      background-color: #ddd;
+      border: none; }
+    #head #head-list .show {
+      display: block; }
+
+@media (max-width: 750px) {
+  #icon-container {
+    position: relative !important;
+    margin-top: -1% !important;
+    margin-left: 2% !important;
+    justify-content: space-around !important; }
+  #user-friend-a {
+    font-size: 20px;
+    position: relative !important;
+    margin-top: -7% !important;
+    margin-left: 10% !important; }
+  #head {
+    height: 40px !important; }
+  #name {
+    top: 13px !important;
+    left: -5%;
+    font-size: 15px !important;
+    width: 70% !important; }
+  #head-list {
+    position: relative;
+    left: -150px;
+    top: 3px; }
+    #head-list li #list-item {
+      font-size: 10px !important; }
+  .dropbtn {
+    margin-left: 70px !important;
+    margin-top: -15px !important;
+    font-size: 10px !important;
+    padding-top: 15px !important;
+    padding-bottom: 25px !important;
+    width: 100px !important; }
+  .dropdown-content {
+    position: absolute !important;
+    width: 90px !important;
+    height: 70px !important;
+    font-size: 10px !important;
+    left: 90px !important; } }

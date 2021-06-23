@@ -1,0 +1,344 @@
+#home-container {
+  height: 100%;
+  overflow: scroll; }
+  #home-container #post-container {
+    display: inline-block;
+    margin-left: 27%;
+    margin-top: 3%;
+    width: 40%; }
+    #home-container #post-container #wall {
+      width: 100%;
+      display: inline-block; }
+      #home-container #post-container #wall #new-post {
+        list-style: none;
+        margin-top: 8%;
+        background-color: white;
+        height: 21%;
+        border-top: 3px solid #659DBD; }
+        #home-container #post-container #wall #new-post #pic, #home-container #post-container #wall #new-post #button {
+          height: 30%;
+          width: 28%;
+          padding: 2%;
+          margin-top: 4%;
+          margin-left: 9%; }
+        #home-container #post-container #wall #new-post #post-area {
+          margin-left: 8.5%;
+          margin-top: 3%;
+          width: 83%;
+          height: 30%;
+          border: none;
+          padding-left: 4%;
+          background-color: #f1f0f0;
+          font-size: 10px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 5px; }
+        #home-container #post-container #wall #new-post ::placeholder {
+          color: rgba(0, 0, 0, 0.24); }
+        #home-container #post-container #wall #new-post #pic:focus, #home-container #post-container #wall #new-post #post-area:focus {
+          outline: none; }
+        #home-container #post-container #wall #new-post .custom-file-input::-webkit-file-upload-button {
+          visibility: hidden; }
+        #home-container #post-container #wall #new-post .custom-file-input::before {
+          content: 'Upload Picture';
+          color: rgba(0, 0, 0, 0.24);
+          text-align: center;
+          padding: 13%; }
+        #home-container #post-container #wall #new-post .custom-file-input {
+          display: inline-block;
+          background: #f1f0f0;
+          padding: 13%;
+          cursor: pointer;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 5px;
+          font-weight: 700;
+          font-size: 11.5px; }
+        #home-container #post-container #wall #new-post #pic:hover {
+          transition: 0.5s;
+          background-color: #659DBD; }
+        #home-container #post-container #wall #new-post #button {
+          margin-top: -7%;
+          margin-left: 26%;
+          cursor: pointer;
+          border: none;
+          color: rgba(0, 0, 0, 0.34);
+          font-weight: 700;
+          border-radius: 5px;
+          background-color: #659DBD; }
+    #home-container #post-container #post-list-container {
+      display: inline-block;
+      width: 100%; }
+      #home-container #post-container #post-list-container #post-list {
+        list-style: none;
+        padding-inline-start: 0;
+        margin-block-start: 0; }
+        #home-container #post-container #post-list-container #post-list .post-list-item {
+          margin-top: 5%;
+          background-color: white;
+          list-style: none; }
+          #home-container #post-container #post-list-container #post-list .post-list-item #user-name {
+            margin-left: 4%;
+            margin-top: 4%;
+            font-size: 18px; }
+          #home-container #post-container #post-list-container #post-list .post-list-item #post-content {
+            margin-left: 4%;
+            font-size: 13px; }
+          #home-container #post-container #post-list-container #post-list .post-list-item #for-border {
+            margin-left: 4%;
+            width: 90%;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.24); }
+          #home-container #post-container #post-list-container #post-list .post-list-item #picture {
+            margin-top: 20px;
+            height: 92%;
+            width: 100%; }
+          #home-container #post-container #post-list-container #post-list .post-list-item #likes {
+            margin-left: 4%;
+            display: flex; }
+            #home-container #post-container #post-list-container #post-list .post-list-item #likes .count {
+              width: 2%; }
+            #home-container #post-container #post-list-container #post-list .post-list-item #likes .img {
+              height: 23px;
+              width: 20px;
+              margin-top: 13px; }
+          #home-container #post-container #post-list-container #post-list .post-list-item .toggle-like-button {
+            text-decoration: none; }
+            #home-container #post-container #post-list-container #post-list .post-list-item .toggle-like-button #like-button-1 {
+              width: 22%;
+              background-color: #ff6f61;
+              color: white;
+              text-decoration: none;
+              text-transform: uppercase;
+              margin-top: 3%;
+              margin-left: 4%;
+              padding: 2%;
+              padding-left: 18%;
+              color: white;
+              display: inline-block; }
+          #home-container #post-container #post-list-container #post-list .post-list-item .delete-post {
+            text-decoration: none;
+            text-align: center; }
+            #home-container #post-container #post-list-container #post-list .post-list-item .delete-post #delete-button-1 {
+              display: inline-block;
+              width: 22%;
+              background-color: #ff6f61;
+              color: white;
+              text-decoration: none;
+              text-transform: uppercase;
+              margin-top: 3%;
+              margin-left: 3%;
+              padding: 2%;
+              padding-left: 20%;
+              color: white; }
+              #home-container #post-container #post-list-container #post-list .post-list-item .delete-post #delete-button-1 #span {
+                margin-left: -76%; }
+          #home-container #post-container #post-list-container #post-list .post-list-item #delete-button-1:hover, #home-container #post-container #post-list-container #post-list .post-list-item #like-button-1:hover {
+            background-color: #8f8787; }
+          #home-container #post-container #post-list-container #post-list .post-list-item #comment-form {
+            margin-top: 5%; }
+            #home-container #post-container #post-list-container #post-list .post-list-item #comment-form #new-comment .comment-input {
+              padding: 2%;
+              border: none; }
+            #home-container #post-container #post-list-container #post-list .post-list-item #comment-form #new-comment .comment-input:focus {
+              outline: none; }
+            #home-container #post-container #post-list-container #post-list .post-list-item #comment-form #new-comment #comment {
+              width: 90%;
+              height: 5%;
+              margin-left: 4%;
+              border-bottom: 1px solid rgba(0, 0, 0, 0.14); }
+            #home-container #post-container #post-list-container #post-list .post-list-item #comment-form #new-comment .comment-button {
+              margin-top: 3%;
+              margin-left: 4%;
+              background-color: rgba(168, 169, 223, 0.185);
+              border: none;
+              padding: 2%; }
+            #home-container #post-container #post-list-container #post-list .post-list-item #comment-form #new-comment .comment-button:hover {
+              cursor: pointer;
+              background-color: #5188bd; }
+            #home-container #post-container #post-list-container #post-list .post-list-item #comment-form #new-comment .comment-button:focus {
+              outline: none; }
+          #home-container #post-container #post-list-container #post-list .post-list-item .post-comments-container #comment-heading {
+            color: burlywood;
+            margin-left: 4%; }
+          #home-container #post-container #post-list-container #post-list .post-list-item .post-comments-container .comments-list {
+            list-style: none;
+            margin-left: -8%;
+            margin-top: 4%; }
+            #home-container #post-container #post-list-container #post-list .post-list-item .post-comments-container .comments-list li #user-name {
+              display: inline-block;
+              padding-top: 0 !important;
+              width: 85%;
+              height: auto; }
+            #home-container #post-container #post-list-container #post-list .post-list-item .post-comments-container .comments-list li #comment-content {
+              display: inline-block;
+              margin-left: 4%;
+              width: 90%;
+              height: auto; }
+            #home-container #post-container #post-list-container #post-list .post-list-item .post-comments-container .comments-list li #delete-comment {
+              color: #ff6f61; }
+            #home-container #post-container #post-list-container #post-list .post-list-item .post-comments-container .comments-list li #comment-likes-container {
+              margin-left: 4%;
+              margin-top: -4%; }
+              #home-container #post-container #post-list-container #post-list .post-list-item .post-comments-container .comments-list li #comment-likes-container a {
+                color: #659DBD; }
+              #home-container #post-container #post-list-container #post-list .post-list-item .post-comments-container .comments-list li #comment-likes-container a:hover {
+                color: #ff6f61; }
+              #home-container #post-container #post-list-container #post-list .post-list-item .post-comments-container .comments-list li #comment-likes-container #likes-length {
+                color: #659DBD; }
+            #home-container #post-container #post-list-container #post-list .post-list-item .post-comments-container .comments-list li #for-border {
+              width: 90%;
+              border-top: 1px solid rgba(0, 0, 0, 0.14);
+              border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+              position: relative; }
+  #home-container #for-border-up, #home-container #for-border-down {
+    color: red;
+    border: 1px solid rgba(0, 0, 0, 0); }
+  #home-container #friends {
+    display: inline-block;
+    margin-left: 50px;
+    border-left: 2px solid grey;
+    vertical-align: top;
+    margin-top: 90px;
+    position: fixed; }
+    #home-container #friends #friends-list {
+      margin-left: 20px;
+      font-size: 20px;
+      color: dodgerblue; }
+    #home-container #friends #friend-details {
+      margin-left: 20px; }
+      #home-container #friends #friend-details #f-name {
+        text-decoration: none;
+        color: #3f382f;
+        font-family: sans-serif;
+        font-size: 15px; }
+      #home-container #friends #friend-details #f-name:hover {
+        color: #94082b;
+        transition: 0s; }
+    #home-container #friends #all-users {
+      margin-left: 20px;
+      font-size: 20px;
+      color: dodgerblue; }
+    #home-container #friends #all-users-list {
+      margin-left: 20px; }
+      #home-container #friends #all-users-list #user-name-home {
+        text-decoration: none;
+        color: #3f382f;
+        font-family: sans-serif;
+        font-size: 15px; }
+      #home-container #friends #all-users-list #user-name-home:hover {
+        color: #94082b;
+        transition: 0s; }
+  #home-container #sign-in-container-home {
+    height: 99%;
+    width: 98%;
+    text-align: center; }
+    #home-container #sign-in-container-home #sign-in-home {
+      width: 22%;
+      height: 20%;
+      color: #1e1e2b;
+      margin-left: 20%;
+      margin-top: 14%;
+      color: #93ccea;
+      font-size: 30px;
+      font-family: sans-serif; }
+    #home-container #sign-in-container-home #form-signin-home {
+      width: 33%;
+      height: 60%;
+      margin-left: 50%;
+      margin-top: -20%;
+      background-color: white; }
+      #home-container #sign-in-container-home #form-signin-home #home-form {
+        border-top: 1px solid rgba(65, 65, 236, 0);
+        margin-top: 6%; }
+        #home-container #sign-in-container-home #form-signin-home #home-form #input-home {
+          display: block;
+          height: 15%;
+          width: 87%;
+          padding: 4%;
+          margin-top: 5%;
+          margin-left: 7%;
+          border: none;
+          border-bottom: 1px solid grey; }
+        #home-container #sign-in-container-home #form-signin-home #home-form #input-home:focus {
+          outline: none; }
+        #home-container #sign-in-container-home #form-signin-home #home-form .button {
+          background-color: rgba(192, 190, 190, 0.3); }
+        #home-container #sign-in-container-home #form-signin-home #home-form .button:hover {
+          transition: 0.5s;
+          background-color: cadetblue;
+          cursor: pointer; }
+    #home-container #sign-in-container-home #google-container {
+      width: 87%;
+      height: 15%;
+      margin-left: 7%;
+      border-radius: 20px; }
+      #home-container #sign-in-container-home #google-container .google-btn {
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25); }
+        #home-container #sign-in-container-home #google-container .google-btn .google-icon-wrapper {
+          display: inline-block;
+          border-radius: 2px;
+          background-color: #fff; }
+        #home-container #sign-in-container-home #google-container .google-btn .google-icon {
+          margin-top: 75%;
+          display: inline-block;
+          width: 78%;
+          height: auto; }
+        #home-container #sign-in-container-home #google-container .google-btn .btn-text {
+          float: right;
+          margin-right: 33%;
+          margin-top: 5%;
+          text-align: center;
+          color: black;
+          font-size: 14px;
+          letter-spacing: 0.2px;
+          font-family: "Roboto"; }
+        #home-container #sign-in-container-home #google-container .google-btn:hover {
+          box-shadow: 0 0 6px #4285f4; }
+    #home-container #sign-in-container-home #sign-up-home {
+      background-color: white;
+      width: 33%;
+      height: 8%;
+      margin-left: 50%;
+      margin-top: 1%;
+      padding-top: 1%;
+      padding-bottom: 1%; }
+
+#home-container::-webkit-scrollbar {
+  width: 0; }
+
+@media (max-width: 750px) {
+  #friends {
+    display: none !important; }
+  #post-container {
+    width: 100% !important;
+    margin-left: 0 !important; }
+  #new-post {
+    height: 14% !important; }
+  #pic, .button-home, #post-area {
+    height: 30% !important;
+    margin-top: 3% !important;
+    margin-left: 9%; }
+  .custom-file-input, .comment-button, .button-home {
+    font-size: 7px !important; }
+  #picture {
+    height: 420px !important; }
+  .img {
+    margin-left: 7px !important; }
+  .post-comments-container {
+    font-size: 10px !important; }
+  #sign-in-container-home {
+    height: 40% !important; }
+  #sign-in-home {
+    margin-left: 30% !important; }
+  #form-signin-home {
+    margin-top: 0% !important;
+    width: 80% !important;
+    height: 100% !important;
+    margin-left: 10% !important; }
+    #form-signin-home #input-home {
+      height: 14% !important; }
+  #google-container {
+    height: 14% !important; }
+  #sign-up-home {
+    width: 80% !important;
+    height: 14% !important;
+    margin-left: 10% !important; } }
