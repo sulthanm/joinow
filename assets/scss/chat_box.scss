@@ -63,3 +63,8 @@
 		    }
 	    }
 }
+@media (max-width: 380px) {
+	#user-chat-box{
+		display: none !important;
+	}
+}

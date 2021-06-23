@@ -97,3 +97,30 @@ module.exports.downloadAvatar = async function(req, res){
     const readStream = await s3BucketJoinow.downloadFile(req.params.key);
     readStream.pipe(res);
 }
+
+module.exports.userFriends = async function(req, res){
+    
+    try{
+        
+        let users = await User.find({}).populate({
+            path:'friends',
+            populate:{
+             path:'from_user'   
+            }
+        }).populate({
+            path:'friends',
+            populate:'to_user'
+        });
+        
+        
+        return res.render('user_friends',{
+            title: "Joinow || Users-Page",
+            allUsers : users
+        });
+
+    }catch(err){
+        console.log('Error in rendering homePage', err);
+        return;
+    }
+  
+}

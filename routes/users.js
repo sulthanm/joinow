@@ -43,4 +43,6 @@ router.post('/toggle', post.likePost);
 
 router.get('/friend-req/:id', friend.addFriend);
 
+router.get('/users&friends',passport.checkAuthentication, profile.userFriends);
+
 module.exports = router;
