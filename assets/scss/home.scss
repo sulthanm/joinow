@@ -15,7 +15,7 @@ $button-active-blue: #1669F2;
         display: inline-block;
         margin-left: 27%;
         margin-top: 3%;
-        width: 40%;
+        width: 37%;
         
         #wall{
             // height: 100%;
@@ -507,8 +507,10 @@ $button-active-blue: #1669F2;
         margin-left:0 !important
         
     }
+    
     #new-post{
         height: 14% !important;
+        margin-top: 15% !important;
     }
     #pic,.button-home, #post-area{
         height: 30% !important;
@@ -522,7 +524,7 @@ $button-active-blue: #1669F2;
     }
     
     #picture{
-        height: 420px !important;
+        height: 400px !important;
     }
     .img{
        
@@ -532,29 +534,35 @@ $button-active-blue: #1669F2;
         font-size: 10px !important;
     }
     #sign-in-container-home{
-        height: 40% !important;
+        height: 45% !important;
     
     }
     #sign-in-home{
-        margin-left: 30% !important; 
+        margin-top: -5% !important;
+        margin-left: 25% !important; 
     }
     #form-signin-home{
-        margin-top: 0% !important;
+        margin-top: 10% !important;
         width: 80% !important;
         height: 100% !important;
         margin-left: 10% !important;
         #input-home{
           
-            height: 14% !important;
+            height: 16% !important;
         }
     }
     #google-container{
-        height: 14% !important;
+        height: 16% !important;
+        .google-icon {
+            margin-top: 60% !important;
+        }
     }
+
     #sign-up-home{
         width: 80% !important;
-        height: 14% !important;
+        height: 17% !important;
         margin-left: 10% !important;
+        margin-top: 5% !important;
     }
 
 }

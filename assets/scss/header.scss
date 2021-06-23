@@ -60,16 +60,12 @@
             // margin-top: 20px;
             display: flex;
             justify-content: space-around;
-          
-            #user-pic-header{
-                height: 30px;
-                width: 30px;
-                margin-top: -4px;
-                border-radius: 50px;
-                // margin-left: -5px;
-                // border: 2px solid black;
-            }
+            padding-inline-start: 0;
+            margin-block-start: 0;
+            
             li{
+                padding-inline-start: 0;
+                margin-block-start: 0;
                 display: inline;
                 // margin-left: 40px;
                 margin-top: -4px;
@@ -94,12 +90,12 @@
                 width: 160px;
                 background-color: white;
                 color: black;
-                padding: 10px 15px 30px 15px;
+                
                 font-size: 16px;
                 border:none;
                 cursor: pointer;
-                margin-top: -5px;
-                margin-left: -40px;
+                margin-top: 19px;
+                margin-left: 20px;
                 // border: 2px solid navy;
                 
               }
@@ -107,7 +103,7 @@
               .dropbtn:hover {
                 border:none;
                 transition: 0.5s;
-                background-color: rgba(192, 189, 189,0.2);
+                color: rgb(108, 97, 114);
               
               }
               
@@ -155,9 +151,9 @@
          }
         #user-friend-a{
             font-size: 20px;
-            position: relative !important;
+            position: absolute !important;
             margin-top: -7% !important;
-            margin-left: 10% !important;
+            margin-left: 145% !important;
             // border: 2px solid navy;
         }
         #head{
@@ -171,39 +167,15 @@
             width: 70% !important;
             // border: 2px solid black !important;
         }
-      
-        #head-list{
+        .dropbtn {
+            font-size: 10px !important;
+            padding-top: 0 !important;
             position: relative;
-            left: -150px;
-            top: 3px;
-            li{
-                #list-item{
-                    // border: 2px solid black;
-                    font-size: 10px !important;
-                   
-                }
-            }
-        }
-        .dropbtn{
-    
-            margin-left: 70px !important;
-            margin-top: -15px !important;
-            font-size: 10px !important;
-            padding-top:15px !important;
-            padding-bottom: 25px !important;
-            width: 100px !important;
-    
-        }
-        .dropdown-content {
+            height: 10px !important;
+            margin-top: 15% !important;
          
-            position: absolute !important;
-            width: 90px !important;
-            height: 70px !important;
-            font-size: 10px !important;
-            left: 90px !important;
-           
         }
-        
+       
         
        
         

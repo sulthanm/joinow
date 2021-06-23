@@ -5,7 +5,7 @@
     display: inline-block;
     margin-left: 27%;
     margin-top: 3%;
-    width: 40%; }
+    width: 37%; }
     #home-container #post-container #wall {
       width: 100%;
       display: inline-block; }
@@ -312,7 +312,8 @@
     width: 100% !important;
     margin-left: 0 !important; }
   #new-post {
-    height: 14% !important; }
+    height: 14% !important;
+    margin-top: 15% !important; }
   #pic, .button-home, #post-area {
     height: 30% !important;
     margin-top: 3% !important;
@@ -320,25 +321,29 @@
   .custom-file-input, .comment-button, .button-home {
     font-size: 7px !important; }
   #picture {
-    height: 420px !important; }
+    height: 400px !important; }
   .img {
     margin-left: 7px !important; }
   .post-comments-container {
     font-size: 10px !important; }
   #sign-in-container-home {
-    height: 40% !important; }
+    height: 45% !important; }
   #sign-in-home {
-    margin-left: 30% !important; }
+    margin-top: -5% !important;
+    margin-left: 25% !important; }
   #form-signin-home {
-    margin-top: 0% !important;
+    margin-top: 10% !important;
     width: 80% !important;
     height: 100% !important;
     margin-left: 10% !important; }
     #form-signin-home #input-home {
-      height: 14% !important; }
+      height: 16% !important; }
   #google-container {
-    height: 14% !important; }
+    height: 16% !important; }
+    #google-container .google-icon {
+      margin-top: 60% !important; }
   #sign-up-home {
     width: 80% !important;
-    height: 14% !important;
-    margin-left: 10% !important; } }
+    height: 17% !important;
+    margin-left: 10% !important;
+    margin-top: 5% !important; } }

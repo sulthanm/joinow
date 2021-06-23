@@ -37,13 +37,12 @@
     height: 20px;
     list-style: none;
     display: flex;
-    justify-content: space-around; }
-    #head #head-list #user-pic-header {
-      height: 30px;
-      width: 30px;
-      margin-top: -4px;
-      border-radius: 50px; }
+    justify-content: space-around;
+    padding-inline-start: 0;
+    margin-block-start: 0; }
     #head #head-list li {
+      padding-inline-start: 0;
+      margin-block-start: 0;
       display: inline;
       margin-top: -4px; }
       #head #head-list li #list-item {
@@ -58,16 +57,15 @@
       width: 160px;
       background-color: white;
       color: black;
-      padding: 10px 15px 30px 15px;
       font-size: 16px;
       border: none;
       cursor: pointer;
-      margin-top: -5px;
-      margin-left: -40px; }
+      margin-top: 19px;
+      margin-left: 20px; }
     #head #head-list .dropbtn:hover {
       border: none;
       transition: 0.5s;
-      background-color: rgba(192, 189, 189, 0.2); }
+      color: #6c6172; }
     #head #head-list .dropdown {
       border: none;
       position: relative;
@@ -102,9 +100,9 @@
     justify-content: space-around !important; }
   #user-friend-a {
     font-size: 20px;
-    position: relative !important;
+    position: absolute !important;
     margin-top: -7% !important;
-    margin-left: 10% !important; }
+    margin-left: 145% !important; }
   #head {
     height: 40px !important; }
   #name {
@@ -112,22 +110,9 @@
     left: -5%;
     font-size: 15px !important;
     width: 70% !important; }
-  #head-list {
-    position: relative;
-    left: -150px;
-    top: 3px; }
-    #head-list li #list-item {
-      font-size: 10px !important; }
   .dropbtn {
-    margin-left: 70px !important;
-    margin-top: -15px !important;
     font-size: 10px !important;
-    padding-top: 15px !important;
-    padding-bottom: 25px !important;
-    width: 100px !important; }
-  .dropdown-content {
-    position: absolute !important;
-    width: 90px !important;
-    height: 70px !important;
-    font-size: 10px !important;
-    left: 90px !important; } }
+    padding-top: 0 !important;
+    position: relative;
+    height: 10px !important;
+    margin-top: 15% !important; } }
