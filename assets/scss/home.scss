@@ -15,7 +15,7 @@ $button-active-blue: #1669F2;
         display: inline-block;
         margin-left: 27%;
         margin-top: 3%;
-        width: 37%;
+        width: 42%;
         
         #wall{
             // height: 100%;
@@ -526,7 +526,7 @@ $button-active-blue: #1669F2;
     }
     
     #picture{
-        height: 430px !important;
+        // height: 530px !important;
         width: 100% !important;
     }
     .img{
@@ -537,8 +537,7 @@ $button-active-blue: #1669F2;
         font-size: 10px !important;
     }
     #sign-in-container-home{
-        height: 200px !important;
-        width: 80% !important;
+        height: 285px !important;
     
     }
     #sign-in-home{
@@ -549,32 +548,26 @@ $button-active-blue: #1669F2;
         margin-top: 10% !important;
         width: 80% !important;
         height: 120% !important;
-        margin-left: 20% !important;
+        margin-left: 10% !important;
         #input-home{
           
             height: 16% !important;
         }
     }
     #google-container{
-        margin-top: -5% !important;
         height: 16% !important;
         .google-icon {
-           
-            margin-top: 40% !important;
-            
+            margin-top: 60% !important;
         }
     }
     .btn-text{
-       
-        margin-top: 10px !important;
+        margin-top: 17px !important;
     }
     #sign-up-home{
-        font-size: 12px !important;
         width: 80% !important;
         height: 17% !important;
-        margin-left: 20% !important;
-        margin-top: 6% !important;
-      
+        margin-left: 10% !important;
+        margin-top: 5% !important;
     }
     
 
