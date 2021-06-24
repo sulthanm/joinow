@@ -50,3 +50,7 @@
       font-family: "Roboto"; }
     #container .google-btn:hover {
       box-shadow: 0 0 6px #4285f4; }
+
+@media (max-width: 750px) {
+  #container {
+    margin-left: 14.5% !important; } }

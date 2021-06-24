@@ -4,7 +4,7 @@
   background-color: white;
   position: fixed;
   display: flex;
-  margin: 0; }
+  margin-top: -1.5%; }
   #head #name {
     margin-left: 10%;
     font-size: 25px;
@@ -32,14 +32,15 @@
         position: relative;
         margin-top: -3%; }
   #head #head-list {
-    margin-left: 75vw;
-    width: 180px;
+    margin-left: 78%;
+    width: 16%;
     height: 20px;
     list-style: none;
     display: flex;
     justify-content: space-around;
     padding-inline-start: 0;
-    margin-block-start: 0; }
+    margin-block-start: 0;
+    margin-top: 1.5%; }
     #head #head-list li {
       padding-inline-start: 0;
       margin-block-start: 0;
@@ -93,6 +94,8 @@
       display: block; }
 
 @media (max-width: 750px) {
+  #head {
+    margin: 0 !important; }
   #icon-container {
     position: relative !important;
     margin-top: -1% !important;
@@ -105,6 +108,14 @@
     margin-left: 145% !important; }
   #head {
     height: 40px !important; }
+  #head-list {
+    margin-top: 3% !important;
+    margin-left: 63% !important;
+    width: 30% !important; }
+    #head-list li {
+      font-size: 5px !important; }
+    #head-list .sign-up-header {
+      visibility: hidden !important; }
   #name {
     top: 13px !important;
     left: -5%;

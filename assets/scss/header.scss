@@ -6,7 +6,7 @@
         // border: 2px solid black;
         position: fixed;
         display: flex;
-        margin: 0;
+        margin-top: -1.5% ;
      
         #name {
             margin-left: 10%;
@@ -52,16 +52,17 @@
           
         #head-list{
          
-            margin-left: 75vw;
-            width: 180px;
+            margin-left: 78%;
+            width: 16%;
             height: 20px;
             list-style: none;
             // border: 2px solid black;
-            // margin-top: 20px;
+            
             display: flex;
             justify-content: space-around;
             padding-inline-start: 0;
             margin-block-start: 0;
+            margin-top: 1.5%;
             
             li{
                 padding-inline-start: 0;
@@ -143,6 +144,9 @@
     
 @media (max-width: 750px) 
      {
+         #head{
+             margin : 0 !important
+         }
          #icon-container{
              position: relative !important;
              margin-top: -1% !important;
@@ -159,6 +163,16 @@
         #head{
             height: 40px !important;
             
+        }#head-list{
+            li{
+                font-size: 5px !important;
+            }
+            .sign-up-header{
+                visibility: hidden !important;
+            }
+            margin-top: 3% !important;
+            margin-left: 63% !important;
+            width: 30% !important;
         }
         #name{
             top: 13px !important;
