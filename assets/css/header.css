@@ -3,8 +3,7 @@
   width: 100%;
   background-color: white;
   position: fixed;
-  display: flex;
-  margin-top: -1.5%; }
+  display: flex; }
   #head #name {
     margin-left: 10%;
     font-size: 25px;
@@ -45,7 +44,8 @@
       padding-inline-start: 0;
       margin-block-start: 0;
       display: inline;
-      margin-top: -4px; }
+      margin-top: -4px;
+      z-index: 0; }
       #head #head-list li #list-item {
         font-size: 17px;
         text-decoration: none; }
@@ -61,7 +61,7 @@
       font-size: 16px;
       border: none;
       cursor: pointer;
-      margin-top: 19px;
+      margin-top: 0px;
       margin-left: 20px; }
     #head #head-list .dropbtn:hover {
       border: none;
@@ -78,7 +78,8 @@
       width: 100px;
       overflow: auto;
       box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 99; }
+      z-index: 1;
+      margin-top: 20px; }
     #head #head-list .dropdown-content a {
       font-size: 13px;
       color: black;
@@ -113,9 +114,13 @@
     margin-left: 63% !important;
     width: 30% !important; }
     #head-list li {
-      font-size: 5px !important; }
+      font-size: 5px !important;
+      margin-top: 3.5% !important; }
     #head-list .sign-up-header {
       visibility: hidden !important; }
+    #head-list .sign-in-header {
+      font-size: 12px !important;
+      margin-top: 6% !important; }
   #name {
     top: 13px !important;
     left: -5%;
@@ -126,5 +131,7 @@
     padding-top: 0 !important;
     position: relative;
     height: 10px !important;
-    margin-top: 10% !important;
-    margin-left: -15% !important; } }
+    margin-top: 4% !important;
+    margin-left: -13% !important; }
+  .sign-in-header {
+    font-size: 12px !important; } }
