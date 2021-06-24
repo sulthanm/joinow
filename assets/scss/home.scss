@@ -146,9 +146,11 @@ $button-active-blue: #1669F2;
                     
                     #picture{
                         // margin-left: 10px;
+                        
                         margin-top: 20px;
-                        height: 700px;
+                        height: 550px;
                         width: 100%;
+                        object-fit: contain;
                     }
                     #likes{
                         // border: 2px solid black;
@@ -524,7 +526,7 @@ $button-active-blue: #1669F2;
     }
     
     #picture{
-        height: 500px !important;
+        height: 430px !important;
         width: 100% !important;
     }
     .img{
@@ -535,7 +537,8 @@ $button-active-blue: #1669F2;
         font-size: 10px !important;
     }
     #sign-in-container-home{
-        height: 285px !important;
+        height: 200px !important;
+        width: 80% !important;
     
     }
     #sign-in-home{
@@ -546,24 +549,32 @@ $button-active-blue: #1669F2;
         margin-top: 10% !important;
         width: 80% !important;
         height: 120% !important;
-        margin-left: 10% !important;
+        margin-left: 20% !important;
         #input-home{
           
             height: 16% !important;
         }
     }
     #google-container{
+        margin-top: -5% !important;
         height: 16% !important;
         .google-icon {
-            margin-top: 60% !important;
+           
+            margin-top: 40% !important;
+            
         }
     }
-
+    .btn-text{
+       
+        margin-top: 10px !important;
+    }
     #sign-up-home{
+        font-size: 12px !important;
         width: 80% !important;
         height: 17% !important;
-        margin-left: 10% !important;
-        margin-top: 5% !important;
+        margin-left: 20% !important;
+        margin-top: 6% !important;
+      
     }
     
 

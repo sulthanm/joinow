@@ -27,7 +27,7 @@ module.exports.homePage = async function(req, res){
         
         
         return res.render('home',{
-            title: "Joinow || Home-Page",
+            title: "joinow",
             posts : userPosts,
             allUsers : users
         });

@@ -1,9 +1,9 @@
 <link rel="stylesheet" href="<%= assetPath('css/profile.css') %>">
 <%- include('_header'); %>
 <div id="profile-container">
-   <%- include('_header'); %>
+
    <% if(locals.user.id==profile_user.id){ %>
-      <h1>
+      <div id="profile-container-2">
          <div id="cover-background"></div>
             <div id="profile-pic-container">
                <img src="<%= user.avatar %>" alt="<%= user.name %>" id="profile-pic">
@@ -11,23 +11,26 @@
             
         
          
-      
-      </h1>
-     
-      <form action="/users/profile-update/<%= user.id %>" enctype="multipart/form-data" method="POST" id="update-form">
+         <div id="update-form-container">
+            <form action="/users/profile-update/<%= user.id %>" enctype="multipart/form-data" method="POST" class="update-form">
 
-         <input type="text" name="name" value="<%= user.name %>" id="userName">
-         <input type="text" name="email" value="<%= user.email %>" id="userEmail">
-         <div class="file-input">
-            <input type="file" placeholder="Profile PIcture" name="avatar" id="file">
-            <label for="file">Edit Profile Photo</label>
+            <input type="text" name="name" value="<%= user.name %>" id="userName">
+            <input type="text" name="email" value="<%= user.email %>" id="userEmail">
+            <div class="file-input">
+               <input type="file" placeholder="Profile PIcture" name="avatar" id="file">
+               <label for="file">Edit Profile Photo</label>
+            </div>
+            <!-- <input type="file" placeholder="Cover pic" name="avatarCover"> -->
+            
+            <button class="button">Update me</button>
+             
+         </form>
          </div>
-         <!-- <input type="file" placeholder="Cover pic" name="avatarCover"> -->
-         
-         <button class="button">Update me</button>
-          
-      </form>
+     
+      
       <div id="border"></div>
+      </div>
+         
 
    <% }else{ %>
       <div id="user-details-container">
