@@ -55,15 +55,19 @@
         border-bottom: 1px solid rgba(90, 112, 128, 0.411);
         color: rgba(212, 22, 22, 0.658); }
     #head #head-list .dropbtn {
-      height: 20px;
-      width: 160px;
+      height: 25px;
+      width: 150px;
       background-color: white;
       color: black;
       font-size: 16px;
       border: none;
       cursor: pointer;
       margin-top: 0px;
-      margin-left: 20px; }
+      margin-left: 20px;
+      display: flex;
+      justify-content: space-around; }
+      #head #head-list .dropbtn #user-name-header {
+        margin-top: 3px; }
     #head #head-list .dropbtn:hover {
       border: none;
       transition: 0.5s;
@@ -76,18 +80,19 @@
     #head #head-list .dropdown-content {
       display: none;
       position: absolute;
-      background-color: #f1f1f1;
-      width: 100px;
+      width: 100%;
       overflow: auto;
       box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
       z-index: 1;
-      margin-top: 10px; }
+      margin-top: 10px;
+      background-color: #f1f1f1; }
     #head #head-list .dropdown-content a {
       font-size: 13px;
       color: black;
       padding: 9px 5px;
       text-decoration: none;
-      display: block; }
+      display: block;
+      padding-left: 30%; }
     #head #head-list .dropdown-content a:hover {
       border: none; }
     #head #head-list .dropdown a:hover {
@@ -138,7 +143,18 @@
     margin-left: -13% !important;
     width: auto !important;
     height: 30px !important; }
+  .drop-icon-header {
+    margin-top: 2px !important;
+    height: 20px !important;
+    width: 20px !important; }
   .dropdown-content {
-    margin-top: 20px !important; }
+    font-size: 7px !important;
+    height: 60px !important;
+    width: 110px !important;
+    margin-top: 20px !important;
+    margin-left: -30px !important; }
+  .dropdown-content a {
+    height: 7px !important;
+    padding-left: 10% !important; }
   .sign-in-header {
     font-size: 12px !important; } }

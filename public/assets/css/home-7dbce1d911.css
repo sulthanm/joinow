@@ -15,12 +15,6 @@
         background-color: white;
         height: 21%;
         border-top: 3px solid #659DBD; }
-        #home-container #post-container #wall #new-post #pic, #home-container #post-container #wall #new-post #button {
-          height: 30%;
-          width: 28%;
-          padding: 2%;
-          margin-top: 4%;
-          margin-left: 9%; }
         #home-container #post-container #wall #new-post #post-area {
           margin-left: 8.5%;
           margin-top: 3%;
@@ -53,8 +47,13 @@
         #home-container #post-container #wall #new-post #pic:hover {
           transition: 0.5s;
           background-color: #659DBD; }
+        #home-container #post-container #wall #new-post #pic, #home-container #post-container #wall #new-post #button {
+          height: 30%;
+          width: 28%;
+          padding: 2%;
+          margin-top: 15px !important;
+          margin-left: 9%; }
         #home-container #post-container #wall #new-post #button {
-          margin-top: -7%;
           margin-left: 26%;
           cursor: pointer;
           border: none;
@@ -196,7 +195,8 @@
     border-left: 2px solid grey;
     vertical-align: top;
     margin-top: 90px;
-    position: fixed; }
+    position: fixed;
+    overflow: scroll; }
     #home-container #friends #friends-list {
       margin-left: 20px;
       font-size: 20px;
@@ -225,6 +225,8 @@
       #home-container #friends #all-users-list #user-name-home:hover {
         color: #94082b;
         transition: 0s; }
+  #home-container #friends::-webkit-scrollbar {
+    display: none; }
   #home-container #sign-in-container-home {
     height: 99%;
     width: 98%;

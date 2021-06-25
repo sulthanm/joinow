@@ -11,7 +11,7 @@
                         <div id="wall">
                                 <% if(locals.user){ %>
                                         <form action="/users/create-posts" id="new-post" enctype="multipart/form-data" method="POST">
-                                                <input name="post_content" id="post-area" type="text" placeholder="Type here.." required></textarea>
+                                                <input name="post_content" id="post-area" type="text" placeholder="Post.." required></textarea>
                                                 <input type="file" placeholder="Post Picture" name="avatar" id="pic" class="custom-file-input">
                                                 <input type="submit" value="Post" id="button" class="button-home">
                                         </form>

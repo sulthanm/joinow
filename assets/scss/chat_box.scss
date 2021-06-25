@@ -93,6 +93,9 @@
 	    }
 }
 @media (max-width: 750px) {
+	.openChatBtn{
+		display: none !important;
+	}
 	#user-chat-box{
 		display: none !important;
 	}
