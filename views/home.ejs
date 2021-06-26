@@ -12,8 +12,17 @@
                                 <% if(locals.user){ %>
                                         <form action="/users/create-posts" id="new-post" enctype="multipart/form-data" method="POST">
                                                 <input name="post_content" id="post-area" type="text" placeholder="Post.." required></textarea>
-                                                <input type="file" placeholder="Post Picture" name="avatar" id="pic" class="custom-file-input">
-                                                <input type="submit" value="Post" id="button" class="button-home">
+                                                <div id="photo-button-container">
+                                                        <div id="upload-con">
+                                                                <input type="file" placeholder="Post Picture" name="avatar" id="pic" class="custom-file-input">
+                                                                <img src="https://img.icons8.com/material-outlined/24/000000/stack-of-photos.png" id="photo-icon"/>
+                                                        </div>
+                                                        <div id="post-button-con">
+                                                                <input type="submit" value="Post" id="button" class="button-home">
+                                                        </div>
+                                                </div>
+                                                
+                                                
                                         </form>
                         
                                 <% } %>
@@ -49,8 +58,10 @@
                                                                 
                                                                 <% if(name == f.to_user.name){   %>
                                                                         
+
                                                                         <a href="/users/profile/<%= f.from_user._id %>" id="f-name"><%= f.from_user.name %></a>
                                                                 <%} else{ %>
+                                                                        
                                                                         <a href="/users/profile/<%= f.to_user._id %>" id="f-name"><%= f.to_user.name %></a>
                                                                 <% } %>
                         
@@ -73,9 +84,12 @@
                                                                 <% continue %>
                                                         <%}%>
                                                 <% } %>
+                                                
                                                 <a href="/users/profile/<%= u.id %>" id="user-name-home" ><%= u.name %></a>
+                                            
                                         
                                         </p>
+                                 
                                         
                                 <% } %>
 
@@ -92,7 +106,7 @@
                                 <form action="/users/create-session" method="POST" id="home-form">
                                         <input type="email" name="email" placeholder="Email" required id="input-home">
                                         <input type="password" name="password" placeholder="Password" required id="input-home">
-                                        <input type="submit" value="Sign-In" id="input-home" class="button">
+                                        <input type="submit" value="Sign-In" id="input-home" class="button ">
                                         
                                         
                                 </form>
