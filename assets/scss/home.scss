@@ -193,25 +193,57 @@ $button-active-blue: #1669F2;
                         object-fit: contain;
                     }
                     #likes{
-                        // border: 2px solid black;
+                        // border: 2px solid yellow;
                         margin-left: 4%;
-                       
+                        height: 22px;
                         display: flex;
-                        .count{
-                            width: 2%;
+                        flex-direction: row;
+                        // justify-content: space-between;
+                        .likes-count{
+                            margin-block-start: 0;
+                            margin-block-end: 0;
+                            height: 80%;
+                            margin-top: 0.5%;
+                            // border: 2PX solid red;
                         }
                         
                         .img{
-                            height: 23px;
+                       
+                            // border: 2PX solid blue;
+                            // height: 23px;
+
                             width: 20px;
-                            margin-top: 13px;
+                            margin-left: 0%;
+                        }
+                        #comment-count{
+                            height: 80%;
+                           
+                            margin-left: 1%;
+                            margin-top: 0.5%;
+                            margin-block-start: 0;
+                            margin-block-end: 0;
+                            
                         }
                     }
+                    
+                    #comment-count::before{
+                        content: "\00b7";
+                        font-size: 0.8rem;
+                        line-height: 1.33333;
+                        font-weight: 700;
+                        color: rgba(0,0,0,.9);
+                        color: var(--color-text-low-emphasis);
+                        
+                        font-weight: 700;
+                        // border: 2PX solid black;
+                    }
+                 
+                    
                     .toggle-like-button{
                         text-decoration: none;
                         
                         #like-button-1{
-                            width: 22%;
+                            width: 23%;
                             
                             background-color: rgb(255, 111, 97);
                             color: white;
@@ -220,8 +252,8 @@ $button-active-blue: #1669F2;
                             text-transform: uppercase;
                             margin-top: 3%;
                             margin-left: 4%;
-                            padding: 2%;
-                            padding-left: 18%;
+                            padding: 1.8%;
+                            padding-left: 16%;
                             color: white;
                             display: inline-block;
                         }
@@ -254,7 +286,15 @@ $button-active-blue: #1669F2;
                         background-color: rgb(143, 135, 135);
                     }
                       
-                  
+                    #comments-view{
+                        display: none;
+                    }
+                    #close-comments-button,#view-comments-button{
+                        margin-left: 4%;
+                    }
+                    #close-comments-button{
+                        display: none;
+                    }
                     #comment-form{
                         margin-top: 5%;
                         
@@ -575,10 +615,7 @@ $button-active-blue: #1669F2;
         // height: 530px !important;
         width: 100% !important;
     }
-    .img{
-       
-        margin-left: 7px !important;
-    }
+   
     .post-comments-container{
         font-size: 10px !important;
     }
