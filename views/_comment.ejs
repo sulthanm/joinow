@@ -1,8 +1,15 @@
-<div id="comments-view">
+
+    
 <ul id="post-comments-<%= post._id %>" class="comments-list">
     
-    
-        <h3 id="comment-heading">Comments: </h3>
+        <!-- <button id="view-comments-button"  onclick="viewComments()">
+            View all comments
+        </button>
+        <button id="close-comments-button" onclick="closeComments()">
+            Close comments
+        </button> -->
+        <div class="comments-view-container">
+        <h3 id="comment-heading">All Comments: </h3>
         <% for (comment of post.comments){%>
             <li id="comment-<%= comment._id %>" class="comment-list-item">
                       
@@ -31,6 +38,6 @@
             
             <%} %>
    
-    
+        </div>
 </ul>
-</div>
+

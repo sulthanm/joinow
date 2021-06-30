@@ -71,30 +71,10 @@
             </div>
 
             <div class="post-comments-container">
-                <button id="view-comments-button" onclick="viewComments()">
-                         View all comments
-                </button>
-                <button id="close-comments-button" onclick="closeComments()">
-                        Close comments
-                </button>
+                
                
                 <%- include('_comment'); %>
             </div>
             <div id="for-border-down"></div>
     </li>
     
-<script>
-        document.querySelector("#view-comments-button") .addEventListener("click", viewComments);
-	document.querySelector("#close-comments-button").addEventListener("click", closeForm);
-        function viewComments(){
-                document.querySelector("#comments-view").style.display = "block";
-	        document.querySelector("#close-comments-button").style.display = "block";
-                document.querySelector("#view-comments-button").style.display = "none";
-        }
-        function closeComments(){
-                document.querySelector("#comments-view").style.display = "none";
-	        document.querySelector("#view-comments-button").style.display = "block";
-                document.querySelector("#close-comments-button").style.display = "none";
-        }
-        
-</script>
