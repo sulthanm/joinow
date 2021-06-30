@@ -213,15 +213,16 @@ $button-active-blue: #1669F2;
                             // height: 23px;
 
                             width: 20px;
-                            margin-left: 0%;
+                            margin-left: 0.2%;
                         }
                         #comment-count{
                             height: 80%;
                            
                             margin-left: 1%;
-                            margin-top: 0.5%;
+                            padding-top: 0.2%;
                             margin-block-start: 0;
                             margin-block-end: 0;
+                            // border: 2PX solid forestgreen;
                             
                         }
                     }
@@ -339,6 +340,7 @@ $button-active-blue: #1669F2;
                     .post-comments-container{
                         // border: 2px solid brown;
                         // margin-top: 10px;
+                     
                         #comment-heading{
                             color: burlywood;
                             // border: 2px solid goldenrod;
