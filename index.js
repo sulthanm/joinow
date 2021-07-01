@@ -26,7 +26,20 @@ const cors = require('cors');
 app.use(cors());
 
 const chatServer = require('http').Server(app);
-const chatSockets = require('./config/chat_socket').chatSockets(chatServer);
+const chatSockets = require('./config/chat_socket').chatSockets(chatServer,{
+    origins: ["https://example.com"],
+  
+    // optional, useful for custom headers
+    handlePreflightRequest: (req, res) => {
+      res.writeHead(200, {
+        "Access-Control-Allow-Origin": "https://example.com",
+        "Access-Control-Allow-Methods": "GET,POST",
+        "Access-Control-Allow-Headers": "my-custom-header",
+        "Access-Control-Allow-Credentials": true
+      });
+      
+    }
+  });
 const portChatServer = 8621;
 
 chatServer.listen(portChatServer);
