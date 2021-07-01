@@ -22,6 +22,10 @@ const env = require('./config/environment');
 const logger = require('morgan');
 const path = require('path');
 
+//cors
+var cors = require('cors');
+app.use(cors());
+
 const chatServer = require('http').Server(app);
 const chatSockets = require('./config/chat_socket').chatSockets(chatServer);
 const portChatServer = 8621;
@@ -92,6 +96,20 @@ app.use(passport.setAuthenticatedUser);
 
 app.use(flash());
 app.use(customMware.setFlash);
+
+//CORS middleware
+var allowCrossDomain = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', 'example.com');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+
+    next();
+}
+
+//...
+
+app.use(allowCrossDomain);
+   
 
 
 const routes = require('./routes/index');

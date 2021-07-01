@@ -2,6 +2,7 @@ class ChatEngine{
     constructor(chatBoxId, userEmail){
         this.chatBox = $(`#${chatBoxId}`);
         this.userEmail = userEmail;
+
         this.socket = io.connect('http://joinow.herokuapp.com:8621');
         console.log("hapy",this.userEmail);
         if (this.userEmail){
