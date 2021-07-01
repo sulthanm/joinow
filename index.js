@@ -37,7 +37,8 @@ const chatSockets = require('./config/chat_socket').chatSockets(chatServer,{
         "Access-Control-Allow-Headers": "my-custom-header",
         "Access-Control-Allow-Credentials": true
       });
-      
+      console.log('sdolokldsjvgsmj');
+      res.end();
     }
   });
 const portChatServer = 8621;
