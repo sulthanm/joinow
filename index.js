@@ -27,12 +27,12 @@ app.use(cors());
 
 const chatServer = require('http').Server(app);
 const chatSockets = require('./config/chat_socket').chatSockets(chatServer,{
-    origins: ["https://example.com"],
+    origins: ["https://joinow.herokuapp.com"],
   
     // optional, useful for custom headers
     handlePreflightRequest: (req, res) => {
       res.writeHead(200, {
-        "Access-Control-Allow-Origin": "https://example.com",
+        "Access-Control-Allow-Origin": "https://joinow.herokuapp.com",
         "Access-Control-Allow-Methods": "GET,POST",
         "Access-Control-Allow-Headers": "my-custom-header",
         "Access-Control-Allow-Credentials": true
