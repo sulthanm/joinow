@@ -253,15 +253,17 @@ $button-active-blue: #1669F2;
                             text-transform: uppercase;
                             margin-top: 3%;
                             margin-left: 4%;
-                            padding: 1.8%;
+                            padding: 1.2%;
                             padding-left: 16%;
                             color: black;
                             display: inline-block;
+                            font-size: 13px;
                         }
                     }
                     .delete-post{
                         text-decoration: none;
                         text-align: center;
+                        font-size: 13px;
                         #delete-button-1{
                             display: inline-block;
                             width: 22%;
@@ -272,7 +274,7 @@ $button-active-blue: #1669F2;
                             text-transform: uppercase;
                             margin-top: 3%;
                             margin-left: 3%;
-                            padding: 2%;
+                            padding: 1.2%;
                             padding-left: 20%;
                            
                             #span{
@@ -300,22 +302,22 @@ $button-active-blue: #1669F2;
                         display: none;
                     }
                     #comment-form{
-                        margin-top: 5%;
-                        
+                        margin-top: 2%;
+                        // border:1px solid black;
                         #new-comment{
                             .comment-input{
                                 padding: 2%;
-                                border:none;
+                                border:1px solid black;
                             }
                             .comment-input:focus{
                                 outline: none;
                             }
                             #comment{
-                                width: 90%;
+                                width: 70%;
                                 height: 5%;
                                 margin-left: 4%;
                                 // border-top: 0px solid black;
-                                border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+                            
                             
                             }
                             .comment-button{
@@ -589,6 +591,28 @@ $button-active-blue: #1669F2;
     width: 0;  
    
 }
+.no-js #loader { display: none; }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    // border: 4px solid springgreen;
+    // background-color: blueviolet;
+    background: #fff;
+    .loader-container-lay{
+        // border: 2px solid springgreen;
+        width: auto;
+        font-size: 30px;
+        position: relative;
+        left: 47%;
+        top: 45%;
+        
+    }
+}
 @media (max-width: 750px) {
     #photo-icon{
         height: 17px !important;
@@ -625,21 +649,24 @@ $button-active-blue: #1669F2;
         font-size: 10px !important;
     }
     #sign-in-container-home{
-        height: 285px !important;
-    
+        height: 100% !important;
+        border: 1px solid rgba(34,345,345,0) !important;
+        background-color: white;
     }
     #sign-in-home{
-        margin-top: -5% !important;
+        height: 100px !important;
+        // margin-top: 7% !important;
         margin-left: 25% !important; 
+        // border: 1px solid grey !important;
     }
     #form-signin-home{
-        margin-top: 10% !important;
+        margin-top: 6% !important;
         width: 80% !important;
-        height: 120% !important;
+        height: 285px !important;
         margin-left: 10% !important;
         #input-home{
-          
-            height: 16% !important;
+            border: 1px solid grey !important;
+            height: 13% !important;
         }
     }
     #google-container{
@@ -649,13 +676,15 @@ $button-active-blue: #1669F2;
         }
     }
     .btn-text{
-        margin-top: 17px !important;
+        margin-top: 19px !important;
     }
     #sign-up-home{
-        width: 80% !important;
-        height: 17% !important;
+        width: 70% !important;
+        height: 38px !important;
         margin-left: 10% !important;
-        margin-top: 5% !important;
+        margin-top: 0% !important;
+        // border: 1px solid grey !important;
+        padding-left: 4% !important;
     }
     // #button{
     //     // position: relative !important;

@@ -152,13 +152,15 @@
               text-transform: uppercase;
               margin-top: 3%;
               margin-left: 4%;
-              padding: 1.8%;
+              padding: 1.2%;
               padding-left: 16%;
               color: black;
-              display: inline-block; }
+              display: inline-block;
+              font-size: 13px; }
           #home-container #post-container #post-list-container #post-list .post-list-item .delete-post {
             text-decoration: none;
-            text-align: center; }
+            text-align: center;
+            font-size: 13px; }
             #home-container #post-container #post-list-container #post-list .post-list-item .delete-post #delete-button-1 {
               display: inline-block;
               width: 22%;
@@ -169,7 +171,7 @@
               text-transform: uppercase;
               margin-top: 3%;
               margin-left: 3%;
-              padding: 2%;
+              padding: 1.2%;
               padding-left: 20%; }
               #home-container #post-container #post-list-container #post-list .post-list-item .delete-post #delete-button-1 #span {
                 margin-left: -76%; }
@@ -183,17 +185,16 @@
           #home-container #post-container #post-list-container #post-list .post-list-item #close-comments-button {
             display: none; }
           #home-container #post-container #post-list-container #post-list .post-list-item #comment-form {
-            margin-top: 5%; }
+            margin-top: 2%; }
             #home-container #post-container #post-list-container #post-list .post-list-item #comment-form #new-comment .comment-input {
               padding: 2%;
-              border: none; }
+              border: 1px solid black; }
             #home-container #post-container #post-list-container #post-list .post-list-item #comment-form #new-comment .comment-input:focus {
               outline: none; }
             #home-container #post-container #post-list-container #post-list .post-list-item #comment-form #new-comment #comment {
-              width: 90%;
+              width: 70%;
               height: 5%;
-              margin-left: 4%;
-              border-bottom: 1px solid rgba(0, 0, 0, 0.14); }
+              margin-left: 4%; }
             #home-container #post-container #post-list-container #post-list .post-list-item #comment-form #new-comment .comment-button {
               margin-top: 3%;
               margin-left: 4%;
@@ -362,6 +363,30 @@
 #home-container::-webkit-scrollbar {
   width: 0; }
 
+.no-js #loader {
+  display: none; }
+
+.js #loader {
+  display: block;
+  position: absolute;
+  left: 100px;
+  top: 0; }
+
+.se-pre-con {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: #fff; }
+  .se-pre-con .loader-container-lay {
+    width: auto;
+    font-size: 30px;
+    position: relative;
+    left: 47%;
+    top: 45%; }
+
 @media (max-width: 750px) {
   #photo-icon {
     height: 17px !important;
@@ -380,25 +405,29 @@
   .post-comments-container {
     font-size: 10px !important; }
   #sign-in-container-home {
-    height: 285px !important; }
+    height: 100% !important;
+    border: 1px solid rgba(34, 255, 255, 0) !important;
+    background-color: white; }
   #sign-in-home {
-    margin-top: -5% !important;
+    height: 100px !important;
     margin-left: 25% !important; }
   #form-signin-home {
-    margin-top: 10% !important;
+    margin-top: 6% !important;
     width: 80% !important;
-    height: 120% !important;
+    height: 285px !important;
     margin-left: 10% !important; }
     #form-signin-home #input-home {
-      height: 16% !important; }
+      border: 1px solid grey !important;
+      height: 13% !important; }
   #google-container {
     height: 16% !important; }
     #google-container .google-icon {
       margin-top: 60% !important; }
   .btn-text {
-    margin-top: 17px !important; }
+    margin-top: 19px !important; }
   #sign-up-home {
-    width: 80% !important;
-    height: 17% !important;
+    width: 70% !important;
+    height: 38px !important;
     margin-left: 10% !important;
-    margin-top: 5% !important; } }
+    margin-top: 0% !important;
+    padding-left: 4% !important; } }

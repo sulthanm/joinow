@@ -17,7 +17,7 @@
                     let newcomment1 = newCommentDisplay(data.data.comment);
                     // console.log(newcomment1);
                     $('.post-comments-container>ul').prepend(newcomment1);
-                    deleteComment($(' #delete-comment', newcomment1));
+                    deleteComment($('#delete-comment', newcomment1));
                     new  ToggleLike($(' .toggle-like-button', newcomment1));
                     
                     new Noty({
@@ -55,15 +55,15 @@
                       
                     </div>
                     <p id="comment-content">${  comment.content }</p>
-                    
+                    <div id="for-border"></div>
                     
             </li>`);
     }
 
     function deleteComment(deleteLink){
-        console.log("Deletnf link ", $(deleteLink).prop('href'));
-        $(deleteLink).click(function(e){
-            // console.log("prevetnggggg delete comment");
+        console.log(deleteLink, "Deletnf link ", $(deleteLink).prop('href'));
+        $('#delete-comment').click(function(e){
+            console.log("prevetnggggg delete comment");
             e.preventDefault();
             
             $.ajax({

@@ -156,9 +156,9 @@ module.exports.deleteComment = async function(req, res){
             let post = await Post.findByIdAndUpdate(postId, { $pull: {comments: req.params.id}});
 
             await Like.deleteMany({likeable: comment._id, onModel: 'Comment'});
-
+            // console.log(" noooooooooo xhr requestttttt");
             if (req.xhr){
-                console.log("xhr requestttttt")
+                console.log("xhr requestttttt");
                 return res.status(200).json({
                     data: {
                         comment_id: req.params.id
@@ -227,6 +227,7 @@ module.exports.likePost = async function(req, res){
         res.locals.deleted = deleted;
         
         if(req.xhr){
+            console.log("xhr requst fr deletng comment");
             return res.json(200, {
                 message: "Request successful!",
                 data: {
