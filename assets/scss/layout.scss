@@ -3,6 +3,26 @@ body{
    
     background-color: rgba(0, 0, 0, 0.05);
     
+    
+}
+.no-js #loader { display: none; }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    // border: 4px solid springgreen;
+    // background-color: blueviolet;
+    background: #fff;
+    .fa-spin{
+        font-size: 30px;
+        position: relative;
+        left: 47.5%;
+        top: 47%;
+    }
 }
 @media (max-width: 400px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
     body{

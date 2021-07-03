@@ -146,15 +146,15 @@
             text-decoration: none; }
             #home-container #post-container #post-list-container #post-list .post-list-item .toggle-like-button #like-button-1 {
               width: 23%;
-              background-color: #ff6f61;
-              color: white;
+              border: 1px solid rgba(0, 0, 0, 0.14);
+              background-color: white;
               text-decoration: none;
               text-transform: uppercase;
               margin-top: 3%;
               margin-left: 4%;
               padding: 1.8%;
               padding-left: 16%;
-              color: white;
+              color: black;
               display: inline-block; }
           #home-container #post-container #post-list-container #post-list .post-list-item .delete-post {
             text-decoration: none;
@@ -162,19 +162,22 @@
             #home-container #post-container #post-list-container #post-list .post-list-item .delete-post #delete-button-1 {
               display: inline-block;
               width: 22%;
-              background-color: #ff6f61;
-              color: white;
+              border: 1px solid rgba(0, 0, 0, 0.14);
+              background-color: white;
+              color: black;
               text-decoration: none;
               text-transform: uppercase;
               margin-top: 3%;
               margin-left: 3%;
               padding: 2%;
-              padding-left: 20%;
-              color: white; }
+              padding-left: 20%; }
               #home-container #post-container #post-list-container #post-list .post-list-item .delete-post #delete-button-1 #span {
                 margin-left: -76%; }
           #home-container #post-container #post-list-container #post-list .post-list-item #delete-button-1:hover, #home-container #post-container #post-list-container #post-list .post-list-item #like-button-1:hover {
-            background-color: #8f8787; }
+            color: black;
+            transition: 0.5s;
+            background-color: #c5c2c2;
+            border: 1px solid rgba(0, 0, 0, 0.14); }
           #home-container #post-container #post-list-container #post-list .post-list-item #close-comments-button, #home-container #post-container #post-list-container #post-list .post-list-item #view-comments-button {
             margin-left: 4%; }
           #home-container #post-container #post-list-container #post-list .post-list-item #close-comments-button {

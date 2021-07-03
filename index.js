@@ -26,21 +26,7 @@ const cors = require('cors');
 app.use(cors());
 
 const chatServer = require('http').Server(app);
-const chatSockets = require('./config/chat_socket').chatSockets(chatServer,{
-    origins: ["https://joinow.herokuapp.com"],
-  
-    // optional, useful for custom headers
-    handlePreflightRequest: (req, res) => {
-      res.writeHead(200, {
-        "Access-Control-Allow-Origin": "https://joinow.herokuapp.com",
-        "Access-Control-Allow-Methods": "GET,POST",
-        "Access-Control-Allow-Headers": "my-custom-header",
-        "Access-Control-Allow-Credentials": true
-      });
-      console.log('sdolokldsjvgsmj');
-      res.end();
-    }
-  });
+const chatSockets = require('./config/chat_socket').chatSockets(chatServer);
 const portChatServer = 8621;
 
 chatServer.listen(portChatServer);

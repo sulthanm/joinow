@@ -2,6 +2,7 @@ const Post = require('../models/post');
 const Comment = require('../models/comment');
 const mailingFile = require('../mailers/funcToSendMails');
 const s3BucketJoinow = require('../config/s3');
+const sharp = require('sharp');
 
 // const commentEmailWorker = require('../workers/comment_email_worker');
 // const queue = require('../config/kue');
@@ -22,8 +23,10 @@ module.exports.createPosts = async function(req, res){
                 res.locals.file = postFile;
                 if(req.file){
                     res.locals.file = true;
+                   
                     result = await s3BucketJoinow.uploadFile(req.file);
                     console.log(req.file);
+
                     console.log("files pushed to buc",result);
                     filePresent = true;
                     postFile=true;
@@ -56,6 +59,7 @@ module.exports.createPosts = async function(req, res){
 module.exports.downloadPost = async function(req, res){
     // console.log(req.params.key);
     const readStream = await s3BucketJoinow.downloadFile(req.params.key);
+
     readStream.pipe(res);
 }
 module.exports.createComment = async function(req,res){
