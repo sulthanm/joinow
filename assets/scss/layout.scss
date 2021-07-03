@@ -17,11 +17,14 @@ body{
     // border: 4px solid springgreen;
     // background-color: blueviolet;
     background: #fff;
-    .fa-spin{
+    .loader-container-lay{
+        // border: 2px solid springgreen;
+        width: auto;
         font-size: 30px;
         position: relative;
-        left: 47.5%;
-        top: 47%;
+        left: 47%;
+        top: 45%;
+        
     }
 }
 @media (max-width: 400px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {

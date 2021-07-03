@@ -39,11 +39,16 @@
             <%- body %>
         </main>
         <div class="se-pre-con">
-            <img src="https://img.icons8.com/windows/32/000000/spinner-frame-5.png" class="fa-spin"/>
+            <div class="loader-container-lay">
+    
+                <img src="https://img.icons8.com/windows/32/000000/spinner-frame-5.png" class="fa-spin"/>
+            </div>
+            
             
           
         </div>
 
+        <%- script %>
         
         <script>
             <% if (flash.success && flash.success.length > 0) {%>

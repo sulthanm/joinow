@@ -19,11 +19,12 @@ body {
   height: 100%;
   z-index: 9999;
   background: #fff; }
-  .se-pre-con .fa-spin {
+  .se-pre-con .loader-container-lay {
+    width: auto;
     font-size: 30px;
     position: relative;
-    left: 47.5%;
-    top: 47%; }
+    left: 47%;
+    top: 45%; }
 
 @media (max-width: 400px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
   body {
