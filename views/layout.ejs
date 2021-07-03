@@ -21,7 +21,12 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
         
-        
+        <script>
+            $(window).load(function() {
+                // Animate loader off screen
+                $(".se-pre-con").fadeOut("slow");;
+            });
+        </script>
             
         
         <%- style %>
@@ -34,15 +39,12 @@
             <%- body %>
         </main>
         <div class="se-pre-con">
-            <i class="fas fa-spinner fa-spin"></i>
+            <img src="https://img.icons8.com/windows/32/000000/spinner-frame-5.png" class="fa-spin"/>
+            
+          
         </div>
+
         
-        <script>
-            $(window).load(function() {
-                // Animate loader off screen
-                $(".se-pre-con").fadeOut("slow");;
-            });
-        </script>
         <script>
             <% if (flash.success && flash.success.length > 0) {%>
                 new Noty({
