@@ -134,6 +134,11 @@
               padding-top: 0.4%;
               margin-block-start: 0;
               margin-block-end: 0; }
+            #home-container #post-container #post-list-container #post-list .post-list-item #likes #comment-img {
+              margin-top: 0.4%;
+              height: 18px;
+              width: 20px;
+              margin-left: 0.4%; }
           #home-container #post-container #post-list-container #post-list .post-list-item #comment-count::before {
             content: "\00b7";
             font-size: 0.8rem;

@@ -7,16 +7,17 @@
             
             e.preventDefault();
             let self = this;
-            // console.log("hmmmmmm",self);
+            console.log("hmmmmmm",self);
             $.ajax({
                 type : 'POST',
                 url : '/users/create-comment',
                 data : $(self).serialize(),
                 success : function(data){
-                    // console.log(data.data.comment);
+                    console.log(data.data.comment.post);
                     let newcomment1 = newCommentDisplay(data.data.comment);
                     // console.log(newcomment1);
-                    $('.post-comments-container>ul').prepend(newcomment1);
+                    let postId = data.data.comment.post;
+                    $(`.post-comments-container-${postId}>ul`).prepend(newcomment1);
                     deleteComment($('#delete-comment', newcomment1));
                     new  ToggleLike($(' .toggle-like-button', newcomment1));
                     
@@ -38,7 +39,7 @@
     }
 
     let newCommentDisplay= function(comment){
-        return $(`<li id="comment-${ comment._id }">
+        return $(`<li id="comment-${ comment._id }" class="comment-list-item">
                 <div id="for-border"></div>
                 <h4 id="user-name">
                     ${ comment.user.name }

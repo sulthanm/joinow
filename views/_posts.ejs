@@ -19,7 +19,9 @@
                                         <p class="display-likes likes-count " data-likes="<%= post.likes.length %>" id="<%=post._id%>"><%= post.likes.length %></p>
                                         
                                         <img class="display-likes img" src="https://img.icons8.com/ios-glyphs/30/000000/filled-like.png"/ id="like-img">
-                                        <p id="comment-count"><%= post.comments.length %> Comments</p>
+                                        
+                                        <p id="comment-count"><%= post.comments.length %> </p>
+                                        <img src="https://img.icons8.com/metro/26/000000/comments.png"/ id="comment-img">
                                 </div>
                                 
                                
@@ -70,7 +72,7 @@
                     <% } %>
             </div>
 
-            <div class="post-comments-container">
+            <div class="post-comments-container-<%= post._id %> post-comments-container">
                 
                
                 <%- include('_comment'); %>
