@@ -112,7 +112,7 @@
             border-bottom: 1px solid rgba(0, 0, 0, 0.24); }
           #home-container #post-container #post-list-container #post-list .post-list-item #picture {
             margin-top: 20px;
-            height: 550px;
+            height: 540px;
             width: 100%;
             object-fit: contain; }
           #home-container #post-container #post-list-container #post-list .post-list-item #likes {
@@ -406,6 +406,7 @@
   .custom-file-input, .comment-button, .button-home {
     font-size: 7px !important; }
   #picture {
+    height: 400px !important;
     width: 100% !important; }
   .post-comments-container {
     font-size: 10px !important; }
@@ -429,7 +430,7 @@
     #google-container .google-icon {
       margin-top: 60% !important; }
   .btn-text {
-    margin-top: 19px !important; }
+    margin-top: 7% !important; }
   #sign-up-home {
     width: 70% !important;
     height: 38px !important;
