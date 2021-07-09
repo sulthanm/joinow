@@ -5,13 +5,22 @@ const path = require('path');
 const s3BucketJoinow = require('../config/s3');
 const passport = require('../config/passport-local-strategy');
 
-module.exports.profilePage = function (req,res){
-    User.findById(req.params.id, function(err, user){
+module.exports.profilePage = async function (req,res){
+    let user = await User.findById(req.params.id).populate({
+        path:'friends',
+        populate:{
+         path:'from_user'   
+        }
+    }).populate({
+        path:'friends',
+        populate:'to_user'
+    });
+
         return res.render('user_profile',{
             title: "Joinow || Profile_Page",
             profile_user: user
         });
-    });
+  
     
 }
 

@@ -1,5 +1,8 @@
 <link rel="stylesheet" href="<%= assetPath('css/profile.css') %>">
 <%- include('_header'); %>
+
+
+
 <div id="profile-container">
 
    <% if(locals.user.id==profile_user.id){ %>
@@ -25,50 +28,82 @@
             <button class="button">Update me</button>
              
          </form>
-         </div>
+      </div>
      
       
       <div id="border"></div>
-      </div>
+</div>
          
 
    <% }else{ %>
-      <div id="user-details-container">
-         <div id="user-details">  
-            <img src="<%= profile_user.avatar %>" alt="<%= profile_user.name %>" height="200px" width="200px">
-         <p><%= profile_user.name %></p>
-         <p><%= profile_user.email %></p>
-         <br>
-         <br>
-         
-         <% let present = false %>
-       
-         <% for(friend1 of locals.user.friends) { %>
-   
-            <% for(friend2 of profile_user.friends) { %>
-             
-               <% if(  friend1.equals(friend2) ){  %> 
-                  <% present = true %>
-                  <a href="/users/friend-req/<%= profile_user.id %>" id="add-friend" >Un-friend</a>
-                  <% break %>
-               <% }  %>
-             
-            <% } %>
-         <% } %>
-     
-         <% if(present == false){ %>
-            <a href="/users/friend-req/<%= profile_user.id %>" id="add-friend" >Add-friend</a>
-         <% } %>
+      <div id="main-div">
+
+         <div id="user-details-container" class="other-user-details-container">
+            <div id="user-details">  
+               <img src="<%= profile_user.avatar %>" alt="<%= profile_user.name %>" id="img3">
+            <p ><b><%= profile_user.name %></b></p>
+            <p><%= profile_user.email %></p>
+            <br>
+            <br>
             
-   
+            <% let present = false %>
+          
+            <% for(friend1 of locals.user.friends) { %>
+      
+               <% for(friend2 of profile_user.friends) { %>
+           
+                  <% if(  friend1.equals(friend2._id) ){  %> 
+                     <% present = true %>
+                     <a href="/users/friend-req/<%= profile_user.id %>" id="add-friend" >Un-friend</a>
+                     <% break %>
+                  <% }  %>
+                
+               <% } %>
+            <% } %>
+        
+            <% if(present == false){ %>
+               <a href="/users/friend-req/<%= profile_user.id %>" id="add-friend" >Add-friend</a>
+            <% } %>
+               
+      
+            </div>
+            
+            
          </div>
+         <% if(profile_user.friends.length != 0){ %>
+            <div id="friends-container3">
+            
+               <div id="friends3">
+                  <p><b> Friends - <%= profile_user.friends.length %></b></p>
+                 <% for(f of profile_user.friends){ %>
+                    <p >
+                            <% let name = profile_user.name %>
+                    
+                         
+                            <% if(name == f.to_user.name){   %>
+                                    
+        
+                                    <a href="/users/profile/<%= f.from_user._id %>" id="f-name"><%= f.from_user.name %></a>
+                            <%} else{ %>
+                                    
+                                    <a href="/users/profile/<%= f.to_user._id %>" id="f-name"><%= f.to_user.name %></a>
+                            <% } %>
+        
+                    
+        
+                    </p>
+                 <% } %>
+               </div>
+            
+             
+            
+            </div>
+         <% } %>
       </div>
       
-
+      
       
    <% } %>
    
-
-</div>
 
 

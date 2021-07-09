@@ -104,40 +104,87 @@
           
     }
    
-    #user-details-container{
+    
+    
+}
+#main-div{
+    height: 100%;
+    overflow-y: scroll;
+    width: 100%;
+    background-color: rgba(241, 240, 240,0.2);
+    .other-user-details-container{
         
         // border: 2px solid black;
-        width: 500px;
-        height: 450px;
-        background-color: white;
-        font-family: sans-serif;
-        // margin-top: 50px;
-        margin-left: 350px;
-        position: relative;
-        top: 80px;
+        width: 100%;
+        height: 35%;
+        // border: 2px solid black;
+        margin-top: 54px;
+        background-color: #ffffff;
+        background-image: linear-gradient(62deg, #ffffff 0%, #E0C3FC 100%);
+
+
+        
         #user-details{
             position: relative;
-            top: 50px;
-            margin-left: 155px;
+            top: 25%;
+            margin-left: 10%;
+            width: 17%;
+            // border: 2px solid black;
+            height: 160%;
+            #img3{
+                margin-top: 5%;
+                width: 200px;
+                height: 200px;
+                object-fit: contain;
+                border-radius: 50%;
+            }
             #add-friend{
                 text-decoration: none;
-                margin-left: 40px;
-                margin-top: -30px;
-                padding: 13px;
+                margin-left: 25%;
+                margin-top: -15%;
+                padding: 4%;
                 border-top: 2px solid grey;
                 border-bottom: 2px solid grey;
             }
             #add-friend:hover{
-                padding: 13px;
+                padding: 3%;
                 transition: 0.3s;
                 border-left: 2px solid grey;
                 border-right: 2px solid grey;
+                
             }
             
         }
+        
     }
+    #friends-container3{
+        // color: black;
+        position: absolute;
+        // border: 2px solid black;
+        margin-top: 2%;
+        left: 57%;
+        width: 25%;
+        height: 40%;
+        overflow-y: scroll;
+        border-left: 3px solid rgb(236, 185, 109);
+        #friends3{
+            margin-left: 15%;
+        }
+        
     
+    }
+
+
 }
+#main-div::-webkit-scrollbar {
+    display: none;
+  }
+
+
+#friends-container3::-webkit-scrollbar {
+    display: none;
+  }
+
 @media (max-width: 750px) {
     #cover-background{
         height: 150px !important;
@@ -159,5 +206,22 @@
         font-size: 10px !important;
         height: 40px !important;
     }
+    .other-user-details-container{
+        margin-top: 10px !important;
+    }
+    #user-details{
+        width: 60% !important;
+        margin-left: 24% !important;
+    }
+    #friends-container3{
+        margin-top: 55% !important;
+        border-left: none !important;
+        border-top: 2px solid rgb(130, 144, 182);
+        width: 100% !important;
+        margin-left: -57% !important;
+        background-color: rgb(255, 255, 255) !important;
+
+    }
+  
 
 }
