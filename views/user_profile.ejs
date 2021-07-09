@@ -37,33 +37,41 @@
 
    <% }else{ %>
       <div id="main-div">
-
+         <div id="cover-background"></div>
+         
          <div id="user-details-container" class="other-user-details-container">
             <div id="user-details">  
                <img src="<%= profile_user.avatar %>" alt="<%= profile_user.name %>" id="img3">
-            <p ><b><%= profile_user.name %></b></p>
-            <p><%= profile_user.email %></p>
-            <br>
-            <br>
+               <br>
+              
+               <p ><b><%= profile_user.name %></b></p>
+               <p><%= profile_user.email %></p>
+               
+               
+               
+               <% let present = false %>
             
-            <% let present = false %>
-          
-            <% for(friend1 of locals.user.friends) { %>
-      
-               <% for(friend2 of profile_user.friends) { %>
-           
-                  <% if(  friend1.equals(friend2._id) ){  %> 
-                     <% present = true %>
-                     <a href="/users/friend-req/<%= profile_user.id %>" id="add-friend" >Un-friend</a>
-                     <% break %>
-                  <% }  %>
-                
+               <% for(friend1 of locals.user.friends) { %>
+         
+                  <% for(friend2 of profile_user.friends) { %>
+            
+                     <% if(  friend1.equals(friend2._id) ){  %> 
+                        <% present = true %>
+                        <p id="p-friend">
+                           <a href="/users/friend-req/<%= profile_user.id %>" id="add-friend" >Un-friend</a>
+                        </p>
+                        <% break %>
+                     <% }  %>
+                  
+                  <% } %>
                <% } %>
-            <% } %>
-        
-            <% if(present == false){ %>
-               <a href="/users/friend-req/<%= profile_user.id %>" id="add-friend" >Add-friend</a>
-            <% } %>
+         
+               <% if(present == false){ %>
+                  <p id="p-friend">
+                     <a href="/users/friend-req/<%= profile_user.id %>" id="add-friend" >Add-friend</a>
+                  </p>
+                  
+               <% } %>
                
       
             </div>
@@ -74,25 +82,35 @@
             <div id="friends-container3">
             
                <div id="friends3">
-                  <p><b> Friends - <%= profile_user.friends.length %></b></p>
-                 <% for(f of profile_user.friends){ %>
-                    <p >
-                            <% let name = profile_user.name %>
+                  <p id="friends-heading"><b> Friends - <%= profile_user.friends.length %></b></p>
+                
+               <div id="all-friends-div">
+                  <% for(f of profile_user.friends){ %>
+                     
+                        <p id="friend-p">
+                           <% let name = profile_user.name %>
+                   
+                        
+                           <% if(name == f.to_user.name){   %>
+                                   
+                                   <img src="<%= f.from_user.avatar %>" alt="<%= f.from_user.name %>" height="100px" width="100px">
+                                   <br>
+                                   
+                                   <a href="/users/profile/<%= f.from_user._id %>" id="f-name"><%= f.from_user.name %></a>
+                           <%} else{ %>
+                                   <img src="<%= f.to_user.avatar %>" alt="<%= f.to_user.name %>" height="100px" width="100px">
+                                   <br>
+                                   
+                                   <a href="/users/profile/<%= f.to_user._id %>" id="f-name"><%= f.to_user.name %></a>
+                           <% } %>
+       
+                   
+       
+                        </p>
+                     
                     
-                         
-                            <% if(name == f.to_user.name){   %>
-                                    
-        
-                                    <a href="/users/profile/<%= f.from_user._id %>" id="f-name"><%= f.from_user.name %></a>
-                            <%} else{ %>
-                                    
-                                    <a href="/users/profile/<%= f.to_user._id %>" id="f-name"><%= f.to_user.name %></a>
-                            <% } %>
-        
-                    
-        
-                    </p>
-                 <% } %>
+                  <% } %>
+               </div>
                </div>
             
              

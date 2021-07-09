@@ -79,28 +79,35 @@
   overflow-y: scroll;
   width: 100%;
   background-color: rgba(241, 240, 240, 0.2); }
-  #main-div .other-user-details-container {
+  #main-div #cover-background {
+    height: 43%;
     width: 100%;
-    height: 35%;
-    margin-top: 54px;
-    background-color: #ffffff;
-    background-image: linear-gradient(62deg, #ffffff 0%, #E0C3FC 100%); }
+    background-color: #bbadb2;
+    background-image: linear-gradient(315deg, #bbaab0 0%, #ffffff 100%); }
+  #main-div .other-user-details-container {
+    width: 19%;
+    height: 80%;
+    margin-top: -10%;
+    margin-left: 10%;
+    display: flex;
+    background-color: white; }
     #main-div .other-user-details-container #user-details {
-      position: relative;
-      top: 25%;
-      margin-left: 10%;
-      width: 17%;
-      height: 160%; }
+      width: 100%;
+      border: 2px solid white;
+      height: auto;
+      display: flex;
+      flex-direction: column; }
       #main-div .other-user-details-container #user-details #img3 {
         margin-top: 5%;
-        width: 200px;
-        height: 200px;
-        object-fit: contain;
-        border-radius: 50%; }
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 100%; }
+      #main-div .other-user-details-container #user-details p {
+        text-align: center;
+        width: 100%; }
       #main-div .other-user-details-container #user-details #add-friend {
         text-decoration: none;
-        margin-left: 25%;
-        margin-top: -15%;
         padding: 4%;
         border-top: 2px solid grey;
         border-bottom: 2px solid grey; }
@@ -110,17 +117,29 @@
         border-left: 2px solid grey;
         border-right: 2px solid grey; }
   #main-div #friends-container3 {
-    position: absolute;
-    margin-top: 2%;
-    left: 57%;
-    width: 25%;
-    height: 40%;
+    width: 40%;
+    height: 45%;
     overflow-y: scroll;
-    border-left: 3px solid #ecb96d; }
-    #main-div #friends-container3 #friends3 {
-      margin-left: 15%; }
+    overflow-x: scroll;
+    margin-left: 35%;
+    margin-top: -23%; }
+    #main-div #friends-container3 #friends3 #friends-heading {
+      margin-left: 5%; }
+    #main-div #friends-container3 #friends3 #all-friends-div {
+      display: flex;
+      flex-direction: row;
+      height: 75%;
+      width: 100%;
+      overflow-y: scroll; }
+      #main-div #friends-container3 #friends3 #all-friends-div #friend-p {
+        margin-block-start: 0;
+        margin-block-end: 0;
+        margin-left: 5%;
+        height: 70%;
+        background-color: white;
+        text-align: center; }
 
-#main-div::-webkit-scrollbar {
+#main-div::-webkit-scrollbar, #all-friends-div::-webkit-scrollbar {
   display: none; }
 
 #friends-container3::-webkit-scrollbar {
@@ -142,14 +161,11 @@
     font-size: 10px !important;
     height: 40px !important; }
   .other-user-details-container {
-    margin-top: 10px !important; }
-  #user-details {
-    width: 60% !important;
-    margin-left: 24% !important; }
+    margin-top: -17% !important;
+    width: 80% !important; }
   #friends-container3 {
-    margin-top: 55% !important;
-    border-left: none !important;
-    border-top: 2px solid #8290b6;
     width: 100% !important;
-    margin-left: -57% !important;
-    background-color: white !important; } }
+    margin-left: -0% !important;
+    margin-top: 10% !important; }
+  #all-friends-div {
+    height: 65% !important; } }

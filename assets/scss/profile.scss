@@ -112,39 +112,58 @@
     overflow-y: scroll;
     width: 100%;
     background-color: rgba(241, 240, 240,0.2);
+   
+    #cover-background{
+        // margin-top: -22px;
+        height: 43%;
+        width: 100%;
+        background-color: #bbadb2;
+        background-image: linear-gradient(315deg, #bbaab0 0%, #ffffff 100%);
+        
+
+    }
+    
     .other-user-details-container{
         
-        // border: 2px solid black;
-        width: 100%;
-        height: 35%;
-        // border: 2px solid black;
-        margin-top: 54px;
-        background-color: #ffffff;
-        background-image: linear-gradient(62deg, #ffffff 0%, #E0C3FC 100%);
-
-
-        
+        // border: 2px solid yellow;
+        width: 19%;
+        height: 80%;
+        margin-top: -10%;
+        margin-left: 10%;
+        display: flex;
+        background-color: white;
         #user-details{
-            position: relative;
-            top: 25%;
-            margin-left: 10%;
-            width: 17%;
-            // border: 2px solid black;
-            height: 160%;
+          
+           
+            
+            width: 100%;
+            border: 2px solid white;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            
             #img3{
+                // border: 2px solid rgb(192, 181, 181);
                 margin-top: 5%;
-                width: 200px;
-                height: 200px;
-                object-fit: contain;
-                border-radius: 50%;
+                width: 100%;
+                height: 250px;
+                object-fit: cover;
+                border-radius: 100%;
+                
+            }
+            p{
+               
+                text-align: center;
+                width: 100%;
+           
             }
             #add-friend{
                 text-decoration: none;
-                margin-left: 25%;
-                margin-top: -15%;
+              
                 padding: 4%;
                 border-top: 2px solid grey;
                 border-bottom: 2px solid grey;
+                
             }
             #add-friend:hover{
                 padding: 3%;
@@ -158,17 +177,40 @@
         
     }
     #friends-container3{
-        // color: black;
-        position: absolute;
+        
+        
         // border: 2px solid black;
-        margin-top: 2%;
-        left: 57%;
-        width: 25%;
-        height: 40%;
+        
+        width: 40%;
+        height: 45%;
         overflow-y: scroll;
-        border-left: 3px solid rgb(236, 185, 109);
+        overflow-x: scroll;
+        margin-left: 35%;
+        margin-top: -23%;
         #friends3{
-            margin-left: 15%;
+            // border: 2px solid forestgreen;
+            #friends-heading{
+                margin-left: 5%;
+            }
+            #all-friends-div{
+                // border: 2px solid red;
+                display: flex;
+                flex-direction: row;
+                height: 75%;
+                width: 100%;
+                overflow-y: scroll;
+                #friend-p{
+                    margin-block-start: 0;
+                    margin-block-end: 0;
+                    margin-left: 5%;
+                    height: 70%;
+                    background-color: white;
+                    text-align: center;
+                  
+                    // border: 2px solid bisque;
+                }
+               
+            }
         }
         
     
@@ -176,7 +218,7 @@
 
 
 }
-#main-div::-webkit-scrollbar {
+#main-div::-webkit-scrollbar ,#all-friends-div::-webkit-scrollbar{
     display: none;
   }
 
@@ -207,21 +249,19 @@
         height: 40px !important;
     }
     .other-user-details-container{
-        margin-top: 10px !important;
-    }
-    #user-details{
-        width: 60% !important;
-        margin-left: 24% !important;
+        margin-top: -17% !important;
+        width: 80% !important;
     }
     #friends-container3{
-        margin-top: 55% !important;
-        border-left: none !important;
-        border-top: 2px solid rgb(130, 144, 182);
         width: 100% !important;
-        margin-left: -57% !important;
-        background-color: rgb(255, 255, 255) !important;
-
+        margin-left: -0% !important;
+        margin-top: 10% !important;
+        // border: 2px solid black !important;
     }
+    #all-friends-div{
+        height: 65% !important;
+    }
+   
   
 
 }
