@@ -86,58 +86,83 @@
     background-image: linear-gradient(315deg, #bbaab0 0%, #ffffff 100%); }
   #main-div .other-user-details-container {
     width: 19%;
-    height: 80%;
+    height: 70%;
     margin-top: -10%;
     margin-left: 10%;
     display: flex;
-    background-color: white; }
+    background-color: rgba(255, 255, 255, 0.925); }
     #main-div .other-user-details-container #user-details {
       width: 100%;
       border: 2px solid white;
-      height: auto;
+      height: 100%;
       display: flex;
       flex-direction: column; }
       #main-div .other-user-details-container #user-details #img3 {
         margin-top: 5%;
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
-        border-radius: 100%; }
+        margin-left: 12.5%;
+        width: 75%;
+        height: 200px;
+        object-fit: cover; }
+      #main-div .other-user-details-container #user-details #img3:hover {
+        transition: 0.5s;
+        transform: scale(1.1); }
       #main-div .other-user-details-container #user-details p {
         text-align: center;
         width: 100%; }
       #main-div .other-user-details-container #user-details #add-friend {
         text-decoration: none;
+        color: white;
         padding: 4%;
         border-top: 2px solid grey;
-        border-bottom: 2px solid grey; }
+        border-bottom: 2px solid grey;
+        background-color: #6875ad; }
       #main-div .other-user-details-container #user-details #add-friend:hover {
         padding: 3%;
         transition: 0.3s;
         border-left: 2px solid grey;
         border-right: 2px solid grey; }
+  #main-div .other-user-details-container:hover {
+    background-color: rgba(192, 192, 192, 0.3); }
   #main-div #friends-container3 {
-    width: 40%;
+    border: 2px solid black;
+    box-shadow: 1px 1px 5px 5px rgba(0, 0, 255, 0.2);
+    width: 60%;
     height: 45%;
     overflow-y: scroll;
-    overflow-x: scroll;
+    border: 1px solid #d8d5d5;
     margin-left: 35%;
-    margin-top: -23%; }
+    margin-top: -18%; }
     #main-div #friends-container3 #friends3 #friends-heading {
+      font-size: 105%;
       margin-left: 5%; }
     #main-div #friends-container3 #friends3 #all-friends-div {
       display: flex;
       flex-direction: row;
       height: 75%;
-      width: 100%;
-      overflow-y: scroll; }
+      width: 750px;
+      overflow-y: scroll;
+      flex-wrap: wrap; }
       #main-div #friends-container3 #friends3 #all-friends-div #friend-p {
         margin-block-start: 0;
         margin-block-end: 0;
         margin-left: 5%;
-        height: 70%;
+        margin-top: 3%;
+        height: 85%;
         background-color: white;
-        text-align: center; }
+        text-align: center;
+        width: 20%;
+        display: flex;
+        flex-direction: column; }
+        #main-div #friends-container3 #friends3 #all-friends-div #friend-p #f-image {
+          margin-left: 15%;
+          margin-top: 5%; }
+        #main-div #friends-container3 #friends3 #all-friends-div #friend-p #f-name {
+          font-size: 15px;
+          color: black;
+          text-decoration: none; }
+        #main-div #friends-container3 #friends3 #all-friends-div #friend-p #v-profile {
+          font-size: 13px;
+          color: #6875ad; }
 
 #main-div::-webkit-scrollbar, #all-friends-div::-webkit-scrollbar {
   display: none; }
@@ -164,8 +189,12 @@
     margin-top: -17% !important;
     width: 80% !important; }
   #friends-container3 {
-    width: 100% !important;
-    margin-left: -0% !important;
+    box-shadow: none !important;
+    width: 100vw !important;
+    margin-left: 0% !important;
     margin-top: 10% !important; }
   #all-friends-div {
-    height: 65% !important; } }
+    height: 65% !important; }
+    #all-friends-div #friend-p {
+      margin-left: 2% !important;
+      height: 88% !important; } }

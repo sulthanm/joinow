@@ -93,15 +93,17 @@
                         
                            <% if(name == f.to_user.name){   %>
                                    
-                                   <img src="<%= f.from_user.avatar %>" alt="<%= f.from_user.name %>" height="100px" width="100px">
+                                   <img src="<%= f.from_user.avatar %>" alt="<%= f.from_user.name %>" height="100px" width="100px" id="f-image">
                                    <br>
                                    
-                                   <a href="/users/profile/<%= f.from_user._id %>" id="f-name"><%= f.from_user.name %></a>
+                                   <span id="f-name"><%= f.from_user.name %></span>
+                                   <a href="/users/profile/<%= f.from_user._id %>" id="v-profile">View Profile</a>
                            <%} else{ %>
-                                   <img src="<%= f.to_user.avatar %>" alt="<%= f.to_user.name %>" height="100px" width="100px">
+                                   <img src="<%= f.to_user.avatar %>" alt="<%= f.to_user.name %>" height="100px" width="100px" id="f-image">
                                    <br>
                                    
-                                   <a href="/users/profile/<%= f.to_user._id %>" id="f-name"><%= f.to_user.name %></a>
+                                   <span id="f-name"><%= f.to_user.name %></span>
+                                   <a href="/users/profile/<%= f.to_user._id %>" id="v-profile">View Profile</a>
                            <% } %>
        
                    

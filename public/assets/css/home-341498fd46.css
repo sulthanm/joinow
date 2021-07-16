@@ -103,6 +103,11 @@
             margin-left: 4%;
             margin-top: 4%;
             font-size: 18px; }
+            #home-container #post-container #post-list-container #post-list .post-list-item #user-name #user-route {
+              color: black;
+              text-decoration: none; }
+            #home-container #post-container #post-list-container #post-list .post-list-item #user-name #user-route:hover {
+              border-bottom: 1px solid grey; }
           #home-container #post-container #post-list-container #post-list .post-list-item #post-content {
             margin-left: 4%;
             font-size: 13px; }

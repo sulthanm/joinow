@@ -170,6 +170,14 @@ $button-active-blue: #1669F2;
                         margin-left: 4%;
                         margin-top: 4%;
                         font-size: 18px;
+                        #user-route{
+                            color: black;
+                            text-decoration: none;
+                        }
+                        #user-route:hover{
+                            border-bottom: 1px solid grey;
+                        }
+                        
                         // border: 2px solid green;
                     }
                     #post-content{

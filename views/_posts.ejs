@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <li id="post-<%= post._id %>" class="post-list-item">
                 <div id="for-border-up"></div>
-                <div id="user-name"><%= post.userss.name %></div>
+                <b><div id="user-name"><a href="/users/profile/<%= post.userss._id %>" id="user-route"><%= post.userss.name %></a></div></b>
                 
                 <p id="post-content"><%= post.post_content %></p>
                 <div id="for-border">
