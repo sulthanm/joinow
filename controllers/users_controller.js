@@ -1,9 +1,10 @@
 const User = require('../models/user');
-
+const Post = require('../models/post');
 const fs = require('fs');
 const path = require('path');
 const s3BucketJoinow = require('../config/s3');
 const passport = require('../config/passport-local-strategy');
+// var url = require('url');
 
 module.exports.profilePage = async function (req,res){
     let user = await User.findById(req.params.id).populate({
@@ -16,9 +17,20 @@ module.exports.profilePage = async function (req,res){
         populate:'to_user'
     });
 
+    let profileUserPosts = await Post.find({})
+        .sort('-createdAt')
+        .populate('userss')
+        .populate({
+            path: 'comments',
+            populate: {
+                path: 'user'
+            }
+    });
+   
         return res.render('user_profile',{
             title: "Joinow || Profile_Page",
-            profile_user: user
+            profile_user: user,
+            uPosts : profileUserPosts
         });
   
     

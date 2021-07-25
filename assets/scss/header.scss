@@ -5,45 +5,63 @@
         background-color: white;
         // border: 2px solid black;
         position: fixed;
-        display: flex;
-        // margin-top: -1.5% ;
         z-index: 1;
+      
         #name {
-            margin-left: 10%;
-           
+            // margin-left: 10%;
+            height: 100%;
+            width: 50%;
             font-size: 25px;
             position: absolute;
-            top: 25%;
+            // top: 25%;
             display: flex;
             flex-direction: row;
-            width: 50%;
+            justify-content: center;
+            
+            // border: 2px solid rgb(35, 228, 228);
             #joinow{
                 text-decoration: none;
                 font-family: Helvetica;
                 color: black;
-                display: inline-block;
+                display: flex;
                 // border: 2px solid navy;
+                height : 100%;
+                align-items: center;
+                justify-content: center;
+                p{
+                    margin-block-start: 0;
+                    margin-block-end: 0;
+                }
+
             }
             #icon-container{
-                width: 15%;
-                margin-left: 5%;
-                margin-top: -0.2%;
+                width: 30%;
+                height: 100%;
+                margin-left: 2%;
+                // margin-top: -0.2%;
+                // border: 2px solid lightblue;
                 display: flex;
                 flex-direction: row;
-                justify-content: space-between;
-                // border: 2px solid lightblue;
-                #home-image-a{
-                    width: 35%;
-                    padding-top: 3px;
-                    // border: 2px solid red;
-                }
-                #user-friend-a{
-                    width: 35%;
-                    height: 100%;
-                    position: relative;
-                    // margin-top: -3%;
+                justify-content: center;
+                align-items: center;
+                
+                #home-image-a , #user-friend-a{
                     // border: 2px solid yellow;
+                    width: 50%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                   
+                    
+                    
                 }
+                #home-image-a:hover, #user-friend-a:hover{
+                    cursor: pointer;
+                    background-color: rgb(231, 229, 229);
+                }
+              
+                
             }
             
           
@@ -53,117 +71,39 @@
           
         #head-list{
          
-            margin-left: 78%;
-            width: 16%;
-            height: 20px;
-            list-style: none;
-            // border: 2px solid black;
+            margin-left: 50%;
+            width: 44%;
+            height: 100%;
+        
+            // border: 2px solid rgb(228, 49, 49);
             
             display: flex;
-            justify-content: space-around;
-            padding-inline-start: 0;
-            margin-block-start: 0;
-            margin-top: 1.3%;
-            
-            li{
-                padding-inline-start: 0;
-                margin-block-start: 0;
-                display: inline;
-                // margin-left: 40px;
-             
-                // border: 2px solid black;
-                z-index: 0;
-                #list-item{
-                    // border: 2px solid black;
-                    font-size: 17px;
-           
-                    text-decoration: none;
-                }
-                #list-item:hover{
-                    transition: 0.3s;
-                    border-bottom: 1px solid rgba(90, 112, 128, 0.411);
-                    color: rgba(212, 22, 22, 0.658);
-                }
+            justify-content: flex-end;
+            .drop{
+                width: auto;
+                // border: 2px solid rgb(44, 236, 102);
                 
             }
-            .dropdown{
-                height: 25px;
+            .dropdown-new{
+                // border: 1px solid black;
+                background-color: white ;
+                color: black;
+                height: 100%;
                 width: 100%;
-                // background-color: white;
-                color: black;
-                
-                font-size: 16px;
-            
-             
-                // border: 2px solid red;
                 display: flex;
-                // justify-content: space-around;
-                font-size: 17px;
- 
-                #user-name-header{
-                    margin-block-start: 0;
-                    margin-block-end: 0;
-                    height: 80%;
-                    width: auto;
-                    // border:2px solid black;
-                }
-                .dropbtn{
-                    height: 25px;
-                    width: 33px;
-                    border: none;
-                    background-color: white;
-                    cursor: pointer;
-                    // border:2px solid black;
-                    .drop-icon-header{
-                        height: 100%;
-                        width: 100%;
-                        margin-left: -25%;
-                        margin-top: -5px;
-                        // border:2px solid black;
-                        
-                        font-size: 7px ;
-                       
-                    }
-                }
+                align-items: center;
+                justify-content: center;
+                // padding: 2%;
             }
-     
-              .dropbtn:hover {
-                border:none;
-                transition: 0.5s;
-                color: rgb(108, 97, 114);
-              
-              }
-              
-             
-              
-              .dropdown-content {
-                display: none;
-                position: absolute;
-                
-                width: 14%;
-                overflow: auto;
-                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                z-index: 1;
-                margin-top: 3%;
-                // border: 2px solid yellowgreen;
-                background-color: #f1f1f1;
-              }
-              
-              .dropdown-content a {
-                
-                font-size: 13px;
-                color: black;
-                padding: 9px 5px;
+            .dropdown-new:hover{
                 text-decoration: none;
-                display: block;
-                padding-left: 27%;
-              }
-              .dropdown-content a:hover{
-                  border: none;
-              }
-              .dropdown a:hover {background-color: #ddd;border:none;}
-              
-              .show {display: block;}
+            }
+            .dropdown-new:focus{
+                border: none;
+                box-shadow: none;
+                background-color: rgba(218, 218, 218,0.3);
+            }
+            
         }
     
     }
@@ -174,28 +114,33 @@
              
              margin : 0 !important ;
              z-index: 1 !important;
+             height: 40px !important;
          }
          #joinow{
-            font-size: 20px !important;
+            font-size: 17px !important;
          }
          #icon-container{
-             position: relative !important;
-             margin-left: 10% !important;
-            margin-top: -2% !important;
-            //  border: 2px solid lightblue;
-             width: 35% !important;
-             font-size: 10px !important;
+          
+            //  border: 2px solid lightblue !important;
+            width: 45% !important;
+            
+            #f-img{
+                // margin-top: 20% !important;
+                height: 59% !important;
+
+            }
          }
      
-        #head{
-            height: 40px !important;
-            
-        }#head-list{
-            li{
-                font-size: 5px !important;
-                // border: 2px solid violet;
-                margin-top: 3.5% !important;
-            }
+        #head-list{
+            margin-left: 53% !important;
+            width: 30% !important;
+            font-size: 13px !important;
+            // border:  1px solid black !important;
+         
+          .dropdown-menu{
+              border: 1px solid rgb(0, 0, 0);
+            //   width: 25% !important;
+          }
             .sign-up-header{
                 
                 visibility: hidden !important;
@@ -204,42 +149,19 @@
                 font-size: 12px !important;
                 margin-top: 6% !important;
             }
-            margin-top: 3% !important;
-            margin-left: 63% !important;
-            width: 30% !important;
+        
         }
      
          
-        .dropdown{
-            
-            // border: 2px solid black !important;
-            margin-left: 17% !important;
-            margin-top: -7% !important;
-        }
+  
         #user-name-header{
             margin-top: 8% !important;
             // border: 2px solid black !important;
             font-size: 9px !important;
         }
-        .dropbtn{
-            height: 15px !important;
-            width: 23px !important;
-            margin-top: 8% !important;
-        }
+    
       
-        .dropdown-content{
-           
-            font-size: 7px !important;
-            height: 60px !important;
-            width: 110px !important;
-            margin-top: 30px !important;
-            margin-left: -12px !important;
-        }
-        .dropdown-content a {
-            height: 7px !important;
-            padding-left: 10% !important;
-            
-        }
+     
         .sign-in-header{
             font-size: 12px !important;
            

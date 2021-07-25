@@ -8,11 +8,12 @@ const sharp = require('sharp');
 // const queue = require('../config/kue');
 
 const Like = require('../models/like');
+var url = require('url');
 
 module.exports.createPosts = async function(req, res){
 
     try{
-        
+            
             let posT = await Post.create({
                 post_content : req.body.post_content,
                 userss : req.user._id,
@@ -25,9 +26,9 @@ module.exports.createPosts = async function(req, res){
                     res.locals.file = true;
                    
                     result = await s3BucketJoinow.uploadFile(req.file);
-                    console.log(req.file);
+                    // console.log(req.file);
 
-                    console.log("files pushed to buc",result);
+                    // console.log("files pushed to buc",result);
                     filePresent = true;
                     postFile=true;
                     res.locals.file = postFile;

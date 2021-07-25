@@ -18,7 +18,7 @@
       position: relative;
       border: 3px solid white; }
   #profile-container-2 #update-form-container {
-    height: 500px;
+    height: auto;
     width: 17%;
     margin-top: -5%;
     margin-left: 43%; }
@@ -73,6 +73,75 @@
         border-color: black;
         color: black;
         transition: all .1s ease-in-out; }
+  #profile-container-2 #border {
+    height: 0;
+    width: 75%;
+    margin-left: 12.5%;
+    border: 1px solid rgba(192, 192, 192, 0.9); }
+  #profile-container-2 #posts-container-inprofile {
+    margin-top: 1%;
+    width: 75%;
+    height: auto;
+    margin-left: 12.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
+    #profile-container-2 #posts-container-inprofile #posts-name {
+      width: 100%;
+      height: 5%;
+      display: flex;
+      justify-content: center; }
+    #profile-container-2 #posts-container-inprofile #users-posts-container-p {
+      width: 100%;
+      height: auto; }
+      #profile-container-2 #posts-container-inprofile #users-posts-container-p #post-p-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap; }
+        #profile-container-2 #posts-container-inprofile #users-posts-container-p #post-p-container #post-p {
+          margin-top: 4%;
+          height: 200px;
+          width: 200px; }
+          #profile-container-2 #posts-container-inprofile #users-posts-container-p #post-p-container #post-p #userProfile-posts-img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover; }
+        #profile-container-2 #posts-container-inprofile #users-posts-container-p #post-p-container #zposts {
+          margin-top: 3%;
+          width: 100%;
+          display: flex;
+          justify-content: center; }
+      #profile-container-2 #posts-container-inprofile #users-posts-container-p #post-p {
+        position: relative; }
+      #profile-container-2 #posts-container-inprofile #users-posts-container-p #userProfile-posts-img {
+        opacity: 1;
+        transition: .5s ease;
+        backface-visibility: hidden; }
+      #profile-container-2 #posts-container-inprofile #users-posts-container-p .middle {
+        transition: .5s ease;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%); }
+        #profile-container-2 #posts-container-inprofile #users-posts-container-p .middle .text {
+          height: 0%; }
+      #profile-container-2 #posts-container-inprofile #users-posts-container-p #post-p:hover #userProfile-posts-img {
+        opacity: 0.3; }
+      #profile-container-2 #posts-container-inprofile #users-posts-container-p #post-p:hover .middle {
+        opacity: 1; }
+      #profile-container-2 #posts-container-inprofile #users-posts-container-p .text {
+        width: 74%;
+        height: 18px;
+        color: black;
+        font-size: 16px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around; }
 
 #main-div {
   height: 100%;
@@ -197,4 +266,8 @@
     height: 65% !important; }
     #all-friends-div #friend-p {
       margin-left: 2% !important;
-      height: 88% !important; } }
+      height: 88% !important; }
+  #post-p-container {
+    justify-content: center !important; }
+    #post-p-container .text {
+      height: 20px !important; } }

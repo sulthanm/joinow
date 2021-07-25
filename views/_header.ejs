@@ -4,53 +4,61 @@
         <div id="name">
          
           
-          <span id="joinow">JOINOW</span> 
+          <div id="joinow"> <p id="app-name">JOINOW</p> </div> 
           <div id="icon-container">
-            <a href="/" id="home-image-a">
-              <img src="https://img.icons8.com/material-rounded/24/000000/home-page.png" />
-            </a>
+            <div id="home-image-a">
+              <a href="/" id="i-hom">
+                <img src="https://img.icons8.com/windows/32/000000/home.png" id="f-img"/>
+              </a>
+            </div>
+            <div id="user-friend-a">
+              <a href="/users/users&friends" id="i-hom">
+                <img src="https://img.icons8.com/ios-glyphs/30/000000/group.png"/ id="f-img">
+              </a>
+            </div>
    
-            <a href="/users/users&friends" id="user-friend-a">
-              <img src="https://img.icons8.com/windows/32/000000/group2.png" />
-            </a>
+            
           </div>
           
         </div>
         
-        <ul id="head-list">
+        <div id="head-list">
+         
             <% if(locals.user){ %>
+           
                 
-                <li>
                 
-                  <div class="dropdown" >
+              
+                      <div class="drop ">
+                        <a class="dropdown-toggle dropdown-new" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <%= user.name %>
+                        </a>
                       
-                        <p id="user-name-header"><%= user.name %></p>
-                      <button  class="dropbtn">
-                        <img src="https://img.icons8.com/material-outlined/24/000000/expand-arrow--v1.png" class="drop-icon-header" onclick="myFunction()"/>
-                      </button>
-                      
-                      <div id="myDropdown" class="dropdown-content">
-                        <a href="/users/profile/<%= user._id %>" >View Profile</a>
-                        <a href="/users/signout">Sign Out</a>
-                      
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                          <a class="dropdown-item" href="/users/profile/<%= user._id %>">View Profile</a>
+                          <a class="dropdown-item" href="/users/signout">Sign-Out</a>
+                     
+                        </div>
                       </div>
                       
-                    </div>
-                </li>
+                      
+                  
+                  
+                
                 
                 
         
         
             <% } else{ %>
-                <li>
+                <div>
                     <a href="/users/signup" id="list-item" class="sign-up-header">Sign-Up </a>
-                </li>
-                <li>
+                </div>
+                <div>
                     <a href="/" id="list-item" class="sign-in-header"  >Sign-In </a>
-                </li>
+                </div>
                 
             <% } %>
-        </ul>   
+          
     </div>
 
 </header>

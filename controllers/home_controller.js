@@ -1,11 +1,12 @@
 const Post = require('../models/post');
 const User = require('../models/user');
 const s3BucketJoinow = require('../config/s3');
+// const url = require('url');
 module.exports.homePage = async function(req, res){
     
     try{
         // populate the user of each post
-    
+      
         let userPosts = await Post.find({})
         .sort('-createdAt')
         .populate('userss')

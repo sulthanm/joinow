@@ -43,32 +43,13 @@
         #home-container #post-container #wall #new-post #upload-con {
           display: inline;
           display: flex;
-          justify-content: space-around;
+          justify-content: center;
+          align-items: center;
           width: 49%;
           height: 100%;
           background-color: #f1f0f0;
-          border-radius: 5px; }
-        #home-container #post-container #wall #new-post #pic {
-          margin-top: 5%; }
-        #home-container #post-container #wall #new-post #photo-icon {
-          height: 25px;
-          width: 25px;
-          margin-top: 3%;
-          margin-left: -20px; }
-        #home-container #post-container #wall #new-post .custom-file-input::-webkit-file-upload-button {
-          visibility: hidden; }
-        #home-container #post-container #wall #new-post .custom-file-input::before {
-          content: 'Upload Picture';
-          padding: 10% 0 0 40%;
-          margin-top: -20px; }
-        #home-container #post-container #wall #new-post .custom-file-input {
-          display: inline-block;
           border-radius: 5px;
-          cursor: pointer;
-          width: 100px;
-          height: 100%;
-          font-weight: 700;
-          font-size: 11.5px; }
+          font-size: 13px; }
         #home-container #post-container #wall #new-post #post-button-con {
           height: 100%;
           width: 49%;
@@ -122,27 +103,21 @@
             object-fit: contain; }
           #home-container #post-container #post-list-container #post-list .post-list-item #likes {
             margin-left: 4%;
-            height: 22px;
+            height: 6%;
             display: flex;
-            flex-direction: row; }
+            flex-direction: row;
+            align-items: center; }
             #home-container #post-container #post-list-container #post-list .post-list-item #likes .likes-count {
               margin-block-start: 0;
-              margin-block-end: 0;
-              height: 80%;
-              margin-top: 0.5%; }
-            #home-container #post-container #post-list-container #post-list .post-list-item #likes .img {
-              width: 20px;
-              margin-left: 0.2%; }
+              margin-block-end: 0; }
+            #home-container #post-container #post-list-container #post-list .post-list-item #likes #like-img {
+              height: 70%; }
             #home-container #post-container #post-list-container #post-list .post-list-item #likes #comment-count {
-              height: 80%;
-              margin-left: 1%;
               padding-top: 0.4%;
               margin-block-start: 0;
               margin-block-end: 0; }
             #home-container #post-container #post-list-container #post-list .post-list-item #likes #comment-img {
-              margin-top: 0.4%;
-              height: 18px;
-              width: 20px;
+              height: 70%;
               margin-left: 0.4%; }
           #home-container #post-container #post-list-container #post-list .post-list-item #comment-count::before {
             content: "\00b7";
@@ -152,70 +127,55 @@
             color: rgba(0, 0, 0, 0.9);
             color: var(--color-text-low-emphasis);
             font-weight: 700; }
-          #home-container #post-container #post-list-container #post-list .post-list-item .toggle-like-button {
-            text-decoration: none; }
-            #home-container #post-container #post-list-container #post-list .post-list-item .toggle-like-button #like-button-1 {
-              width: 23%;
-              border: 1px solid rgba(0, 0, 0, 0.14);
-              background-color: white;
-              text-decoration: none;
-              text-transform: uppercase;
-              margin-top: 3%;
-              margin-left: 4%;
-              padding: 1.2%;
-              padding-left: 16%;
-              color: black;
-              display: inline-block;
-              font-size: 13px; }
-          #home-container #post-container #post-list-container #post-list .post-list-item .delete-post {
-            text-decoration: none;
-            text-align: center;
-            font-size: 13px; }
-            #home-container #post-container #post-list-container #post-list .post-list-item .delete-post #delete-button-1 {
-              display: inline-block;
-              width: 22%;
-              border: 1px solid rgba(0, 0, 0, 0.14);
-              background-color: white;
-              color: black;
-              text-decoration: none;
-              text-transform: uppercase;
-              margin-top: 3%;
-              margin-left: 3%;
-              padding: 1.2%;
-              padding-left: 20%; }
-              #home-container #post-container #post-list-container #post-list .post-list-item .delete-post #delete-button-1 #span {
-                margin-left: -76%; }
-          #home-container #post-container #post-list-container #post-list .post-list-item #delete-button-1:hover, #home-container #post-container #post-list-container #post-list .post-list-item #like-button-1:hover {
-            color: black;
-            transition: 0.5s;
-            background-color: #c5c2c2;
-            border: 1px solid rgba(0, 0, 0, 0.14); }
+          #home-container #post-container #post-list-container #post-list .post-list-item #like-con {
+            margin-left: 4%;
+            width: 96%;
+            height: 5%;
+            display: flex; }
+            #home-container #post-container #post-list-container #post-list .post-list-item #like-con #lik {
+              width: 15%;
+              height: 100%; }
+              #home-container #post-container #post-list-container #post-list .post-list-item #like-con #lik .toggle-like-button {
+                text-decoration: none; }
+                #home-container #post-container #post-list-container #post-list .post-list-item #like-con #lik .toggle-like-button #like-button-1 {
+                  height: 100%;
+                  width: 100%;
+                  text-decoration: none;
+                  text-transform: uppercase;
+                  color: black;
+                  font-size: 13px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center; }
+                #home-container #post-container #post-list-container #post-list .post-list-item #like-con #lik .toggle-like-button #like-button-1:hover {
+                  transition: 0.5s;
+                  background-color: #e0dcdc; }
+              #home-container #post-container #post-list-container #post-list .post-list-item #like-con #lik #del-p {
+                width: 15%;
+                height: 100%; }
+                #home-container #post-container #post-list-container #post-list .post-list-item #like-con #lik #del-p .delete-post {
+                  text-decoration: none;
+                  font-size: 13px; }
+                  #home-container #post-container #post-list-container #post-list .post-list-item #like-con #lik #del-p .delete-post #delete-button-1 {
+                    height: 100%;
+                    width: 100%;
+                    text-transform: uppercase;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center; }
+                #home-container #post-container #post-list-container #post-list .post-list-item #like-con #lik #del-p #delete-button-1:hover {
+                  color: black;
+                  transition: 0.5s;
+                  background-color: #c5c2c2;
+                  border: 1px solid rgba(0, 0, 0, 0.14); }
           #home-container #post-container #post-list-container #post-list .post-list-item #close-comments-button, #home-container #post-container #post-list-container #post-list .post-list-item #view-comments-button {
             margin-left: 4%; }
           #home-container #post-container #post-list-container #post-list .post-list-item #close-comments-button {
             display: none; }
           #home-container #post-container #post-list-container #post-list .post-list-item #comment-form {
-            margin-top: 2%; }
-            #home-container #post-container #post-list-container #post-list .post-list-item #comment-form #new-comment .comment-input {
-              padding: 2%;
-              border: 1px solid black; }
-            #home-container #post-container #post-list-container #post-list .post-list-item #comment-form #new-comment .comment-input:focus {
-              outline: none; }
-            #home-container #post-container #post-list-container #post-list .post-list-item #comment-form #new-comment #comment {
-              width: 70%;
-              height: 5%;
-              margin-left: 4%; }
-            #home-container #post-container #post-list-container #post-list .post-list-item #comment-form #new-comment .comment-button {
-              margin-top: 3%;
-              margin-left: 4%;
-              background-color: rgba(168, 169, 223, 0.185);
-              border: none;
-              padding: 2%; }
-            #home-container #post-container #post-list-container #post-list .post-list-item #comment-form #new-comment .comment-button:hover {
-              cursor: pointer;
-              background-color: #5188bd; }
-            #home-container #post-container #post-list-container #post-list .post-list-item #comment-form #new-comment .comment-button:focus {
-              outline: none; }
+            width: 96%;
+            margin-left: 4%;
+            height: 5%; }
           #home-container #post-container #post-list-container #post-list .post-list-item .post-comments-container #comment-heading {
             color: burlywood;
             margin-left: 4%; }
@@ -225,7 +185,7 @@
             margin-top: 4%; }
             #home-container #post-container #post-list-container #post-list .post-list-item .post-comments-container .comments-list li #user-name {
               display: inline-block;
-              padding-top: 0 !important;
+              padding-top: 0;
               width: 85%;
               height: auto; }
             #home-container #post-container #post-list-container #post-list .post-list-item .post-comments-container .comments-list li #comment-content {
@@ -236,8 +196,7 @@
             #home-container #post-container #post-list-container #post-list .post-list-item .post-comments-container .comments-list li #delete-comment {
               color: #ff6f61; }
             #home-container #post-container #post-list-container #post-list .post-list-item .post-comments-container .comments-list li #comment-likes-container {
-              margin-left: 4%;
-              margin-top: -4%; }
+              margin-left: 4%; }
               #home-container #post-container #post-list-container #post-list .post-list-item .post-comments-container .comments-list li #comment-likes-container a {
                 color: #659DBD; }
               #home-container #post-container #post-list-container #post-list .post-list-item .post-comments-container .comments-list li #comment-likes-container a:hover {
@@ -304,7 +263,7 @@
       margin-top: 14%;
       color: #93ccea;
       font-size: 30px;
-      font-family: sans-serif; }
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; }
     #home-container #sign-in-container-home #form-signin-home {
       width: 33%;
       height: 60%;
@@ -312,53 +271,70 @@
       margin-top: -20%;
       background-color: white; }
       #home-container #sign-in-container-home #form-signin-home #home-form {
+        height: 100%;
+        width: 100%;
         border-top: 1px solid rgba(65, 65, 236, 0);
-        margin-top: 6%; }
-        #home-container #sign-in-container-home #form-signin-home #home-form #input-home {
+        margin-top: 6%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around; }
+        #home-container #sign-in-container-home #form-signin-home #home-form .input-home {
           display: block;
           height: 15%;
           width: 87%;
           padding: 4%;
-          margin-top: 5%;
           margin-left: 7%;
           border: none;
           border-bottom: 1px solid grey; }
-        #home-container #sign-in-container-home #form-signin-home #home-form #input-home:focus {
+        #home-container #sign-in-container-home #form-signin-home #home-form .input-home:focus {
           outline: none; }
-        #home-container #sign-in-container-home #form-signin-home #home-form .button {
-          background-color: rgba(192, 190, 190, 0.3); }
-        #home-container #sign-in-container-home #form-signin-home #home-form .button:hover {
-          transition: 0.5s;
-          background-color: cadetblue;
-          cursor: pointer; }
+        #home-container #sign-in-container-home #form-signin-home #home-form #sign-in-b {
+          margin-left: 7%;
+          height: 15%;
+          width: 87%;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          #home-container #sign-in-container-home #form-signin-home #home-form #sign-in-b .but-sub {
+            border: none;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(201, 201, 201, 0.3); }
+          #home-container #sign-in-container-home #form-signin-home #home-form #sign-in-b .but-sub:hover {
+            transition: 0.5s;
+            background-color: #afcbcc;
+            cursor: pointer; }
     #home-container #sign-in-container-home #google-container {
       width: 87%;
       height: 15%;
       margin-left: 7%;
-      border-radius: 20px; }
+      border-radius: 20px;
+      text-decoration: none; }
       #home-container #sign-in-container-home #google-container .google-btn {
         width: 100%;
         height: 100%;
-        display: inline-block;
+        display: flex;
+        justify-content: center;
         box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25); }
         #home-container #sign-in-container-home #google-container .google-btn .google-icon-wrapper {
-          display: inline-block;
+          width: 10%;
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
           border-radius: 2px;
           background-color: #fff; }
-        #home-container #sign-in-container-home #google-container .google-btn .google-icon {
-          margin-top: 75%;
-          display: inline-block;
-          width: 78%;
-          height: auto; }
         #home-container #sign-in-container-home #google-container .google-btn .btn-text {
-          float: right;
-          margin-right: 33%;
-          margin-top: 5%;
-          text-align: center;
           color: black;
           font-size: 14px;
           letter-spacing: 0.2px;
-          font-family: "Roboto"; }
+          text-decoration: none;
+          font-family: "Roboto";
+          height: 100%;
+          width: 40%;
+          display: flex;
+          align-items: center;
+          justify-content: center; }
         #home-container #sign-in-container-home #google-container .google-btn:hover {
           box-shadow: 0 0 6px #4285f4; }
     #home-container #sign-in-container-home #sign-up-home {
@@ -397,7 +373,7 @@
     left: 47%;
     top: 45%; }
 
-@media (max-width: 750px) {
+@media (max-width: 550px) {
   #photo-icon {
     height: 17px !important;
     width: 17px !important; }
@@ -430,12 +406,6 @@
     #form-signin-home #input-home {
       border: 1px solid grey !important;
       height: 13% !important; }
-  #google-container {
-    height: 16% !important; }
-    #google-container .google-icon {
-      margin-top: 60% !important; }
-  .btn-text {
-    margin-top: 7% !important; }
   #sign-up-home {
     width: 70% !important;
     height: 38px !important;

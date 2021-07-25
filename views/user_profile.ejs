@@ -29,9 +29,51 @@
              
          </form>
       </div>
-     
-      
       <div id="border"></div>
+      <div id="posts-container-inprofile">
+         <div id="posts-name">
+            Posts
+         </div>
+         
+         <div id="users-posts-container-p">
+            <div id="post-p-container">
+               <% var s = 0 %>
+               <% for(var i of uPosts){ %>
+                  <% if(i.userss.id == profile_user.id && i.avatar ){ %>
+                     <% s= s+1 %> 
+                     <div id="post-p">
+                        
+                        <% if(!i.avatar){ %>
+                        
+                           <p  ><%= i.post_content %></p>
+                           <% continue %>
+                        <% } %>
+                        <img src="http://joinow.herokuapp.com/<%= i.avatar %>" alt="<%= i.userss.name %>" id="userProfile-posts-img">
+                        <div class="middle">
+                           <div class="text">
+                              
+                              <p class=" "  ><%= i.likes.length %></p>
+                                        
+                              <img class="" src="https://img.icons8.com/ios-glyphs/30/000000/filled-like.png"/ id="">
+                                        
+                              <p id=""><%= i.comments.length %> </p>
+                              <img src="https://img.icons8.com/metro/26/000000/comments.png"/ id="">
+                           </div>
+                           
+                         </div>
+                     </div>
+                     
+                  <% } %>
+               <% } %> 
+       
+               <% if(s==0){ %>
+                  <div id="zposts"> No posts yet </div>
+                 
+               <% } %>
+            </div>
+         </div>
+      </div>
+      
 </div>
          
 
@@ -127,3 +169,11 @@
    
 
 
+   <script>
+         function zposts(){
+            alert("Page is loaded");
+            console.log("called------------");
+         }
+
+      // "The full URL of this page is:<br>" + window.location.origin;
+      </script>
