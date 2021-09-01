@@ -448,37 +448,43 @@ $button-active-blue: #1669F2;
         display: none;
       }
     #sign-in-container-home{
-        // border: 2px solid black;
-        height: 99%;
-        width: 98%;
-        text-align: center;
-        // margin-left: 40%;
-        #sign-in-home{
-            width: 22%;
-            height: 20%;
-            // border: 2px solid gray;
-            color: rgb(30, 30, 43);
-            margin-left: 20%;
-            margin-top: 14%;
-            color: #93ccea;
-            font-size: 30px;
-  
+        // background-color: rgba(0, 0, 0, 0.34);
+        height: 100%;
+        width: 100%;
+        display: flex;
+        // flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        #app-name-container{
+            width: 24%;
+            height: 100%;
+            // border: 2px solid blueviolet;
+            display: flex;
+            // text-align: right;
+            justify-content: flex-end;
+            align-items: center;
+            font-size: 40px;
+            
+            color:rgb(175, 203, 204) ;
             font-family:  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
         #form-signin-home{
-            // border: 2px solid black;
+            // border: 2px solid red;
             width: 33%;
-            height: 60%;
-            margin-left: 50%;
-            margin-top: -20%;
+            height: 65%;
+           
+            
             background-color: white;
+            display: flex;
+            flex-direction: column;
+            margin-top: 6%;
             
             #home-form{
                 height: 100%;
                 width: 100%;
-                border-top: 1px solid rgba(65, 65, 236,0);
+                // border-top: 1px solid rgba(65, 65, 236,0);
                 
-                margin-top: 6%;
+                // margin-top: 6%;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-around;
@@ -561,7 +567,7 @@ $button-active-blue: #1669F2;
                     width: 40%;
                     display: flex;
                     align-items: center;
-                    justify-content: center;
+                    justify-content: space-around;
                     // border: 1px solid rgb(189, 70, 70);
                 }
                
@@ -575,12 +581,7 @@ $button-active-blue: #1669F2;
         }
         #sign-up-home{
             background-color: white;
-            width: 33%;
-            height: 8%;
-            margin-left: 50%;
-            margin-top: 1%;
-            padding-top: 1%;
-            padding-bottom: 1%;
+            text-align: center;
         }
         
     }
@@ -647,9 +648,10 @@ $button-active-blue: #1669F2;
         font-size: 10px !important;
     }
     #sign-in-container-home{
-        height: 100% !important;
+        height: 30% !important;
         border: 1px solid rgba(34,345,345,0) !important;
-        background-color: white;
+        // background-color: white !important;
+        // border: 1px solid grey !important;
     }
     #sign-in-home{
         height: 100px !important;
@@ -658,13 +660,14 @@ $button-active-blue: #1669F2;
         // border: 1px solid grey !important;
     }
     #form-signin-home{
-        margin-top: 6% !important;
+        // margin-top: 6% !important;
         width: 80% !important;
-        height: 285px !important;
-        margin-left: 10% !important;
+        height: 305px !important;
+        // margin-left: 10% !important;
+        // background-color: white !important;
         #input-home{
             border: 1px solid grey !important;
-            height: 13% !important;
+            height: 16% !important;
         }
     }
    

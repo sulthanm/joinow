@@ -127,9 +127,13 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%); }
+        -ms-transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        height: 15%; }
         #profile-container-2 #posts-container-inprofile #users-posts-container-p .middle .text {
-          height: 0%; }
+          height: 100%; }
       #profile-container-2 #posts-container-inprofile #users-posts-container-p #post-p:hover #userProfile-posts-img {
         opacity: 0.3; }
       #profile-container-2 #posts-container-inprofile #users-posts-container-p #post-p:hover .middle {
@@ -201,37 +205,39 @@
     border: 1px solid #d8d5d5;
     margin-left: 35%;
     margin-top: -18%; }
-    #main-div #friends-container3 #friends3 #friends-heading {
-      font-size: 105%;
-      margin-left: 5%; }
-    #main-div #friends-container3 #friends3 #all-friends-div {
-      display: flex;
-      flex-direction: row;
-      height: 75%;
-      width: 750px;
-      overflow-y: scroll;
-      flex-wrap: wrap; }
-      #main-div #friends-container3 #friends3 #all-friends-div #friend-p {
-        margin-block-start: 0;
-        margin-block-end: 0;
-        margin-left: 5%;
-        margin-top: 3%;
-        height: 85%;
-        background-color: white;
-        text-align: center;
-        width: 20%;
+    #main-div #friends-container3 #friends3 {
+      height: 100%; }
+      #main-div #friends-container3 #friends3 #friends-heading {
+        font-size: 105%;
+        margin-left: 5%; }
+      #main-div #friends-container3 #friends3 #all-friends-div {
         display: flex;
-        flex-direction: column; }
-        #main-div #friends-container3 #friends3 #all-friends-div #friend-p #f-image {
-          margin-left: 15%;
-          margin-top: 5%; }
-        #main-div #friends-container3 #friends3 #all-friends-div #friend-p #f-name {
-          font-size: 15px;
-          color: black;
-          text-decoration: none; }
-        #main-div #friends-container3 #friends3 #all-friends-div #friend-p #v-profile {
-          font-size: 13px;
-          color: #6875ad; }
+        flex-direction: row;
+        height: 75%;
+        width: 750px;
+        overflow-y: scroll;
+        flex-wrap: wrap; }
+        #main-div #friends-container3 #friends3 #all-friends-div #friend-p {
+          margin-block-start: 0;
+          margin-block-end: 0;
+          margin-left: 5%;
+          margin-top: 3%;
+          height: 85%;
+          background-color: white;
+          text-align: center;
+          width: 20%;
+          display: flex;
+          flex-direction: column; }
+          #main-div #friends-container3 #friends3 #all-friends-div #friend-p #f-image {
+            margin-left: 15%;
+            margin-top: 5%; }
+          #main-div #friends-container3 #friends3 #all-friends-div #friend-p #f-name {
+            font-size: 15px;
+            color: black;
+            text-decoration: none; }
+          #main-div #friends-container3 #friends3 #all-friends-div #friend-p #v-profile {
+            font-size: 13px;
+            color: #6875ad; }
 
 #main-div::-webkit-scrollbar, #all-friends-div::-webkit-scrollbar {
   display: none; }
@@ -269,5 +275,10 @@
       height: 88% !important; }
   #post-p-container {
     justify-content: center !important; }
+    #post-p-container .middle {
+      height: 25px !important; }
+      #post-p-container .middle .p-icons {
+        height: 80% !important;
+        margin-top: 10% !important; }
     #post-p-container .text {
       height: 20px !important; } }

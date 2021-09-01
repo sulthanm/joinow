@@ -185,8 +185,12 @@
                 -ms-transform: translate(-50%, -50%);
                 // text-align: center;
                 // border: 2px solid red;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                height: 15%;
                 .text{
-                    height: 0%;
+                    height: 100%;
                     // border: 2px solid red;
                 }
               }
@@ -314,7 +318,7 @@
         margin-top: -18%;
         #friends3{
             // border: 2px solid forestgreen;
-            
+            height: 100%;
             #friends-heading{
                 font-size: 105%;
                 margin-left: 5%;
@@ -336,6 +340,7 @@
                     height: 85%;
                     background-color: white;
                     text-align: center;
+                    // height: 100%;
                     width: 20%;
                   
                     // border: 2px solid blue;
@@ -420,6 +425,15 @@
     }
     #post-p-container{
         justify-content: center !important;
+        .middle{
+            height: 25px !important;
+            // border: 1px solid red;
+            .p-icons{
+                height: 80% !important;
+                margin-top: 10% !important;
+                // border: 1px solid blue;
+            }
+        }
         .text{
             height: 20px !important;
         }

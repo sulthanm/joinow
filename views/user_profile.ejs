@@ -52,12 +52,12 @@
                         <div class="middle">
                            <div class="text">
                               
-                              <p class=" "  ><%= i.likes.length %></p>
+                              <p ><%= i.likes.length %></p>
                                         
-                              <img class="" src="https://img.icons8.com/ios-glyphs/30/000000/filled-like.png"/ id="">
+                              <img class="p-icons" src="https://img.icons8.com/ios-glyphs/30/000000/filled-like.png"/ id="">
                                         
                               <p id=""><%= i.comments.length %> </p>
-                              <img src="https://img.icons8.com/metro/26/000000/comments.png"/ id="">
+                              <img class="p-icons" src="https://img.icons8.com/metro/26/000000/comments.png"/ id="">
                            </div>
                            
                          </div>
@@ -136,13 +136,13 @@
                            <% if(name == f.to_user.name){   %>
                                    
                                    <img src="<%= f.from_user.avatar %>" alt="<%= f.from_user.name %>" height="100px" width="100px" id="f-image">
-                                   <br>
+                             
+                                    <span id="f-name"><%= f.from_user.name %></span>
+                                    <a href="/users/profile/<%= f.from_user._id %>" id="v-profile">View Profile</a>
+                                  
                                    
-                                   <span id="f-name"><%= f.from_user.name %></span>
-                                   <a href="/users/profile/<%= f.from_user._id %>" id="v-profile">View Profile</a>
                            <%} else{ %>
                                    <img src="<%= f.to_user.avatar %>" alt="<%= f.to_user.name %>" height="100px" width="100px" id="f-image">
-                                   <br>
                                    
                                    <span id="f-name"><%= f.to_user.name %></span>
                                    <a href="/users/profile/<%= f.to_user._id %>" id="v-profile">View Profile</a>

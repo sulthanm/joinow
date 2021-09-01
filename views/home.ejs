@@ -100,8 +100,8 @@
                 </section>
         <% }else{ %>
                 <div id="sign-in-container-home">
-                        <div id=sign-in-home>
-                                <h1 >joinow</h1>
+                        <div id="app-name-container">
+                                <p id="app-name"><b>joinow</b></p>
                         </div>
                         <div id="form-signin-home">
                                 <form action="/users/create-session" method="POST" id="home-form">
@@ -124,25 +124,24 @@
                                         
                                         
                                 </form>
+                                <div id="sign-up-home">
+                                        <p> 
+                                                New User ?
+                                                <a href="/users/signup">Sign Up</a>
+                                        </p>
+                                </div>
                                 
-                                
-                                <!-- <a href="/users/auth/google">Google Sign In</a> -->
                                 
                 
                                 
                         </div>
-                        <div id="sign-up-home">
-                                <p> 
-                                        New User ?
-                                        <a href="/users/signup">Sign Up</a>
-                                </p>
-                        </div>
+                        
                         
                        
                             
                         
                         
-                    </div>
+                </div>
         <% } %>
                 
         <%- include('_chat_box') -%>
