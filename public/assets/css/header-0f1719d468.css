@@ -55,7 +55,10 @@
       width: 100%;
       display: flex;
       align-items: center;
-      justify-content: center; }
+      justify-content: space-around; }
+      #head #head-list .dropdown-new #user-dp {
+        height: 80%;
+        width: 95%; }
     #head #head-list .dropdown-new:hover {
       text-decoration: none; }
     #head #head-list .dropdown-new:focus {

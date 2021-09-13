@@ -83,7 +83,15 @@
          
          <div id="user-details-container" class="other-user-details-container">
             <div id="user-details">  
-               <img src="<%= profile_user.avatar %>" alt="<%= profile_user.name %>" id="img3">
+               
+               <% if(profile_user.avatar){ %>
+                  <img src="<%= profile_user.avatar %>" alt="<%= profile_user.name %>" id="img3">
+               <% } else {%>
+                
+                  <img src="https://img.icons8.com/ios/250/000000/user--v1.png" id="user-dp"/>
+                  
+                  
+               <%  } %>
                <br>
               
                <p ><b><%= profile_user.name %></b></p>
@@ -129,28 +137,55 @@
                <div id="all-friends-div">
                   <% for(f of profile_user.friends){ %>
                      
-                        <p id="friend-p">
+                        
                            <% let name = profile_user.name %>
                    
                         
                            <% if(name == f.to_user.name){   %>
-                                   
-                                   <img src="<%= f.from_user.avatar %>" alt="<%= f.from_user.name %>" height="100px" width="100px" id="f-image">
-                             
-                                    <span id="f-name"><%= f.from_user.name %></span>
-                                    <a href="/users/profile/<%= f.from_user._id %>" id="v-profile">View Profile</a>
+                              <div class="card pro-card frnd-card" >
+                                 <% if(f.from_user.avatar){ %>
+                                    <img class="card-img-top img-dp" src="<%= f.from_user.avatar %>" >
+                                 <% } else {%>
+                                    <img src="https://img.icons8.com/ios/100/000000/user--v1.png" class="img-dp"/>
+                                 <%  } %>
+                                  
+                                
+                                 
+                                 <center>
+                                    <h6 class="card-title"><%= f.from_user.name %></h6>
+                                    <a href="/users/profile/<%= f.from_user._id %>" class="btn btn-primary">View Profile</a>
+                                 </center>
+                                 
+                                 
+                              </div>
+                                 
                                   
                                    
                            <%} else{ %>
-                                   <img src="<%= f.to_user.avatar %>" alt="<%= f.to_user.name %>" height="100px" width="100px" id="f-image">
+                              <div class="card pro-card frnd-card">
+                                 
+                                 <% if(f.to_user.avatar){ %>
+                                    <img class="card-img-top img-dp" src="<%= f.to_user.avatar %>" >
+                                 <% } else {%>
+                                  
+                                       <img src="https://img.icons8.com/ios/100/000000/user--v1.png" class="img-dp"/>
+                                    
+                                    
+                                 <%  } %>
                                    
-                                   <span id="f-name"><%= f.to_user.name %></span>
-                                   <a href="/users/profile/<%= f.to_user._id %>" id="v-profile">View Profile</a>
+                                    <center>
+                                       <h6 class="card-title"><%= f.to_user.name %></h6>
+                                       <a href="/users/profile/<%= f.to_user._id %>" class="btn btn-primary">View Profile</a>
+                                    </center>
+                                   
+                                
+                               </div>
+                                  
                            <% } %>
        
                    
        
-                        </p>
+                        
                      
                     
                   <% } %>
@@ -172,7 +207,7 @@
    <script>
          function zposts(){
             alert("Page is loaded");
-            console.log("called------------");
+            // console.log("called------------");
          }
 
       // "The full URL of this page is:<br>" + window.location.origin;

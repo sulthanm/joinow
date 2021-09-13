@@ -92,8 +92,13 @@
                 width: 100%;
                 display: flex;
                 align-items: center;
-                justify-content: center;
+                justify-content: space-around;
                 // padding: 2%;
+                #user-dp{
+                    height:80% ;
+                    width: 95%;
+                }
+                
             }
             .dropdown-new:hover{
                 text-decoration: none;
