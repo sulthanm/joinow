@@ -27,7 +27,8 @@
         list-style: none;
         background-color: white;
         height: 130px;
-        border-top: 3px solid #659DBD; }
+        border: 1px solid rgba(65, 57, 175, 0.4);
+        border-radius: 12px; }
         #home-container #post-container #wall #new-post #post-area {
           margin-left: 8.5%;
           margin-top: 3%;
@@ -49,9 +50,9 @@
           margin-left: 8.5%;
           margin-top: 4%;
           display: flex;
-          justify-content: space-between; }
+          justify-content: space-around; }
         #home-container #post-container #wall #new-post #upload-con {
-          width: 49%;
+          width: 25%;
           height: 100%;
           border-bottom: 1px solid #635291;
           border-radius: 5px;
@@ -66,8 +67,9 @@
           margin-bottom: 0; }
         #home-container #post-container #wall #new-post #post-button-con {
           height: 100%;
-          width: 49%;
+          width: 26%;
           border: none;
+          border-radius: 5px;
           color: rgba(0, 0, 0, 0.34);
           font-weight: 700;
           display: flex;
@@ -78,10 +80,10 @@
           cursor: pointer;
           border: none;
           height: 100%;
-          width: 20%;
-          text-align: center;
           border-radius: 5px;
           background-color: #ffffff; }
+        #home-container #post-container #wall #new-post #label-f-file:hover {
+          cursor: pointer; }
         #home-container #post-container #wall #new-post #post-button-con:hover, #home-container #post-container #wall #new-post #upload-con:hover {
           transition: 0.5s;
           background-color: white;
@@ -99,7 +101,9 @@
         #home-container #post-container #post-list-container #post-list .post-list-item {
           margin-top: 5%;
           background-color: white;
-          list-style: none; }
+          list-style: none;
+          border-radius: 10px;
+          border: 1px solid rgba(0, 0, 0, 0.14); }
           #home-container #post-container #post-list-container #post-list .post-list-item #user-name {
             margin-left: 4%;
             margin-top: 4%;
@@ -193,9 +197,13 @@
           #home-container #post-container #post-list-container #post-list .post-list-item #close-comments-button {
             display: none; }
           #home-container #post-container #post-list-container #post-list .post-list-item #comment-form {
-            width: 96%;
+            width: 90%;
             margin-left: 4%;
-            height: 5%; }
+            height: 4%; }
+            #home-container #post-container #post-list-container #post-list .post-list-item #comment-form #button-comm {
+              font-size: 12px;
+              background-color: #826cd1;
+              color: white; }
           #home-container #post-container #post-list-container #post-list .post-list-item .post-comments-container #comment-heading {
             color: burlywood;
             margin-left: 4%; }

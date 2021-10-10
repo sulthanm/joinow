@@ -103,6 +103,10 @@
     margin-right: 3%; }
     #head #head-list .drop {
       width: auto; }
+      #head #head-list .drop #user-dp {
+        height: 90px;
+        width: 120px;
+        border-radius: 50%; }
     #head #head-list .dropdown-new {
       background-color: #635291;
       color: white;
@@ -167,6 +171,6 @@
     font-size: 9px !important; }
   #user-dp {
     height: 80%;
-    width: 25px !important; }
+    width: 30px !important; }
   .sign-in-header {
     font-size: 12px !important; } }

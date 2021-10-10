@@ -1,14 +1,11 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <li id="post-<%= post._id %>" class="post-list-item">
-                <div id="for-border-up"></div>
-                
+           
                 <b><div id="user-name"><a href="/users/profile/<%= post.userss._id %>" id="user-route"><%= post.userss.name %></a></div></b>
                 
                 <p id="post-content"><%= post.post_content %><i class="bi bi-heart"></i></p>
-                
-                <div id="for-border">
-                </div>
+           
                 <%= locals.file %>
                 <% if(post.avatar){ %>
                         <img src="<%= post.avatar %>" alt="<%= post.userss.name %>"  id="picture" class="post-img"> 
@@ -28,7 +25,6 @@
                                 
                                
 
-                                <div id="for-border"></div>
                                 <div id="like-con">
                                         <div id="lik">
                                                 <a class="toggle-like-button"  data-likes="<%= post.likes.length %>" href="/users/toggle/?id=<%=post._id%>&type=Post">
@@ -69,9 +65,9 @@
                     <% if(locals.user){ %>
                             <form action="/users/create-comment"  id="new-comment"method="POST" >
                                 <div class="input-group mb-3">
-                                        <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2" name="comment" placeholder="Add Comment">
+                                        <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2" name="comment" placeholder="Comment..">
                                         <input type="hidden" name="post" value="<%= post._id %>" class="comment-input">
-                                        <input type="submit" value="Add Comment" id="button" class="comment-input comment-button">
+                                        <input type="submit" value="Add Comment" id="button-comm" class="comment-input comment-button">
                                 </div>
                               
                             </form>

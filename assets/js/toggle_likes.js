@@ -12,15 +12,13 @@ class ToggleLike{
         $(this.toggler).click(function(e){
             e.preventDefault();
             let self = this;
-            
-            
             $.ajax({
                 type: 'post',
                 url: $(self).attr('href'),
             })
             .done(function(data) {
-                
-                x.classList.toggle("fa-thumbs-down");
+                console.log("got here");
+                // x.classList.toggle("fa-thumbs-down");
                 let likesCount = parseInt($(self).attr('data-likes'));
                 let div1 = document.getElementById(`${data.data.requestedTypeId}`);
                 let likesCountPost = parseInt($(div1).attr('data-likes'));
@@ -35,11 +33,11 @@ class ToggleLike{
                     likesCount += 1;
                     like =false;
                 }
-                // console.log("message--", data.data);
+                console.log("message--", data.data);
                 // console.log(self);
                 if(data.data.type == "Post"){
                     
-                
+                    console.log("post jshgjsh");
                     div1.setAttribute("data-likes", `${likesCountPost}`);
                     div1.innerHTML = `${likesCountPost}`;
                     

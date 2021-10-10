@@ -25,7 +25,7 @@
             // border-radius: 50px;
             object-fit: contain;
             position: relative;
-            border : 3px solid white;
+            // border : 3px solid white;
           
             
         }
@@ -138,12 +138,13 @@
                 // border: 2px solid violet;
                 display: flex;
                 flex-direction: row;
-                justify-content: space-between;
+                // justify-content: space-between;
                 flex-wrap: wrap;
                 #post-p{
                     margin-top: 4%;
                     height: 200px;
                     width: 200px;
+                    margin-left: 4%;
                     #userProfile-posts-img{
                         height: 100%;;
                         width: 100%;

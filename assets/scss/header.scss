@@ -156,6 +156,11 @@
             .drop{
                 width: auto;
                 // border: 2px solid rgb(44, 236, 102);
+                #user-dp{
+                    height: 90px;
+                    width: 120px;
+                    border-radius: 50%;
+                }
                 
             }
             .dropdown-new{
@@ -276,7 +281,7 @@
         }
         #user-dp{
             height:80% ;
-            width: 25px !important;
+            width: 30px !important;
         }
       
      

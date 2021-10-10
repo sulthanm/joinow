@@ -48,7 +48,8 @@ $button-active-blue: #1669F2;
                 // border: 2px solid black;
                 background-color: white;
                 height: 130px;
-                border-top: 3px solid #659DBD;
+                border: 1px solid rgba(65, 57, 175, 0.4);
+                border-radius: 12px;
                 // margin-top: 110.5%;
                 
                 #post-area {
@@ -83,14 +84,14 @@ $button-active-blue: #1669F2;
                     margin-left: 8.5%;
                     margin-top: 4%;
                     display: flex;
-                    justify-content: space-between;
+                    justify-content: space-around;
                 }
             
                 
              
                 #upload-con{
                     
-                    width: 49%;
+                    width: 25%;
                     height: 100%;
                     border-bottom:1px solid #635291;
                     // background-color:  rgb(241, 240, 240);
@@ -112,9 +113,10 @@ $button-active-blue: #1669F2;
                 }
                 #post-button-con{
                     height: 100%;
-                    width: 49%;
+                    width: 26%;
                     // border: 2px solid black !important;
                     border:none;
+                    border-radius: 5px;
                     color: rgba(0, 0, 0, 0.34);
                     font-weight: 700;
                     display: flex;
@@ -128,11 +130,16 @@ $button-active-blue: #1669F2;
                     cursor: pointer;
                     border: none;
                     height: 100%;
-                    width: 20%;
-                    text-align: center;
+                    // width: 20%;
+                 
                     border-radius: 5px;
                     // border-bottom:1px solid #635291;
                     background-color: #ffffff;
+                }
+                
+                #label-f-file:hover{
+                    cursor: pointer;
+                    
                 }
                 #post-button-con:hover,#upload-con:hover{
                     transition: 0.5s;
@@ -168,7 +175,8 @@ $button-active-blue: #1669F2;
                     // border: 2px solid yellowgreen;
                     background-color: white;
                     list-style: none;
-                    
+                    border-radius: 10px;
+                    border: 1px solid rgba(0, 0, 0, 0.14);
                     #user-name{
                
                         margin-left: 4%;
@@ -332,10 +340,15 @@ $button-active-blue: #1669F2;
                     }
                     #comment-form{
                         // margin-top: 2%;
-                        width: 96%;
+                        width: 90%;
                         margin-left: 4%;
-                        height: 5%;
+                        height: 4%;
                         // border:1px solid black;
+                        #button-comm{
+                            font-size: 12px;
+                            background-color: #826cd1;
+                            color: white;
+                        }
                        
                        
                         

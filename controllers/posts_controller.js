@@ -189,7 +189,7 @@ module.exports.likePost = async function(req, res){
         if(req.query.type == 'Post'){
             console.log("finding model with query post");
             modelWithQuery = await Post.findById(req.query.id).populate('likes');
-            // console.log("----------",modelWithQuery);
+            console.log("----------",modelWithQuery);
         }else{
             modelWithQuery = await Comment.findById( req.query.id).populate('likes');
         }
@@ -228,8 +228,8 @@ module.exports.likePost = async function(req, res){
         res.locals.deleted = deleted;
         
         if(req.xhr){
-            console.log("xhr requst fr deletng comment");
-            return res.json(200, {
+            console.log("xhr requst fr deletng like");
+            return res.status(200).json( {
                 message: "Request successful!",
                 data: {
                     deleted: deleted,

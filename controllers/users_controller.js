@@ -71,6 +71,7 @@ module.exports.createUser = function(req, res){
                 return res.redirect('/users/signin');
             });
         }else{
+            req.flash("error", "User already exist");
             return res.redirect('back');
         }
     });
