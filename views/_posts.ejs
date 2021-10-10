@@ -33,11 +33,12 @@
                                         <div id="lik">
                                                 <a class="toggle-like-button"  data-likes="<%= post.likes.length %>" href="/users/toggle/?id=<%=post._id%>&type=Post">
                                                         <div id="like-button-1">
-                                                                Like
+                                                                Like&nbsp<i class="fa fa-heart"></i>
                                                         </div>
                                                        
                                                         
                                                 </a>
+                                                
                                         </div>
                                         
                                         <% if(locals.user && locals.user.id == post.userss.id) { %>
@@ -52,14 +53,7 @@
                                                 
                                         <% } %>
                                 </div>
-                              
-                                             
-                                     
-                                                
-                                                
-                                    
-                                        
-                             
+          
                             
                         <% }else{ %>
                                 <div id="likes">
@@ -91,4 +85,4 @@
             </div>
             <div id="for-border-down"></div>
     </li>
-    
+ 

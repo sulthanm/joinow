@@ -1,6 +1,7 @@
 // CHANGE :: create a class to toggle likes when a link is clicked, using AJAX
 class ToggleLike{
     constructor(toggleElement){
+        
         this.toggler = toggleElement;
         this.toggleLike();
     }
@@ -19,6 +20,7 @@ class ToggleLike{
             })
             .done(function(data) {
                 
+                x.classList.toggle("fa-thumbs-down");
                 let likesCount = parseInt($(self).attr('data-likes'));
                 let div1 = document.getElementById(`${data.data.requestedTypeId}`);
                 let likesCountPost = parseInt($(div1).attr('data-likes'));
@@ -40,7 +42,8 @@ class ToggleLike{
                 
                     div1.setAttribute("data-likes", `${likesCountPost}`);
                     div1.innerHTML = `${likesCountPost}`;
-                  
+                    
+
                
                 }else{
                

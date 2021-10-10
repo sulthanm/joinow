@@ -1,25 +1,26 @@
 <link rel="stylesheet" href="<%= assetPath('css/footer.css') %>">
 
 <div id="layout-footer">
-    <div>
-        <p>
-            &#169; M Sulthan. All Rights Reserved
-        </p>
+
+    <div id="footer-container">
+
+        <a href="/">
+            <div class="h-icon"><img src="https://img.icons8.com/material-rounded/24/000000/home.png" /></div>
+
+        </a>
+
+
+
+
+        <a href="/users/profile/<%= user._id %>">
+            <div class="h-icon"><img src="https://img.icons8.com/material-outlined/24/000000/user--v1.png" /></div>
+
+        </a>
+
+
     </div>
 
-    <div>
-        <nav class="footer-nav">
-            <ul>
-                <% if(locals.user){ %>
-                <li>
-                    <a href="/">Home</a>
-                </li>
-               
-                <li>
-                    <a href="/users/profile/<%= user._id %>">Profile</a>
-                </li>
-                <% } %>
-            </ul>
-        </nav>
-    </div>
+
+
+
 </div>

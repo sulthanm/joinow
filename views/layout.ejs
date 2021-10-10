@@ -1,5 +1,6 @@
 <html>
     <head>
+        <meta name="description" content="joinow social-media app make-friends post">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -25,12 +26,17 @@
     
     <body id="main-body">
         
-      
+        <% if(locals.user){ %>
+            <%- include('_header'); %>
+            <% } %>
         <main id="layout-main">
             <%- body %>
         </main>
         
-
+        <% if(locals.user){ %>
+            <%- include('_footer'); %>
+            <% } %>
+       
         <%- script %>
         
         <script>
@@ -55,6 +61,7 @@
                     
                 }).show();    
             <%} %>
+           
        
             
         </script>

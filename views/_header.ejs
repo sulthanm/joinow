@@ -3,22 +3,38 @@
     <div id="head">
         <div id="name">
          
-          
-          <div id="joinow"> <p id="app-name">JOINOW</p> </div> 
           <div id="icon-container">
             <div id="home-image-a">
               <a href="/" id="i-hom">
-                <img src="https://img.icons8.com/windows/32/000000/home.png" id="f-img"/>
+                <!-- <img src="https://img.icons8.com/windows/32/000000/home.png" id="f-img"/> -->
+                <img src="https://img.icons8.com/material-outlined/27/ffffff/home--v2.png" id="f-img"/>
               </a>
             </div>
             <div id="user-friend-a">
               <a href="/users/users&friends" id="i-hom">
-                <img src="https://img.icons8.com/ios-glyphs/30/000000/group.png"/ id="f-img">
+                <img src="https://img.icons8.com/ios-glyphs/27/ffffff/group.png" id="f-img"/>
+
               </a>
             </div>
-   
             
           </div>
+          <div class="search-container"> 
+            <div class="search-input">
+              <form action="/search-user" method="post" class="form-search">
+                <div class="search-in" >
+                  <input type="text" class="input-ser" name="searchUser" placeholder="Enter email to search">
+                  
+                </div>
+                
+                <div class="search-icon">
+                
+                  <button type="submit" class="search-btn" id="search-text"> <img src="https://img.icons8.com/ios-glyphs/27/ffffff/search--v1.png" id="search-i"/></button>
+                </div>
+              </form>
+            </div>
+            
+          </div>
+          <div id="joinow"> <p id="app-name">JOINOW</p> </div> 
           
         </div>
         
@@ -28,7 +44,7 @@
            
                 
                 
-              
+                      
                       <div class="drop ">
                         <!-- <img src="http://localhost:8000/users/profile/<%= user.avatar %>" alt="<%= user.name %>" id="profile-pic" height="100px" width="100px"> -->
                         <a class="dropdown-toggle dropdown-new" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -40,7 +56,7 @@
                             <div><img src="https://img.icons8.com/ios/250/000000/user--v1.png" id="user-dp"/></div>
                             
                          <%  } %>
-                          <div>
+                          <div id="user-name-head-con">
                             <span id="user-name-head"><%= user.name %></span>
                           </div>
                           

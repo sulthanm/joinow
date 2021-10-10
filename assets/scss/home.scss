@@ -6,28 +6,45 @@ $button-active-blue: #1669F2;
 
     height: 100%;
     overflow: scroll;
-
+    // margin-top: 15%;
     // border: 2px solid black;
-    
+    // margin-top: 5%;
     
     #post-container{
-        // border: 2px solid yellow;
-        display: inline-block;
-        margin-left: 27%;
-        margin-top: 3%;
-        width: 42%;
+        // border: 2px solid rgb(241, 165, 0);
+        display: flex;
+        flex-direction: row;
+        // align-items: flex-end;
+        justify-content: space-around;
+        width: 100%;
+        margin-top: 5%;
+        #games{
+            display: inline;
+            visibility: hidden;
+            margin-top: 2%;
+            width: 25%;
+            height: 80vh;
+            border: 1px solid magenta;
+            #games-heading{
+                text-align: center;
+            }
+            .on-games{
+                height: 30%;
+                width: 100%;
+            }
+        }
+        
         
         #wall{
             // height: 100%;
-            width: 100%;
-            // border: 2px solid blue;
+            width: 42%;
+            // border: 1px solid blue;
             // margin-left: 25%;
-            
-            display: inline-block;
+            height: 90vh;
+            overflow-y: scroll;
+            // display: inline-block;
             #new-post{
                 list-style: none;
-                margin-top: 8%;
-                // margin-left:2%;
                 // border: 2px solid black;
                 background-color: white;
                 height: 130px;
@@ -41,7 +58,7 @@ $button-active-blue: #1669F2;
                     height: 30%;
                     border: none;
                     padding-left: 4%;
-                    background-color: rgb(241, 240, 240);
+                    background-color: rgb(255, 255, 255);
                     font-size: 10px;
                     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 5px;
                     border-radius: 20px;
@@ -50,13 +67,15 @@ $button-active-blue: #1669F2;
                 }
                 ::placeholder{
                     color: rgba(0, 0, 0, 0.24);
-
+                    
                 }
                
                
-                #pic:focus,#post-area:focus{
+                .pic:focus,#post-area:focus{
                     outline: none;
                 }
+                
+                
                 #photo-button-container{
                     // border: 2px solid black;
                     height: 30%;
@@ -67,60 +86,69 @@ $button-active-blue: #1669F2;
                     justify-content: space-between;
                 }
             
-                #upload-con:hover{
-                    transition: 0.5s;
-                    background-color: #659DBD;
-                    
-                }
+                
              
                 #upload-con{
-                    display: inline ;
+                    
+                    width: 49%;
+                    height: 100%;
+                    border-bottom:1px solid #635291;
+                    // background-color:  rgb(241, 240, 240);
+                    border-radius: 5px;
+                    font-size: 13px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    width: 49%;
-                    height: 100%;
-                    // border:2px solid rgb(228, 40, 40);
-                    background-color:  rgb(241, 240, 240);
-                    border-radius: 5px;
-                    font-size: 13px;
-                  
-              
-                  
+                    
                   
                 }
                 
-                
+                .file {
+                    opacity: 0;
+                    display: none;
+                }
+                #label-f-file{
+                    margin-bottom: 0 ;
+                }
                 #post-button-con{
                     height: 100%;
                     width: 49%;
-                    // border: 2px solid black;
+                    // border: 2px solid black !important;
                     border:none;
                     color: rgba(0, 0, 0, 0.34);
                     font-weight: 700;
-                    
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    // background-color: rgb(241, 240, 240);;
+                    border-bottom:1px solid #635291;
                     
                 }
                 .button-home{
                     cursor: pointer;
                     border: none;
                     height: 100%;
-                    width: 100%;
+                    width: 20%;
                     text-align: center;
-                    padding: 2%;
                     border-radius: 5px;
-                    background-color: #659DBD;
+                    // border-bottom:1px solid #635291;
+                    background-color: #ffffff;
                 }
-                .button-home:hover{
+                #post-button-con:hover,#upload-con:hover{
                     transition: 0.5s;
                     background-color: white;
-                    border: 2px solid rgba(0, 0, 0, 0.14); 
+                    cursor: pointer;
+                    border:1px solid #635291;
+                    // border: 2px solid rgba(0, 0, 0, 0.14);
+                   
                 }
                 
                 
             }
         }
-        
+        #wall::-webkit-scrollbar {
+            display: none;
+          }
         
         #post-list-container{
             // border: 2px solid black;
@@ -388,13 +416,13 @@ $button-active-blue: #1669F2;
     #friends{
         display: inline-block;
         margin-left: 50px;
-        border-left : 2px solid grey;
+        border-left : 2px solid rgb(48, 82, 196);
         vertical-align: top;
         // margin-top: 35px;
-        margin-top: 90px;
-        position: fixed;
-        height: 500px;
-        width: 300px;
+        // margin-top: 5%;
+        // position: fixed;
+        height: 80vh;
+        width: 20%;
         overflow-y: scroll;
        
         
@@ -466,7 +494,8 @@ $button-active-blue: #1669F2;
             font-size: 40px;
             
             color:rgb(175, 203, 204) ;
-            font-family:  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            // font-family:  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
         #form-signin-home{
             // border: 2px solid red;
@@ -613,6 +642,16 @@ $button-active-blue: #1669F2;
     }
 }
 @media (max-width: 550px) {
+    #games{
+        display: none !important;
+    }
+    #wall{
+        width:100% !important;
+        margin-top: 8% !important;
+    }
+    #label-f-file{
+        font-size: 10px !important;
+    }
     #photo-icon{
         height: 17px !important;
         width: 17px !important;
@@ -625,7 +664,8 @@ $button-active-blue: #1669F2;
         
     #post-container{
         width: 100% !important;
-        margin-left:0 !important
+        margin-left:0 !important;
+        
         
     }
     
@@ -633,7 +673,11 @@ $button-active-blue: #1669F2;
         height: 84px !important;
         // margin-top: 15% !important;
     }
-    
+    .up-icon{
+        font-size: 20px !important;
+        height: 15px !important;
+        width: 20px !important;
+    }
   
     .custom-file-input,.comment-button,.button-home {
         font-size: 7px !important;
