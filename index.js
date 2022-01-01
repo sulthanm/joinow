@@ -26,7 +26,7 @@ const cors = require('cors');
 app.use(cors());
 
 const chatServer = require('http').Server(app);
-const chatSockets = require('./config/chat_socket').chatSockets(chatServer);
+const chatSockets = require('./config/chat_sockets').chatSockets(chatServer);
 const portChatServer = 8621;
 
 chatServer.listen(portChatServer);

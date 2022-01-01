@@ -1,0 +1,446 @@
+#home-container {
+  border: 2px solid rgba(0, 0, 0, 0); }
+  #home-container #post-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    height: 90%;
+    margin-top: 4%; }
+    #home-container #post-container #games {
+      display: inline;
+      visibility: hidden;
+      margin-top: 2%;
+      width: 25%;
+      height: 80vh;
+      border: 1px solid magenta; }
+      #home-container #post-container #games #games-heading {
+        text-align: center; }
+      #home-container #post-container #games .on-games {
+        height: 30%;
+        width: 100%; }
+    #home-container #post-container #wall {
+      width: 42%;
+      height: 100%;
+      overflow-y: scroll; }
+      #home-container #post-container #wall #new-post {
+        list-style: none;
+        background-color: white;
+        height: 130px;
+        border: 1px solid rgba(65, 57, 175, 0.2);
+        border-radius: 6px; }
+        #home-container #post-container #wall #new-post #post-area {
+          margin-left: 8.5%;
+          margin-top: 3%;
+          width: 82%;
+          height: 30%;
+          border: none;
+          padding-left: 4%;
+          background-color: white;
+          font-size: 10px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 5px;
+          border-radius: 10px; }
+        #home-container #post-container #wall #new-post ::placeholder {
+          color: rgba(0, 0, 0, 0.24); }
+        #home-container #post-container #wall #new-post .pic:focus, #home-container #post-container #wall #new-post #post-area:focus {
+          outline: none; }
+        #home-container #post-container #wall #new-post #photo-button-container {
+          height: 30%;
+          width: 82%;
+          margin-left: 8.5%;
+          margin-top: 4%;
+          display: flex;
+          justify-content: space-around; }
+        #home-container #post-container #wall #new-post #upload-con {
+          width: 25%;
+          height: 100%;
+          border-bottom: 1px solid #635291;
+          border-radius: 5px;
+          font-size: 13px;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+        #home-container #post-container #wall #new-post .file {
+          opacity: 0;
+          display: none; }
+        #home-container #post-container #wall #new-post #label-f-file {
+          margin-bottom: 0; }
+        #home-container #post-container #wall #new-post #post-button-con {
+          height: 100%;
+          width: 26%;
+          border: none;
+          border-radius: 5px;
+          color: rgba(0, 0, 0, 0.34);
+          font-weight: 700;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-bottom: 1px solid #635291; }
+        #home-container #post-container #wall #new-post .button-home {
+          cursor: pointer;
+          border: none;
+          height: 100%;
+          border-radius: 5px;
+          background-color: #ffffff; }
+        #home-container #post-container #wall #new-post #label-f-file:hover {
+          cursor: pointer; }
+        #home-container #post-container #wall #new-post #post-button-con:hover, #home-container #post-container #wall #new-post #upload-con:hover {
+          transition: 0.5s;
+          background-color: white;
+          cursor: pointer;
+          border: 1px solid #635291; }
+    #home-container #post-container #wall::-webkit-scrollbar {
+      display: none; }
+    #home-container #post-container #post-list-container {
+      display: inline-block;
+      width: 100%; }
+      #home-container #post-container #post-list-container #post-list {
+        list-style: none;
+        padding-inline-start: 0;
+        margin-block-start: 0; }
+        #home-container #post-container #post-list-container #post-list .post-list-item {
+          margin-top: 5%;
+          background-color: white;
+          list-style: none;
+          border-radius: 5px;
+          border: 1px solid rgba(0, 0, 0, 0.14); }
+          #home-container #post-container #post-list-container #post-list .post-list-item #user-name {
+            margin-left: 4%;
+            margin-top: 4%;
+            font-size: 18px; }
+            #home-container #post-container #post-list-container #post-list .post-list-item #user-name #user-route {
+              color: black;
+              text-decoration: none; }
+            #home-container #post-container #post-list-container #post-list .post-list-item #user-name #user-route:hover {
+              border-bottom: 1px solid grey; }
+          #home-container #post-container #post-list-container #post-list .post-list-item #post-content {
+            margin-left: 4%;
+            font-size: 13px; }
+          #home-container #post-container #post-list-container #post-list .post-list-item #picture {
+            margin-top: 20px;
+            height: 540px;
+            width: 100%;
+            object-fit: contain; }
+          #home-container #post-container #post-list-container #post-list .post-list-item #likes {
+            margin-left: 4%;
+            height: 6%;
+            display: flex;
+            flex-direction: row;
+            align-items: center; }
+            #home-container #post-container #post-list-container #post-list .post-list-item #likes .likes-count {
+              margin-block-start: 0;
+              margin-block-end: 0; }
+            #home-container #post-container #post-list-container #post-list .post-list-item #likes #like-img {
+              height: 70%; }
+            #home-container #post-container #post-list-container #post-list .post-list-item #likes #comment-count {
+              padding-top: 0.4%;
+              margin-block-start: 0;
+              margin-block-end: 0; }
+            #home-container #post-container #post-list-container #post-list .post-list-item #likes #comment-img {
+              height: 70%;
+              margin-left: 0.4%; }
+          #home-container #post-container #post-list-container #post-list .post-list-item #comment-count::before {
+            content: "\00b7";
+            font-size: 0.8rem;
+            line-height: 1.33333;
+            font-weight: 700;
+            color: rgba(0, 0, 0, 0.9);
+            color: var(--color-text-low-emphasis);
+            font-weight: 700; }
+          #home-container #post-container #post-list-container #post-list .post-list-item #like-con {
+            margin-left: 4%;
+            width: 96%;
+            height: 5%;
+            display: flex; }
+            #home-container #post-container #post-list-container #post-list .post-list-item #like-con #lik {
+              width: 15%;
+              height: 100%; }
+              #home-container #post-container #post-list-container #post-list .post-list-item #like-con #lik .toggle-like-button {
+                text-decoration: none; }
+                #home-container #post-container #post-list-container #post-list .post-list-item #like-con #lik .toggle-like-button #like-button-1 {
+                  height: 100%;
+                  width: 100%;
+                  text-decoration: none;
+                  text-transform: uppercase;
+                  color: black;
+                  font-size: 13px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center; }
+                #home-container #post-container #post-list-container #post-list .post-list-item #like-con #lik .toggle-like-button #like-button-1:hover {
+                  transition: 0.5s;
+                  background-color: #e0dcdc; }
+              #home-container #post-container #post-list-container #post-list .post-list-item #like-con #lik #del-p {
+                width: 15%;
+                height: 100%; }
+                #home-container #post-container #post-list-container #post-list .post-list-item #like-con #lik #del-p .delete-post {
+                  text-decoration: none;
+                  font-size: 13px; }
+                  #home-container #post-container #post-list-container #post-list .post-list-item #like-con #lik #del-p .delete-post #delete-button-1 {
+                    height: 100%;
+                    width: 100%;
+                    text-transform: uppercase;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center; }
+                #home-container #post-container #post-list-container #post-list .post-list-item #like-con #lik #del-p #delete-button-1:hover {
+                  color: black;
+                  transition: 0.5s;
+                  background-color: #c5c2c2;
+                  border: 1px solid rgba(0, 0, 0, 0.14); }
+          #home-container #post-container #post-list-container #post-list .post-list-item #close-comments-button, #home-container #post-container #post-list-container #post-list .post-list-item #view-comments-button {
+            margin-left: 4%; }
+          #home-container #post-container #post-list-container #post-list .post-list-item #close-comments-button {
+            display: none; }
+          #home-container #post-container #post-list-container #post-list .post-list-item #comment-form {
+            width: 90%;
+            margin-left: 4%; }
+            #home-container #post-container #post-list-container #post-list .post-list-item #comment-form #button-comm {
+              font-size: 12px;
+              background-color: #826cd1;
+              color: white; }
+            #home-container #post-container #post-list-container #post-list .post-list-item #comment-form .commnt-form-new input {
+              margin-top: 3%;
+              height: 30px; }
+          #home-container #post-container #post-list-container #post-list .post-list-item .post-comments-container #comment-heading {
+            color: burlywood;
+            margin-left: 4%; }
+          #home-container #post-container #post-list-container #post-list .post-list-item .post-comments-container .comments-list {
+            list-style: none;
+            margin-left: -8%;
+            margin-top: 4%; }
+            #home-container #post-container #post-list-container #post-list .post-list-item .post-comments-container .comments-list li #user-name {
+              display: inline-block;
+              padding-top: 0;
+              width: 85%;
+              height: auto; }
+            #home-container #post-container #post-list-container #post-list .post-list-item .post-comments-container .comments-list li #comment-content {
+              display: inline-block;
+              margin-left: 4%;
+              width: 90%;
+              height: auto; }
+            #home-container #post-container #post-list-container #post-list .post-list-item .post-comments-container .comments-list li #delete-comment {
+              color: #ff6f61; }
+            #home-container #post-container #post-list-container #post-list .post-list-item .post-comments-container .comments-list li #comment-likes-container {
+              margin-left: 4%; }
+              #home-container #post-container #post-list-container #post-list .post-list-item .post-comments-container .comments-list li #comment-likes-container a {
+                color: #659DBD; }
+              #home-container #post-container #post-list-container #post-list .post-list-item .post-comments-container .comments-list li #comment-likes-container a:hover {
+                color: #ff6f61; }
+              #home-container #post-container #post-list-container #post-list .post-list-item .post-comments-container .comments-list li #comment-likes-container #likes-length {
+                color: #659DBD; }
+            #home-container #post-container #post-list-container #post-list .post-list-item .post-comments-container .comments-list li #for-border {
+              width: 90%;
+              border-top: 1px solid rgba(0, 0, 0, 0.14);
+              border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+              position: relative; }
+    #home-container #post-container #for-border-post {
+      margin-top: 1%;
+      width: 100%;
+      border-bottom: 2px solid rgba(240, 10, 10, 0); }
+  #home-container #for-border-up, #home-container #for-border-down {
+    color: red;
+    border: 1px solid rgba(0, 0, 0, 0); }
+  #home-container #friends {
+    display: inline-block;
+    margin-left: 50px;
+    border: 2px solid rgba(48, 82, 196, 0.2);
+    vertical-align: top;
+    height: 80vh;
+    width: 20%;
+    overflow-y: scroll; }
+    #home-container #friends #friends-list {
+      margin-left: 20px;
+      font-size: 20px;
+      color: dodgerblue; }
+    #home-container #friends #friend-details {
+      margin-left: 20px; }
+      #home-container #friends #friend-details #f-name {
+        text-decoration: none;
+        color: #3f382f;
+        font-family: sans-serif;
+        font-size: 15px; }
+      #home-container #friends #friend-details #f-name:hover {
+        color: #94082b;
+        transition: 0s; }
+    #home-container #friends #all-users {
+      margin-left: 20px;
+      font-size: 20px;
+      color: dodgerblue; }
+    #home-container #friends #all-users-list {
+      margin-left: 20px; }
+      #home-container #friends #all-users-list #user-name-home {
+        text-decoration: none;
+        color: #3f382f;
+        font-family: sans-serif;
+        font-size: 15px; }
+      #home-container #friends #all-users-list #user-name-home:hover {
+        color: #94082b;
+        transition: 0s; }
+  #home-container #friends::-webkit-scrollbar {
+    display: none; }
+  #home-container #sign-in-container-home {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap; }
+    #home-container #sign-in-container-home #app-name-container {
+      width: 24%;
+      height: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      font-size: 40px;
+      color: #afcbcc;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; }
+    #home-container #sign-in-container-home #form-signin-home {
+      width: 33%;
+      height: 65%;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      margin-top: 6%; }
+      #home-container #sign-in-container-home #form-signin-home #home-form {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around; }
+        #home-container #sign-in-container-home #form-signin-home #home-form .input-home {
+          display: block;
+          height: 15%;
+          width: 87%;
+          padding: 4%;
+          margin-left: 7%;
+          border: none;
+          border-bottom: 1px solid grey; }
+        #home-container #sign-in-container-home #form-signin-home #home-form .input-home:focus {
+          outline: none; }
+        #home-container #sign-in-container-home #form-signin-home #home-form #sign-in-b {
+          margin-left: 7%;
+          height: 15%;
+          width: 87%;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          #home-container #sign-in-container-home #form-signin-home #home-form #sign-in-b .but-sub {
+            border: none;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(201, 201, 201, 0.3); }
+          #home-container #sign-in-container-home #form-signin-home #home-form #sign-in-b .but-sub:hover {
+            transition: 0.5s;
+            background-color: #afcbcc;
+            cursor: pointer; }
+    #home-container #sign-in-container-home #google-container {
+      width: 87%;
+      height: 15%;
+      margin-left: 7%;
+      border-radius: 20px;
+      text-decoration: none; }
+      #home-container #sign-in-container-home #google-container .google-btn {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25); }
+        #home-container #sign-in-container-home #google-container .google-btn .google-icon-wrapper {
+          width: 10%;
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          border-radius: 2px;
+          background-color: #fff; }
+        #home-container #sign-in-container-home #google-container .google-btn .btn-text {
+          color: black;
+          font-size: 14px;
+          letter-spacing: 0.2px;
+          text-decoration: none;
+          font-family: "Roboto";
+          height: 100%;
+          width: 40%;
+          display: flex;
+          align-items: center;
+          justify-content: space-around; }
+        #home-container #sign-in-container-home #google-container .google-btn:hover {
+          box-shadow: 0 0 6px #4285f4; }
+    #home-container #sign-in-container-home #sign-up-home {
+      background-color: white;
+      text-align: center; }
+
+#home-container::-webkit-scrollbar {
+  width: 0; }
+
+.no-js #loader {
+  display: none; }
+
+.js #loader {
+  display: block;
+  position: absolute;
+  left: 100px;
+  top: 0; }
+
+.se-pre-con {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: #fff; }
+  .se-pre-con .loader-container-lay {
+    width: auto;
+    font-size: 30px;
+    position: relative;
+    left: 47%;
+    top: 45%; }
+
+@media (max-width: 550px) {
+  #games {
+    display: none !important; }
+  #wall {
+    width: 100% !important;
+    margin-top: 8% !important; }
+  #label-f-file {
+    font-size: 10px !important; }
+  #photo-icon {
+    height: 17px !important;
+    width: 17px !important; }
+  #friends {
+    display: none !important; }
+  #post-container {
+    width: 100% !important;
+    margin-left: 0 !important; }
+  #new-post {
+    height: 84px !important; }
+  .up-icon {
+    font-size: 20px !important;
+    height: 15px !important;
+    width: 20px !important; }
+  .custom-file-input, .comment-button, .button-home {
+    font-size: 7px !important; }
+  #picture {
+    height: 400px !important;
+    width: 100% !important; }
+  .post-comments-container {
+    font-size: 10px !important; }
+  #sign-in-container-home {
+    height: 30% !important;
+    border: 1px solid rgba(34, 255, 255, 0) !important; }
+  #sign-in-home {
+    height: 100px !important;
+    margin-left: 25% !important; }
+  #form-signin-home {
+    width: 80% !important;
+    height: 305px !important; }
+    #form-signin-home #input-home {
+      border: 1px solid grey !important;
+      height: 16% !important; }
+  #sign-up-home {
+    width: 70% !important;
+    height: 38px !important;
+    margin-left: 10% !important;
+    margin-top: 0% !important;
+    padding-left: 4% !important; } }
