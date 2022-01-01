@@ -16,27 +16,28 @@ module.exports.createPosts = async function(req, res){
             
             let posT = await Post.create({
                 post_content : req.body.post_content,
-                userss : req.user._id,
+                userss : req.user._id
             });
                 let filePresent = false;
                 let result;
                 let postFile = false;
                 res.locals.file = postFile;
                 if(req.file){
-                    res.locals.file = true;
-                   
-                    result = await s3BucketJoinow.uploadFile(req.file);
-                    // console.log(req.file);
-
-                    // console.log("files pushed to buc",result);
-                    filePresent = true;
-                    postFile=true;
-                    res.locals.file = postFile;
-                    posT.avatar = `users/create-posts/${result.key}`;
+        
+                    Post.uploadedPost(req, res, function(err){
+                        if(err) console.log("Error in posting image", err);
+                        res.locals.file = true;
+                        filePresent = true;
+                        postFile=true;
+                        res.locals.file = postFile;
+                        console.log(Post.avatarPath);
+                        posT.avatar = Post.avatarPath + '/' + req.file.filename;
+                        console.log(posT.avatar);
+                        posT.save();
+                    })
                     
                 }
-                
-                posT.save();
+            
                 posT.populate('userss', 'name email').execPopulate(function(err, post){
                     if(err){
                         console.log("Error in populating post", err);
@@ -80,12 +81,7 @@ module.exports.createComment = async function(req,res){
       
 
             mailingFile.sendMailForCreatingComment(popuComment);
-            // let job = queue.create('emails', popuComment).save(function(err){
-            //     if(err){
-            //         console.log("Errror in sending to queue", err);return;
-            //     }
-            //     console.log('job enqued', job.id);
-            // });
+   
             console.log(popuComment);
             if (req.xhr){
              

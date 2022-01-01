@@ -9,7 +9,9 @@
   background: #a2a1ee;
   padding: 5px;
   box-shadow: 1px 1px 1px 1px lightgrey;
-  display: block; }
+  display: flex;
+  align-items: center;
+  justify-content: center; }
 
 #user-chat-box {
   position: fixed;
