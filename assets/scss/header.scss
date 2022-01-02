@@ -8,7 +8,7 @@
         z-index: 1;
         color: white !important;
       
-        #name {
+        .name {
             // margin-left: 10%;
             height: 100%;
             width:53%;
@@ -153,12 +153,6 @@
             margin-right: 3%;
             .drop{
                 width: auto;
-                // border: 2px solid rgb(44, 236, 102);
-                #user-dp{
-                    height: 100px;
-                    width: 100px;
-                    border-radius: 50%;
-                }
                 
             }
             .dropdown-new{
@@ -171,9 +165,10 @@
                 align-items: center;
                 justify-content: space-around;
                 // padding: 2%;
-                #user-dp{
-                    height:80% ;
-                    width: 95%;
+                .user-dp{
+                    height:40px;
+                    width: 40px;
+                    border-radius: 50%;
                 }
                 
             }
@@ -211,7 +206,7 @@
             
          }
          
-         #name{
+         .name-mq{
             //  margin-left: 2%;
              width: 82% !important;
             //  border: 1px solid white !important;
@@ -277,8 +272,8 @@
             // border: 2px solid black !important;
             font-size: 9px !important;
         }
-        #user-dp{
-            height:80% ;
+        .dp-mq{
+            height:30px !important;
             width: 30px !important;
         }
       

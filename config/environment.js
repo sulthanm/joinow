@@ -34,11 +34,7 @@ const development = {
     morgan : {
         mode : 'dev',
         options : {stream:accessLogStream}
-    },
-    aws_bucket : process.env.aws_bucket_name,
-    aws_bucket_region : process.env.aws_region,
-    aws_access_id : process.env.aws_access_id,
-    aws_access_key : process.env.aws_access_key
+    }
 }
 
 const production = {
@@ -63,11 +59,7 @@ const production = {
     morgan : {
       mode : 'combined',
       options : {stream:accessLogStream}
-    },
-    aws_bucket:process.env.AWS_BUCKET,
-    aws_bucket_region : process.env.AWS_BUCKET_REGION,
-    aws_access_id : process.env.AWS_ACCESS_ID,
-    aws_access_key : process.env.AWS_ACCESS_KEY
+    }
 
 }
 

@@ -12,7 +12,7 @@
                <% if(user.avatar) { %> 
                   <img src="<%= user.avatar %>" alt="<%= user.name %>" id="profile-pic">
                 <%} else{%>
-                  <img src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/100/000000/external-user-interface-kiranshastry-gradient-kiranshastry-1.png" id="profile-pic"/>
+                  <img src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/200/000000/external-user-interface-kiranshastry-gradient-kiranshastry-1.png" id="profile-pic"/>
                   <% } %>
 
                
@@ -46,15 +46,16 @@
                <% var s = 0 %>
                <% for(var i of uPosts){ %>
                   <% if(i.userss.id == profile_user.id && i.avatar ){ %>
-                     <% s= s+1 %> 
+                     <% s += 1 %> 
                      <div id="post-p">
                         
                         <% if(!i.avatar){ %>
                         
-                           <p  ><%= i.post_content %></p>
+                           <p><%= i.post_content %></p>
                            <% continue %>
                         <% } %>
-                        <img src="http://joinow.herokuapp.com/<%= i.avatar %>" alt="<%= i.userss.name %>" id="userProfile-posts-img">
+ 
+                        <img src="http://localhost:8000<%= i.avatar %>" alt="<%= i.userss.name %>" id="userProfile-posts-img">
                         <div class="middle">
                            <div class="text">
                               

@@ -2,20 +2,27 @@
 <% if (locals.user){ %>
 	<div id="user-chat-box" >
 		<div onclick="closeChat()">
-			<button class="btn btn-danger">X</button>
+			<button class="btn btn-secondary">X</button>
 		</div>
 		<ul id="chat-messages-list">
-			
+			<li class="other-message">
+				<span>Other Message</span>
+			</li>
+			<li class="self-message">
+				<span>
+					Self Message
+				</span>	
+			</li>
 
 		</ul>
 		<div id="chat-message-input-container">
 			<input id="chat-message-input" placeholder="Type message here">
-			<button id="send-message">Send</button>
+			<button id="send-message" class="btn btn-success">Send</button>
 		</div>
 
 	</div>
 	<div id="class-room-btn" onclick="openChat()">
-		<center><p>CHAT ROOM</p></center>
+		<p>ChaT RooM</p>
 		
 	</div>
 <% } %>
@@ -32,6 +39,6 @@
 		
 		console.log("kjsfgkbklghnd");
 		chatRoom.style.display = "none";
-		closeRoom.style.display = "block";
+		closeRoom.style.display = "flex";
 	}
 </script>

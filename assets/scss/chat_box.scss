@@ -1,4 +1,6 @@
 // CHANGE :: add styling for the chat box
+
+
 #class-room-btn{
 	position: fixed;
     bottom: 10px;
@@ -11,8 +13,15 @@
 	padding: 5px;
 	box-shadow: 1px 1px 1px 1px lightgrey;
 	display: flex;
-	align-items: center;
 	justify-content: center;
+	p{
+		margin-top: 6px;
+	}
+}
+#class-room-btn:hover{
+	cursor: pointer;
+	background-color: #ffa0a0;
+	transition: 0.2s;
 }
 #user-chat-box{
     position: fixed;
@@ -20,16 +29,19 @@
     right: 10px;
     border: 1px dashed grey;
     height: 350px;
-	width: 300px;
-	background: white;
+	width: 350px;
+	background-image: url('../images/chatBck.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 	padding: 5px;
 	box-shadow: 1px 1px 1px 1px lightgrey;
 	display: none;
+	
     #chat-messages-list{
     	list-style: none;
 	    padding: 10px;
 	    height: 70%;
-	    background-color: white;
 	    overflow: auto;
 
 	    .other-message{
@@ -40,6 +52,11 @@
 	    		padding: 15px;
 		    	background-color: #ffa0a0;
 		    }
+			#messagedBy{
+				font-size: 10px;
+				font-style: italic;
+			}
+			
 		    
 	    }
 
@@ -53,6 +70,10 @@
 	    		padding: 15px;
     			background-color: #a0dcff;
 		    }
+			#messagedBy{
+				font-size: 10px;
+				font-style: italic;
+			}
 		   
 	    }
 
@@ -71,7 +92,7 @@
 		    #send-message{
 	    	    height: 50%;
 			    width: 30%;
-			    font-size: 25px;
+			    font-size: 15px;
 			    color: white;
 			    border: none;
 			    background: #58d258;

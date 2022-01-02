@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="<%= assetPath('css/header.css') %>">
 <header >
     <div id="head">
-        <div id="name">
+        <div class="name name-mq">
          
           <div id="icon-container">
             <div id="home-image-a">
@@ -50,10 +50,10 @@
                         <a class="dropdown-toggle dropdown-new" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           <% if(user.avatar){ %>
                           <div>
-                            <img src="http://joinow.herokuapp.com/users/profile/<%= user.avatar %>"  id="user-dp" >
+                            <img src="http://localhost:8000<%= user.avatar %>"  class="user-dp dp-mq" >
                           </div>
                           <% } else {%>
-                            <img src="https://img.icons8.com/material-sharp/34/ffffff/user.png" id="user-dp"/>
+                            <img src="https://img.icons8.com/material-sharp/34/ffffff/user.png" class="user-dp dp-mq"/>
                             
                          <%  } %>
                           <div id="user-name-head-con">

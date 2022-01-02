@@ -5,7 +5,7 @@
   position: fixed;
   z-index: 1;
   color: white !important; }
-  #head #name {
+  #head .name {
     height: 100%;
     width: 53%;
     font-size: 25px;
@@ -14,7 +14,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center; }
-    #head #name #joinow {
+    #head .name #joinow {
       text-decoration: none;
       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
       color: white;
@@ -23,10 +23,10 @@
       align-items: center;
       justify-content: center;
       flex-wrap: wrap; }
-      #head #name #joinow p {
+      #head .name #joinow p {
         margin-block-start: 0;
         margin-block-end: 0; }
-    #head #name #icon-container {
+    #head .name #icon-container {
       width: 30%;
       height: 100%;
       margin-left: 2%;
@@ -35,56 +35,56 @@
       justify-content: center;
       align-items: center;
       flex-wrap: wrap; }
-      #head #name #icon-container #home-image-a, #head #name #icon-container #user-friend-a {
+      #head .name #icon-container #home-image-a, #head .name #icon-container #user-friend-a {
         color: white;
         width: 50%;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center; }
-      #head #name #icon-container #home-image-a:hover, #head #name #icon-container #user-friend-a:hover {
+      #head .name #icon-container #home-image-a:hover, #head .name #icon-container #user-friend-a:hover {
         cursor: pointer;
         border-bottom: 2px solid white;
         transition: 0.2s; }
-    #head #name .search-container {
+    #head .name .search-container {
       width: 65%;
       height: 66%;
       display: flex;
       flex-direction: row; }
-      #head #name .search-container .search-input {
+      #head .name .search-container .search-input {
         width: 100%;
         height: 100%; }
-        #head #name .search-container .search-input .form-search {
+        #head .name .search-container .search-input .form-search {
           width: 100%;
           height: 100%;
           display: flex;
           flex-direction: row;
           justify-content: space-between; }
-        #head #name .search-container .search-input .search-in {
+        #head .name .search-container .search-input .search-in {
           height: 100%;
           width: 74%; }
-          #head #name .search-container .search-input .search-in .input-ser {
+          #head .name .search-container .search-input .search-in .input-ser {
             border: none;
             width: 100%;
             height: 100%;
             background-color: #635291;
             border-bottom: 2px solid white; }
-          #head #name .search-container .search-input .search-in .input-ser[type="text"] {
+          #head .name .search-container .search-input .search-in .input-ser[type="text"] {
             color: white;
             font-size: 15px;
             background-color: #635291; }
-          #head #name .search-container .search-input .search-in ::placeholder {
+          #head .name .search-container .search-input .search-in ::placeholder {
             /* Chrome, Firefox, Opera, Safari 10.1+ */
             color: white;
             opacity: 0.4;
             /* Firefox */ }
-          #head #name .search-container .search-input .search-in .input-ser:focus, #head #name .search-container .search-input .search-in .input-ser:focus {
+          #head .name .search-container .search-input .search-in .input-ser:focus, #head .name .search-container .search-input .search-in .input-ser:focus {
             outline: none; }
-        #head #name .search-container .search-input .search-icon {
+        #head .name .search-container .search-input .search-icon {
           width: 26%;
           height: 50%;
           z-index: 1; }
-          #head #name .search-container .search-input .search-icon .search-btn {
+          #head .name .search-container .search-input .search-icon .search-btn {
             width: 100%;
             font-size: 15px;
             height: 100%;
@@ -103,10 +103,6 @@
     margin-right: 3%; }
     #head #head-list .drop {
       width: auto; }
-      #head #head-list .drop #user-dp {
-        height: 100px;
-        width: 100px;
-        border-radius: 50%; }
     #head #head-list .dropdown-new {
       background-color: #635291;
       color: white;
@@ -115,9 +111,10 @@
       display: flex;
       align-items: center;
       justify-content: space-around; }
-      #head #head-list .dropdown-new #user-dp {
-        height: 80%;
-        width: 95%; }
+      #head #head-list .dropdown-new .user-dp {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%; }
     #head #head-list .dropdown-new:hover {
       text-decoration: none; }
     #head #head-list .dropdown-new:focus {
@@ -136,16 +133,16 @@
     display: none !important; }
   #joinow {
     font-size: 17px !important; }
-  #name {
+  .name-mq {
     width: 82% !important;
     text-align: center !important;
     display: flex !important;
     justify-content: center !important; }
-    #name .input-ser {
+    .name-mq .input-ser {
       margin-left: 8% !important; }
-    #name .search-container {
+    .name-mq .search-container {
       width: 100% !important; }
-      #name .search-container #search-i {
+      .name-mq .search-container #search-i {
         height: 17px !important;
         width: 17px !important; }
   #user-name-head-con {
@@ -169,8 +166,8 @@
   #user-name-header {
     margin-top: 8% !important;
     font-size: 9px !important; }
-  #user-dp {
-    height: 80%;
+  .dp-mq {
+    height: 30px !important;
     width: 30px !important; }
   .sign-in-header {
     font-size: 12px !important; } }

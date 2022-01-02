@@ -2,9 +2,7 @@ const User = require('../models/user');
 const Post = require('../models/post');
 const fs = require('fs');
 const path = require('path');
-const s3BucketJoinow = require('../config/s3');
 const passport = require('../config/passport-local-strategy');
-// var url = require('url');
 
 module.exports.profilePage = async function (req,res){
     let user = await User.findById(req.params.id).populate({
@@ -65,9 +63,7 @@ module.exports.createUser = function(req, res){
         if(!userPresent){
             User.create(req.body, function(err, user){
                 if(err){console.log('Error in creating user');return;}
-                // return res.render('user_signin',{
-                //     title:"joinow"
-                // });
+               
                 return res.redirect('/users/signin');
             });
         }else{
@@ -99,15 +95,16 @@ module.exports.profieUpdate = async function(req, res){
         let result;
         if(req.file){
             
-            result = await s3BucketJoinow.uploadFile(req.file);
-            console.log(req.file);
-            console.log("files pushed to buc",result);
-            filePresent = true;      
-            user.avatar = `users/profile-updateavatar/${result.key}`
-            user.avatarKey = result.key;
+            User.uploadedAvatar(req, res, function(err){
+                if(err) console.log("Error in updating profile image", err);
+               
+                user.avatar = User.avatarPath + '/' + req.file.filename;
+                console.log("hhhhhhhhhhhhhh", user.avatar);
+                user.save();
+            })
             
         }
-        user.save();
+  
         return res.redirect('back');
 
 
