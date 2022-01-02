@@ -73,3 +73,11 @@
       color: white;
       border: none;
       background: #58d258; }
+
+@media (max-width: 550px) {
+  #class-room-btn {
+    display: none !important; }
+  #user-chat-box {
+    width: 100% !important;
+    right: 0 !important;
+    bottom: 45px !important; } }

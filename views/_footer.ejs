@@ -17,10 +17,22 @@
 
         </a>
 
+        <a href="" onclick="displayChat(event)" >
+            <div class="h-icon">
+                <img src="https://img.icons8.com/ios/24/000000/chat-message--v1.png"/>
+            </div>
+        </a>
 
     </div>
 
 
-
-
 </div>
+
+<script>
+    var chatRoom = document.getElementById('user-chat-box');
+    function displayChat(event){
+        event.preventDefault();
+        chatRoom.style.display = "block";
+    }
+
+</script>
