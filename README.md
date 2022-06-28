@@ -14,4 +14,4 @@ To use :
 3. run - npm install
 4. run - npm start
 5. open browser
-6. run on - http://localhost:8000/
+6. run on - http://localhost:8080/
